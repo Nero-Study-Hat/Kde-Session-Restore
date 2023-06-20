@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
@@ -7,7 +8,6 @@ namespace GetWindowMonitor
 {
     public class DataParse
     {
-
         private async static Task Main()
         {
             var cmdOutputSB = new StringBuilder();
@@ -15,11 +15,23 @@ namespace GetWindowMonitor
 
             string[] activityIds = await GetActivityIds(cmdOutputSB, delimSB);
             string[] windowIds = await GetWindowIds(cmdOutputSB, delimSB);
-            // string[] windowData = await
 
-            //
+            // Dictionary<WindowData, Window> = await 
 
             Console.WriteLine("Done");
+        }
+
+
+        public static async Task<Window[]>GetWindowData(string[] windowIds, StringBuilder cmdOutputSB, string[] delimSB)
+        {
+            var windows = new Window[windowIds.Length];
+            for (int index = 0; index < windowIds.Length; index++)
+            {
+                // string activity = await 
+                int[] asbWinPos = await GetAbsoluteWindowPosition(windowIds[index], cmdOutputSB, delimSB);
+
+                windows[index] = new Window();
+            }
         }
 
         public static async Task<string[]> GetWindowIds(StringBuilder cmdOutputSB, string[] delimSB)
@@ -34,42 +46,7 @@ namespace GetWindowMonitor
             cmdOutputSB.Clear();
             return windowIds;
         }
-
-        public enum windowData
-        {
-            WindowId,
-            ActivityId,
-            AbsoluteWindowPosition,
-            DesktopNum,
-            ApplicationName
-        }
-
-        public static async Task<Dictionary<windowData, Array>>GetWindowData(string[] windowIds, StringBuilder cmdOutputSB, string[] delimSB)
-        {
-            foreach (var windowId in windowIds)
-            {
-                int[] absWinPos = await GetAbsoluteWindowPosition(windowId, cmdOutputSB, delimSB);
-            }
-        }
-
-        public static async Task<int[]> GetAbsoluteWindowPosition(string windowId, StringBuilder cmdOutputSB, string[] delimSB)
-        {
-            cmdOutputSB.Clear();
-            var xwininfoCmd = Cli.Wrap("xwininfo")
-            .WithArguments(new[] { "-id", windowId });
-            var grepCmd = Cli.Wrap("grep")
-            .WithArguments("Absolute");
-            var awkCmd = Cli.Wrap("awk")
-            .WithArguments("{print $4}");
-            await (xwininfoCmd | grepCmd | awkCmd | cmdOutputSB).ExecuteBufferedAsync();
-            string[] lines = cmdOutputSB.ToString().Split(delimSB, StringSplitOptions.None);
-            int[] absoluteWindowPosition = new int[2];
-            absoluteWindowPosition[0] = Int32.Parse(lines[0]);
-            absoluteWindowPosition[0] = Int32.Parse(lines[1]);
-            cmdOutputSB.Clear();
-            return absoluteWindowPosition;
-        }
-
+        
         public static async Task<string[]> GetActivityIds(StringBuilder cmdOutputSB, string[] delimSB)
         {
             cmdOutputSB.Clear();
