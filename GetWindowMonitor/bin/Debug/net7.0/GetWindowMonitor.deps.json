@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "GetWindowMonitor/1.0.0": {
+        "dependencies": {
+          "CliWrap": "3.6.3"
+        },
+        "runtime": {
+          "GetWindowMonitor.dll": {}
+        }
+      },
+      "CliWrap/3.6.3": {
+        "runtime": {
+          "lib/netcoreapp3.0/CliWrap.dll": {
+            "assemblyVersion": "3.6.3.0",
+            "fileVersion": "3.6.3.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GetWindowMonitor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CliWrap/3.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z0fxJnrwkARqINdjTj/zeCjF/PBkmahoh8ap6Itdf5yCnFNhwnHHbEaOlklXccsIYHTZMZgHIOCVUpKnd2dovQ==",
+      "path": "cliwrap/3.6.3",
+      "hashPath": "cliwrap.3.6.3.nupkg.sha512"
+    }
+  }
+}

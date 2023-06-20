@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "f52Rh9Bn+25XdMw/ITPr1xit8z9cHHmuATQsJIVVc23G2irQNINovCKAgtE3s/YUpSD6O8EXXwF3vgKajOdFYA==",
+  "success": true,
+  "projectFilePath": "/home/nero_admin/Workspace/IT/Kde-Linux-Project/GetWindowMonitor/GetWindowMonitor.csproj",
+  "expectedPackageFiles": [
+    "/home/nero_admin/.nuget/packages/cliwrap/3.6.3/cliwrap.3.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
