@@ -3,13 +3,13 @@ using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
 
-namespace SaveSession
+namespace SessionObjects
 {
     public class Session
     {
         public Dictionary<string, string> Activities { get; set; }
         public int DesktopsAmount { get; set; }
-        public int[] Resolution { get; set; }
+        public Display Display { get; set; }
 
         public Window[] Windows { get; set; }
 

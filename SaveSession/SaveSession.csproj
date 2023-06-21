@@ -8,6 +8,7 @@
     <RootNamespace>SaveSession</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="../SessionObjects/SessionObjects.csproj" />
     <GlobalAnalyzerConfigFiles Include="/home/nero_admin/Workspace/IT/Kde-Session-Restore/.vscode/code_analyzer_settings.globalconfig" />
   </ItemGroup>
   <ItemGroup>

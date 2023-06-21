@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SaveSession
 {
-    public class Window
+    public class SessionObjects
     {
         public string Name { get; set; }
         public string WindowId { get; set; }
