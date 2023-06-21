@@ -1,6 +1,7 @@
 using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
+using SessionObjects;
 
 namespace SaveSession
 {
@@ -11,6 +12,8 @@ namespace SaveSession
             StringBuilder cmdOutputSB = new StringBuilder();
             string[] delimSB = { Environment.NewLine, "\n" };
 
+            Session session = await GetSession(cmdOutputSB, delimSB);
+
             Console.WriteLine("Done");
         }
 
@@ -18,7 +21,9 @@ namespace SaveSession
         {
             Dictionary<string, string> activities = await Session.GetActivities(cmdOutputSB, delimSB);
             Window[] windows = await Session.GetWindows(cmdOutputSB, delimSB);
-            Session session = new Session(activities, windows)
+            Display display = new Display();
+            int desktopsAmount = await Session.GetDesktopsAmount(cmdOutputSB);
+            Session session = new Session(activities, windows, display, desktopsAmount);
             return session;
         }
 

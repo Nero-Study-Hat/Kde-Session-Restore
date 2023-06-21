@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/GetWindowMonitor/GetWindowMonitor.csproj",
+                "${workspaceFolder}/SaveSession/SaveSession.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/GetWindowMonitor/GetWindowMonitor.csproj",
+                "${workspaceFolder}/SaveSession/SaveSession.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/GetWindowMonitor/GetWindowMonitor.csproj"
+                "${workspaceFolder}/SaveSession/SaveSession.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
