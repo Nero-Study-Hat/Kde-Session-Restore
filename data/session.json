@@ -1,0 +1,745 @@
+{
+  "Activities": {
+    "Art": "fa936946-4af6-47e4-960a-977edfb037b0",
+    "Development": "1954e667-b011-49d1-873d-8e7f085f524d",
+    "Game Dev": "e0c35f1a-029d-4c35-a48e-191eb40104e2",
+    "Productive HQ": "e6693b44-93e9-4a2d-91ca-f7ef709a0062",
+    "Slack": "939a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+    "Writing": "1ca6f39c-fe4c-4502-8838-affde25d8dfc"
+  },
+  "DesktopsAmount": 4,
+  "Display": {},
+  "Windows": [
+    {
+      "Name": "Haikyuu!!'s Greatest Redemption Story [Kei Tsukishima] - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00003",
+      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "DesktopNum": 0,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "The Adventure Begins | D&D/TTRPG Music | 1 Hour - YouTube",
+          "Url": "https://www.youtube.com/watch?v=Jikm8CCRbdM"
+        },
+        {
+          "Title": "Haikyuu!!'s Greatest Redemption Story [Kei Tsukishima] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=ayMCOH0q7R8&list=TLPQMDIwNjIwMjNwGQ7Vmhv30g&index=9"
+        },
+        {
+          "Title": "Foundryside (The Founders Trilogy, #1) by Robert Jackson Bennett | Goodreads",
+          "Url": "https://www.goodreads.com/book/show/37173847-foundryside"
+        }
+      ]
+    },
+    {
+      "Name": "Methods for learning to write Japanese - Kristines Blog - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00005",
+      "ActivityId": "6693b44-93e9-4a2d-91ca-f7ef709a0062",
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "1 HOUR 🔥 BADASS VILLAIN MUSIC MIX 2023《ROCK MIX》🔥 - YouTube",
+          "Url": "https://www.youtube.com/watch?v=SeSWp9Jv38Q"
+        },
+        {
+          "Title": "(2) Dark Monastery chants | Gothic litanies | Warhammer 40k ambient | Grimdark RPG music - YouTube",
+          "Url": "https://www.youtube.com/watch?v=VWGr_89_xdU"
+        },
+        {
+          "Title": "(691) Discord | #beebo-corner | Bosan",
+          "Url": "https://discord.com/channels/521050287046262826/524386270609145887"
+        },
+        {
+          "Title": "hiragana at DuckDuckGo",
+          "Url": "https://duckduckgo.com/?q=hiragana&t=brave&iax=images&ia=images&iai=http%3A%2F%2Fsci-life.com%2Fwp-content%2Fuploads%2F2015%2F05%2FHiragana.jpg"
+        },
+        {
+          "Title": "Methods for learning to write Japanese - Kristines Blog",
+          "Url": "https://sci-life.com/2015/05/23/methods-for-learning-to-write-japanese/"
+        }
+      ]
+    },
+    {
+      "Name": "How Do You Design a Just Society? | Thought Experiment: The Original Position - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00006",
+      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "DesktopNum": 3,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Shinsu: Explained (Tower of God) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=tgxSgriBa_c"
+        },
+        {
+          "Title": "How Do You Design a Just Society? | Thought Experiment: The Original Position - YouTube",
+          "Url": "https://www.youtube.com/watch?v=P3gWGtf_w_s"
+        }
+      ]
+    },
+    {
+      "Name": "The Power of Friendship? Eleceed - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00007",
+      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "The Power of Friendship? Eleceed - YouTube",
+          "Url": "https://www.youtube.com/watch?v=dAU2Av5efq0&list=TLPQMDYwNjIwMjMiV5ldquiwsQ&index=21"
+        },
+        {
+          "Title": "How This WEBTOON Makes a Lovable Flawed Character - YouTube",
+          "Url": "https://www.youtube.com/watch?v=oU1FqNa6S-k"
+        },
+        {
+          "Title": "The Best Isekai on WEBTOON - YouTube",
+          "Url": "https://www.youtube.com/watch?v=rmrwnDTjYII"
+        },
+        {
+          "Title": "The Importance of Making Fun Characters - YouTube",
+          "Url": "https://www.youtube.com/watch?v=XcvmTeos9ec"
+        },
+        {
+          "Title": "Why This Character is Great AND Terrifying - YouTube",
+          "Url": "https://www.youtube.com/watch?v=vAxmDrvkpo0"
+        },
+        {
+          "Title": "How to Write Despair: The World After The Fall - YouTube",
+          "Url": "https://www.youtube.com/watch?v=OMKLHTbCiEM"
+        }
+      ]
+    },
+    {
+      "Name": "Dear Authors... Friendships [CC] - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00008",
+      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Dear Authors... Friendships [CC] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=mrq2C_qdU4M&list=TLPQMDYwNjIwMjMgJ6H0N7wcvg&index=23"
+        }
+      ]
+    },
+    {
+      "Name": "Introduction to the A* Algorithm - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00009",
+      "ActivityId": "0c35f1a-029d-4c35-a48e-191eb40104e2",
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Pathfinding Visualizer Tutorial (software engineering project) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=msttfIHHkak"
+        },
+        {
+          "Title": "A* Pathfinding Visualization Tutorial - Python A* Path Finding Tutorial - YouTube",
+          "Url": "https://www.youtube.com/watch?v=JtiK0DOeI4A"
+        },
+        {
+          "Title": "unity maze generator - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=unity+maze+generator+"
+        },
+        {
+          "Title": "unity ai* pathfinding 2d - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=unity+ai%2A+pathfinding+2d+"
+        },
+        {
+          "Title": "Pathfinding - Understanding A* (A star) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=i0x5fj4PqP4"
+        },
+        {
+          "Title": "Introduction to the A* Algorithm",
+          "Url": "https://www.redblobgames.com/pathfinding/a-star/introduction.html"
+        },
+        {
+          "Title": "Map representations",
+          "Url": "https://theory.stanford.edu/~amitp/GameProgramming/MapRepresentations.html"
+        },
+        {
+          "Title": "Flow Field Pathfinding for Tower Defense",
+          "Url": "https://www.redblobgames.com/pathfinding/tower-defense/"
+        }
+      ]
+    },
+    {
+      "Name": "Lofi Jazz Study Music - Calm & Chill Background Jazz Music for Work, Study, Focus, Coding, Reading - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a0000a",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        48,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "coding music - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=coding+music"
+        },
+        {
+          "Title": "Lofi Jazz Study Music - Calm & Chill Background Jazz Music for Work, Study, Focus, Coding, Reading - YouTube",
+          "Url": "https://www.youtube.com/watch?v=bz5q5gl2uZA"
+        },
+        {
+          "Title": "Concentration / Programming Music 010 (part 2) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=pmxYePDPV6M"
+        },
+        {
+          "Title": "3:30 AM Coding Session - Lofi Hip Hop Mix [Study & Coding Beats] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=8nXqcugV2Y4"
+        },
+        {
+          "Title": "Programming / Coding / Hacking music vol.18 (ANONYMOUS HEADQUARTERS) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=Z-VfaG9ZN_U"
+        },
+        {
+          "Title": "github_api_project/GetGithubApiData.cs at cutting-edge · Nero-Study-Hat/github_api_project · GitHub",
+          "Url": "https://github.com/Nero-Study-Hat/github_api_project/blob/cutting-edge/GetGithubApiData.cs"
+        }
+      ]
+    },
+    {
+      "Name": "Chapter 8: The Basement - Tunnel Rat | Royal Road - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a0000b",
+      "ActivityId": "39a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+      "DesktopNum": 0,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "sieley's Posts | Royal Road",
+          "Url": "https://www.royalroad.com/profile/246018/posts"
+        },
+        {
+          "Title": "Chapter 8: The Basement - Tunnel Rat | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/47982/tunnel-rat/chapter/782338/chapter-8-the-basement"
+        },
+        {
+          "Title": "The Quest Giver [An NPC LitRPG Adventure] | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/64484/the-quest-giver-an-npc-litrpg-adventure"
+        },
+        {
+          "Title": "I Ran Away To Evil - A Cozy LitRPG RomCom | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/68117/i-ran-away-to-evil-a-cozy-litrpg-romcom"
+        },
+        {
+          "Title": "Industrial Strength Magic | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/57011/industrial-strength-magic"
+        },
+        {
+          "Title": "Prophecy Approved Companion | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/35549/prophecy-approved-companion"
+        },
+        {
+          "Title": "Threadbare | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/15130/threadbare"
+        }
+      ]
+    },
+    {
+      "Name": "(754) Discord | #memes | Beebo's server - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a0000c",
+      "ActivityId": "39a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        48,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Hurt (Cover Demo) | Wolf Winters - YouTube",
+          "Url": "https://www.youtube.com/watch?v=xoFYaN9xkEk&list=TLPQMTYwNjIwMjMNMxvkLu2mWw&index=9"
+        },
+        {
+          "Title": "hive cities warhammer - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=hive+cities+warhammer"
+        },
+        {
+          "Title": "cyberpunk old net - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=cyberpunk+old+net"
+        },
+        {
+          "Title": "Cyberpunk: Edgerunners OST - Full Soundtrack - YouTube",
+          "Url": "https://www.youtube.com/watch?v=WYa8F_MoY-s"
+        },
+        {
+          "Title": "Lorien - YouTube",
+          "Url": "https://www.youtube.com/@lorien_lra/videos"
+        },
+        {
+          "Title": "Jeremy Tai - YouTube",
+          "Url": "https://www.youtube.com/@jtaicello/videos"
+        },
+        {
+          "Title": "Cyberpunk: I Really Want to Stay at Your House | Emotional LoFi Chill Hip Hop Mix - YouTube",
+          "Url": "https://www.youtube.com/watch?v=7dPElhy9-V0&list=TLPQMTcwNjIwMjPt29JG3ixEjQ&index=4"
+        },
+        {
+          "Title": "【NightcoreFreakz and kitoclanck REUPLOAD】- Ultimate Nightcore Rock Mix 1.5 Hours - YouTube",
+          "Url": "https://www.youtube.com/watch?v=tLiSB9O4I2Q"
+        },
+        {
+          "Title": "(754) Discord | #memes | Beebo's server",
+          "Url": "https://discord.com/channels/696755273901015122/1075960165955797042"
+        },
+        {
+          "Title": "Fool Me Twice | WEBTOON",
+          "Url": "https://www.webtoons.com/en/romance/fool-me-twice/list?title_no=5095"
+        },
+        {
+          "Title": "Divorcing My Tyrant Husband | WEBTOON",
+          "Url": "https://www.webtoons.com/en/romance/divorcing-my-tyrant-husband/list?title_no=4942"
+        },
+        {
+          "Title": "Happily Ever Afterwards | WEBTOON",
+          "Url": "https://www.webtoons.com/en/fantasy/happily-ever-afterwards/list?title_no=2737"
+        },
+        {
+          "Title": "Twilight Poem | WEBTOON",
+          "Url": "https://www.webtoons.com/en/fantasy/twilight-poem/list?title_no=4209"
+        },
+        {
+          "Title": "Vampire Magicka | WEBTOON",
+          "Url": "https://www.webtoons.com/en/fantasy/vampire-magicka/list?title_no=2963"
+        }
+      ]
+    },
+    {
+      "Name": "How to Write a Bromance | Jujutsu Kaisen (ft. Shonen Ouji) - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a0000d",
+      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        48,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "How to Write a Bromance | Jujutsu Kaisen (ft. Shonen Ouji) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=K7PySkxnwEY"
+        }
+      ]
+    },
+    {
+      "Name": "Tunnel Rat | Royal Road - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a0000e",
+      "ActivityId": "39a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        48,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "The Last Orellen | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/46901/the-last-orellen"
+        },
+        {
+          "Title": "Super Supportive | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/63759/super-supportive-superhero-system-novel"
+        },
+        {
+          "Title": "Tunnel Rat | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/47982/tunnel-rat"
+        }
+      ]
+    },
+    {
+      "Name": "Replacing \\ with / using Regex.Replace in C# - Forget Code - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a0000f",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 0,
+      "AbsoluteWindowPosition": [
+        48,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "c# newtonsoft json serialize converter object - Google Search",
+          "Url": "https://www.google.com/search?q=c%23+newtonsoft+json+serialize+converter+object&hl=en&ei=_JeUZOSFKtee5NoPzuScIA&oq=c%23+newtonsoft+json+serialize+converter+ob&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB4QHTIICCEQFhAeEB0yCAghEBYQHhAdOgoIABBHENYEELADOhUILhADEI8BEOoCELQCEIwDEOUCGAE6FQgAEAMQjwEQ6gIQtAIQjAMQ5QIYAToICAAQigUQkQI6EQguEIAEELEDEIMBEMcBENEDOggILhCABBCxAzoLCAAQgAQQsQMQgwE6CwguEIoFELEDEIMBOgsILhCABBCxAxCDAToHCAAQigUQQzoNCAAQigUQsQMQgwEQQzoFCAAQgAQ6CAgAEIoFEIYDOgYIABAWEB46CAgAEBYQHhAPOgUIIRCrAkoFCCkSATFKBAhBGABQuglYv50BYLqsAWgDcAF4AYABlwKIAeERkgEGMTAuOS4xmAEAoAEBsAEKwAEByAEI2gEECAEYCg&sclient=gws-wiz-serp"
+        },
+        {
+          "Title": "Serialize an Object",
+          "Url": "https://www.newtonsoft.com/json/help/html/serializeobject.htm"
+        },
+        {
+          "Title": "NuGet Gallery | Newtonsoft.Json 13.0.3",
+          "Url": "https://www.nuget.org/packages/Newtonsoft.Json/"
+        },
+        {
+          "Title": "c# prettify json string and write to a file - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=c%23%20prettify%20json%20string%20and%20write%20to%20a%20file"
+        },
+        {
+          "Title": "How do I get formatted JSON in .NET using C#? - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/2661063/how-do-i-get-formatted-json-in-net-using-c"
+        },
+        {
+          "Title": "Write to JSON file in C# | Techie Delight",
+          "Url": "https://www.techiedelight.com/write-to-json-file-csharp/"
+        },
+        {
+          "Title": "TabCopy Options",
+          "Url": "chrome-extension://micdllihgoppmejpecmkilggmaagfdmb/options.html"
+        },
+        {
+          "Title": "replace escape character in string c# - Google Search",
+          "Url": "https://www.google.com/search?q=replace+escape+character+in+string+c%23&hl=en&ei=hLiUZLmOAsyn5NoPkaa88AU&oq=c%23+replace+esca+character+in+string&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMggIABAIEAcQHjoECAAQRzoHCAAQigUQQzoGCAAQBxAeOgUIABCABDoGCAAQHhANOggIABAIEB4QDUoECEEYAFDkBlikGmDiJWgAcAJ4AIABU4gBgQSSAQE3mAEAoAEBwAEByAEI&sclient=gws-wiz-serp"
+        },
+        {
+          "Title": "asp.net - replacing escape character with double qoutes in c# - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/7615878/replacing-escape-character-with-double-qoutes-in-c-sharp"
+        },
+        {
+          "Title": "C# Strings - Special Characters (Escape Characters)",
+          "Url": "https://www.w3schools.com/cs/cs_strings_chars.php"
+        },
+        {
+          "Title": "C# Regex.Escape and Unescape Methods - Dot Net Perls",
+          "Url": "https://www.dotnetperls.com/regex-escape"
+        },
+        {
+          "Title": "Replacing / with / using Regex.Replace in C# - Forget Code",
+          "Url": "https://forgetcode.com/csharp/1324-replacing-with-using-regex-replace"
+        }
+      ]
+    },
+    {
+      "Name": "How can I get the monitor resolution using the command line? - Ask Ubuntu - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00010",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "How can I get the monitor resolution using the command line? - Ask Ubuntu",
+          "Url": "https://askubuntu.com/questions/584688/how-can-i-get-the-monitor-resolution-using-the-command-line"
+        },
+        {
+          "Title": "get individual monitor dimensions linux terminal - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=get%20individual%20monitor%20dimensions%20linux%20terminal"
+        },
+        {
+          "Title": "linux terminal get orientation of monitors - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=hlinux%20terminal%20get%20orientation%20of%20monitors#ip=1"
+        },
+        {
+          "Title": "How do I change display orientation on KDE Wayland using a terminal? : linuxquestions",
+          "Url": "https://www.reddit.com/r/linuxquestions/comments/q8s89p/how_do_i_change_display_orientation_on_kde/"
+        },
+        {
+          "Title": "How to find screen resolution in Linux desktop environment",
+          "Url": "https://www.xmodulo.com/how-to-find-screen-resolution-in-linux-desktop-environment.html"
+        },
+        {
+          "Title": "xorg - Get display resolution from the command line for Linux Desktop - Super User",
+          "Url": "https://superuser.com/questions/418699/get-display-resolution-from-the-command-line-for-linux-desktop"
+        },
+        {
+          "Title": "Nero-Study-Hat/Kde-Session-Restore",
+          "Url": "https://github.com/Nero-Study-Hat/Kde-Session-Restore"
+        }
+      ]
+    },
+    {
+      "Name": "Can xdotool be used on some window not in the front? - Unix & Linux Stack Exchange - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00011",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        837,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "linux command line simulate key press - Google Search",
+          "Url": "https://www.google.com/search?q=linux+command+line+simulate+key+press&hl=en&ei=DTqTZLe2Eq6g5NoPqIucuAY&oq=linux+terminal+simulate+ke&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgYIABAWEB4yCAgAEBYQHhAPMgYIABAWEB4yCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgMyCAgAEIoFEIYDMggIABCKBRCGAzoKCAAQRxDWBBCwAzoKCAAQigUQsAMQQzoHCAAQigUQQzoFCAAQgAQ6CAgAEIAEELEDOgUIIRCgAToFCCEQqwI6CAghEBYQHhAdOgcIABCABBAKOggIABAWEB4QCkoECEEYAFDXCFiYiQJglZgCaBBwAXgEgAGQAYgBkzOSAQU1OC4xNpgBAKABAcABAcgBCQ&sclient=gws-wiz-serp"
+        },
+        {
+          "Title": "x11 - Command to simulate keyboard input - Unix & Linux Stack Exchange",
+          "Url": "https://unix.stackexchange.com/questions/267704/command-to-simulate-keyboard-input"
+        },
+        {
+          "Title": "get number of desktops linux terminal - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=get%20number%20of%20desktops%20linux%20terminal"
+        },
+        {
+          "Title": "linux - How can I find out the number of the virtual desktop that displays a virtual terminal window running a shell? - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/68206838/how-can-i-find-out-the-number-of-the-virtual-desktop-that-displays-a-virtual-ter"
+        },
+        {
+          "Title": "set window focus with window id linux terminal - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=set%20window%20focus%20with%20window%20id%20linux%20terminal"
+        },
+        {
+          "Title": "ubuntu - Bash command to focus a specific window - Super User",
+          "Url": "https://superuser.com/questions/142945/bash-command-to-focus-a-specific-window"
+        },
+        {
+          "Title": "xorg - How to change focus in X-window by terminal - Unix & Linux Stack Exchange",
+          "Url": "https://unix.stackexchange.com/questions/24863/how-to-change-focus-in-x-window-by-terminal"
+        },
+        {
+          "Title": "xdotool windowfocus - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=xdotool%20windowfocus"
+        },
+        {
+          "Title": "Ubuntu Manpage: xdotool - command-line X11 automation tool",
+          "Url": "https://manpages.ubuntu.com/manpages/trusty/man1/xdotool.1.html"
+        },
+        {
+          "Title": "Can xdotool be used on some window not in the front? - Unix & Linux Stack Exchange",
+          "Url": "https://unix.stackexchange.com/questions/200469/can-xdotool-be-used-on-some-window-not-in-the-front"
+        }
+      ]
+    },
+    {
+      "Name": "Serializing and Deserializing JSON - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00012",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 3,
+      "AbsoluteWindowPosition": [
+        48,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "c# object to json - Google Search",
+          "Url": "https://www.google.com/search?q=c%23+object+to+json&hl=en&ei=l8ORZJ-4Maeo5NoPkLm_8AM&oq=c%23+object+to+&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgcIABCKBRBDMgcIABCKBRBDMggIABCKBRCRAjIICAAQigUQkQIyBwgAEIoFEEMyCAgAEIoFEJECMggIABCKBRCRAjIHCAAQigUQQzIFCAAQgAQyBQgAEIAEOgoIABBHENYEELADOggIABCABBCxAzoRCC4QgAQQsQMQgwEQxwEQ0QM6CggAEIoFELEDEEM6DQgAEIoFELEDEIMBEENKBAhBGABQ7QhY4xpgtyNoA3ABeACAAXeIAcIIkgEEMTAuM5gBAKABAcABAcgBCA&sclient=gws-wiz-serp"
+        },
+        {
+          "Title": "How to write a JSON file in C#? - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/16921652/how-to-write-a-json-file-in-c"
+        },
+        {
+          "Title": "How to Create JSON Structure Using C# (JSON Creation Part 2)",
+          "Url": "https://www.softwaretestinghelp.com/create-json-structure-using-c/"
+        },
+        {
+          "Title": "Convert an Object to JSON in C#",
+          "Url": "https://www.tutorialsteacher.com/articles/convert-object-to-json-in-csharp"
+        },
+        {
+          "Title": "How to serialize and deserialize JSON using C# - .NET | Microsoft Learn",
+          "Url": "https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-8-0"
+        },
+        {
+          "Title": "How do I turn a C# object into a JSON string in .NET? - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/6201529/how-do-i-turn-a-c-sharp-object-into-a-json-string-in-net"
+        },
+        {
+          "Title": "Serializing and Deserializing JSON",
+          "Url": "https://www.newtonsoft.com/json/help/html/SerializingJSON.htm"
+        },
+        {
+          "Title": "Json.NET - Newtonsoft",
+          "Url": "https://www.newtonsoft.com/json"
+        }
+      ]
+    },
+    {
+      "Name": "C# Tutorial - Serializing and Deserializing JSON with NewtonSoft (JSON.NET) - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00013",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 3,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "using JSON.Net - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=using+JSON.Net"
+        },
+        {
+          "Title": "40% faster JSON serialization with Source Generators in .NET 6 - YouTube",
+          "Url": "https://www.youtube.com/watch?v=HhyBaJ7uisU"
+        },
+        {
+          "Title": "C# Tutorial - Serializing and Deserializing JSON with NewtonSoft (JSON.NET) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=pJtuuolUhCc"
+        },
+        {
+          "Title": "c# write to a json file - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=c%23+write+to+a+json+file"
+        },
+        {
+          "Title": "C# Tutorial - How to create and Parse JSON Data? - YouTube",
+          "Url": "https://www.youtube.com/watch?v=NX3Um9E-AY0"
+        },
+        {
+          "Title": "How to Program a Save File | Beginner C# | Newtonsoft Json.Net - YouTube",
+          "Url": "https://www.youtube.com/watch?v=ISCYD7YPSf4"
+        }
+      ]
+    },
+    {
+      "Name": "RemNote - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00014",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "RemNote",
+          "Url": "https://www.remnote.com/w/612cfdc49f54bc0034b147d2/Custom-Browser-Restore-mG3PWvOTCXFiW6AUU"
+        }
+      ]
+    },
+    {
+      "Name": "hibachi - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00016",
+      "ActivityId": "39a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+      "DesktopNum": 3,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "hibachi - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=hibachi"
+        }
+      ]
+    },
+    {
+      "Name": "DateTimeTest.cs - Kde_Project_Tests - Visual Studio Code",
+      "ApplicationName": "code",
+      "WindowId": "0x09000003",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        162,
+        0
+      ],
+      "Tabs": [
+        null
+      ]
+    },
+    {
+      "Name": "Window.cs - Kde-Session-Restore - Visual Studio Code",
+      "ApplicationName": "code",
+      "WindowId": "0x09000005",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 0,
+      "AbsoluteWindowPosition": [
+        162,
+        0
+      ],
+      "Tabs": [
+        null
+      ]
+    },
+    {
+      "Name": "M_NAME(STRING) = \"nero_admin@fedora:~",
+      "ApplicationName": "cool-retro-term",
+      "WindowId": "0x07c0000d",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 3,
+      "AbsoluteWindowPosition": [
+        162,
+        0
+      ],
+      "Tabs": [
+        null
+      ]
+    },
+    {
+      "Name": "M_NAME(STRING) = \"nero_admin@fedora:~",
+      "ApplicationName": "cool-retro-term",
+      "WindowId": "0x07e0000d",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        90,
+        0
+      ],
+      "Tabs": [
+        null
+      ]
+    },
+    {
+      "Name": "Regex.Unescape(String) Method (System.Text.RegularExpressions) | Microsoft Learn - Brave",
+      "ApplicationName": "brave-browser",
+      "WindowId": "0x06a00087",
+      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "An exception of type 'Newtonsoft.Json.JsonReaderException' occurred in System.Private.CoreLib.dll but was not handled in user code: 'Bad JSON escape sequence: / . Path '[2].title', line 10, position 29.' - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=An%20exception%20of%20type%20%27Newtonsoft.Json.JsonReaderException%27%20occurred%20in%20System.Private.CoreLib.dll%20but%20was%20not%20handled%20in%20user%20code%3A%20%27Bad%20JSON%20escape%20sequence%3A%20%5C%20.%20Path%20%27%5B2%5D.title%27%2C%20line%2010%2C%20position%2029.%27"
+        },
+        {
+          "Title": "I am getting a / character in my json, how do I deal with it c# - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=I%20am%20getting%20a%20%5C%20character%20in%20my%20json%2C%20how%20do%20I%20deal%20with%20it%20c%23"
+        },
+        {
+          "Title": "c# - Replacing escape characters from JSON - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/16692371/replacing-escape-characters-from-json"
+        },
+        {
+          "Title": "c# - Json: how to properly strip the escape characters with json.net - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/16331770/json-how-to-properly-strip-the-escape-characters-with-json-net"
+        },
+        {
+          "Title": "escaping - How to escape a JSON string containing newline characters using JavaScript? - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/4253367/how-to-escape-a-json-string-containing-newline-characters-using-javascript"
+        },
+        {
+          "Title": "Regex.Unescape(String) Method (System.Text.RegularExpressions) | Microsoft Learn",
+          "Url": "https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.unescape?redirectedfrom=MSDN&view=net-7.0#System_Text_RegularExpressions_Regex_Unescape_System_String_"
+        }
+      ]
+    }
+  ]
+}

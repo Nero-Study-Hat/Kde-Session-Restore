@@ -1,2 +1,12 @@
-https://www.youtube.com/watch?v=tgxSgriBa_c
-https://www.youtube.com/watch?v=P3gWGtf_w_s
+[{
+   "title": "The Adventure Begins | D&D/TTRPG Music | 1 Hour - YouTube",
+   "url": "https://www.youtube.com/watch?v=Jikm8CCRbdM" 
+},
+{
+   "title": "Haikyuu!!'s Greatest Redemption Story [Kei Tsukishima] - YouTube",
+   "url": "https://www.youtube.com/watch?v=ayMCOH0q7R8&list=TLPQMDIwNjIwMjNwGQ7Vmhv30g&index=9" 
+},
+{
+   "title": "Foundryside (The Founders Trilogy, #1) by Robert Jackson Bennett | Goodreads",
+   "url": "https://www.goodreads.com/book/show/37173847-foundryside" 
+}]

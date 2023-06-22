@@ -2,6 +2,7 @@ using System;
 using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace SessionObjects
 {
@@ -34,15 +35,12 @@ namespace SessionObjects
             await (getWindowIdsCmd | grepFilterCmd | awkFilterCmd | cmdOutputSB).ExecuteBufferedAsync();
             List<string> windowIds = cmdOutputSB.ToString().Split(delimSB, StringSplitOptions.None).ToList();
             cmdOutputSB.Clear();
-            string terminalWindowId = await Window.GetActiveTerminalWindowId(cmdOutputSB);
-            windowIds.Remove(terminalWindowId);
             windowIds.RemoveAt(windowIds.Count - 1);
             return windowIds.ToArray();
         }
 
         public static async Task<Window[]> GetWindows(StringBuilder cmdOutputSB, string[] delimSB, string[]? windowIds = null)
         {
-            bool debug = false; //FIXME Breakage here.
             windowIds ??= await Session.GetWindowIds(cmdOutputSB, delimSB);
             Window[] windows = new Window[windowIds.Length];
             for (int index = 0; index < windowIds.Length; index++)
@@ -50,16 +48,15 @@ namespace SessionObjects
                 string name = await Window.GetName(windowIds[index], cmdOutputSB);
                 int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
                 string activityId = await Window.GetActivityId(windowIds[index], cmdOutputSB);
-                int desktopNum = await Window.GetDesktopNum(windowIds[index], cmdOutputSB);
+                int desktopNum = await Window.GetDesktopNum(windowIds[index], cmdOutputSB); // Incorrect for second vscode window. (Test Project Win)
                 string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
-                string[] urls = await Window.GetUrls(windowIds[index], cmdOutputSB, delimSB);
-
-                if (index == 13)
+                Tab[] tabs = new Tab[1];
+                if(appName == "brave-browser")
                 {
-                    debug = true;
+                    tabs = await Window.GetUrls(windowIds[index], cmdOutputSB, delimSB);
                 }
 
-                windows[index] = new Window(name, windowIds[index], activityId, asbWinPos, desktopNum, appName, urls);
+                windows[index] = new Window(name, windowIds[index], activityId, asbWinPos, desktopNum, appName, tabs);
             }
             return windows;
         }
@@ -80,9 +77,10 @@ namespace SessionObjects
                 .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "ActivityName", activityIds[i] })
                 .WithStandardOutputPipe(PipeTarget.ToStringBuilder(cmdOutputSB))
                 .ExecuteBufferedAsync();
-                activities.Add(cmdOutputSB.ToString(), activityIds[i]);
+                activities.Add(cmdOutputSB.ToString()[0..^1], activityIds[i]);
                 cmdOutputSB.Clear();
             }
+            activities.Remove("");
             return activities; // FIXME Activity name keys have \n after them.
         }
 
@@ -90,8 +88,10 @@ namespace SessionObjects
         {
             cmdOutputSB.Clear();
             Command getNumDesktopsCmd = Cli.Wrap("xprop")
-            .WithArguments(new[] { "--root", "-notype", "_NET_NUMBER_OF_DESKTOPS" });
-            await (getNumDesktopsCmd | cmdOutputSB).ExecuteBufferedAsync();
+            .WithArguments(new[] { "-root", "-notype", "_NET_NUMBER_OF_DESKTOPS" });
+            Command awkFilterCmd = Cli.Wrap("awk")
+            .WithArguments(new[] {"{print $3}"});
+            await (getNumDesktopsCmd | awkFilterCmd | cmdOutputSB).ExecuteBufferedAsync();
             int desktopNum = Int32.Parse(cmdOutputSB.ToString()); //TODO awk cmd to get only number
             cmdOutputSB.Clear();
             return desktopNum;

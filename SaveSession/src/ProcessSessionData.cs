@@ -1,6 +1,8 @@
 using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
+using System.IO;
+using Newtonsoft.Json;
 using SessionObjects;
 
 namespace SaveSession
@@ -13,6 +15,9 @@ namespace SaveSession
             string[] delimSB = { Environment.NewLine, "\n" };
 
             Session session = await GetSession(cmdOutputSB, delimSB);
+            string sessionJson = JsonConvert.SerializeObject(session, Formatting.Indented);
+
+            await File.WriteAllTextAsync($"/home/nero_admin/Workspace/IT/Kde-Session-Restore/data/session.json", sessionJson);
 
             Console.WriteLine("Done");
         }
@@ -27,7 +32,10 @@ namespace SaveSession
             return session;
         }
 
-        // private static async Task<Window[]>FilterWindows(Window[] windows) {} //TODO Window Filtering
+        // private static async Task<Window[]>FilterWindows(Window[] windows)
+        // {
+        //     //
+        // }
 
         // public string GetMonitor(int[] positionDat)
         // {

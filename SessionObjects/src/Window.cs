@@ -1,6 +1,8 @@
 using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
+using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 namespace SessionObjects
 {
@@ -12,9 +14,9 @@ namespace SessionObjects
         public string ActivityId { get; set; }
         public int DesktopNum { get; set; }
         public int[] AbsoluteWindowPosition { get; set; }
-        public string[] Urls { get; set; }
+        public Tab[] Tabs { get; set; }
 
-        public Window(string name, string windowId, string activityId, int[] absoluteWindowPosition, int desktopNum, string applicationName, string[] urls)
+        public Window(string name, string windowId, string activityId, int[] absoluteWindowPosition, int desktopNum, string applicationName, Tab[] tabs)
         {
             Name = name;
             WindowId = windowId;
@@ -22,7 +24,7 @@ namespace SessionObjects
             AbsoluteWindowPosition = absoluteWindowPosition;
             DesktopNum = desktopNum;
             ApplicationName = applicationName;
-            Urls = urls;
+            Tabs = tabs;
         }
 
 
@@ -47,8 +49,7 @@ namespace SessionObjects
             Command awkFilterCmd = Cli.Wrap("awk")
             .WithArguments(new[] {"{print $3}"});
             await (getWindowActivityCmd | awkFilterCmd | cmdOutputSB).ExecuteBufferedAsync();
-            string activityId = cmdOutputSB.ToString();
-            activityId = activityId.Substring(2, activityId.Length - 2);
+            string activityId = cmdOutputSB.ToString()[2..^2];
             cmdOutputSB.Clear();
             return activityId;
         }
@@ -97,33 +98,48 @@ namespace SessionObjects
             return appName;
         }
 
-        public static async Task<string[]> GetUrls(string windowId, StringBuilder cmdOutputSB, string[] delimSB)
+        public static async Task<Tab[]> GetUrls(string windowId, StringBuilder cmdOutputSB, string[] delimSB)
         {
-            string terminalWindowId = await GetActiveTerminalWindowId(cmdOutputSB);
+            if(windowId == "0x06a0000a")
+            {
+                var debug = true;
+            }
+            cmdOutputSB.Clear();
+            string terminalWindowId = await GetActiveWindowId(cmdOutputSB);
             Command switchWindowsCmd = Cli.Wrap("xdotool")
             .WithArguments(new[] { "windowactivate", "--sync", windowId });
-            Command copyUrlsCmd = Cli.Wrap("xdotool")
+            Command urlsToClipboardCmd = Cli.Wrap("xdotool")
             .WithArguments(new[] { "key", "alt+1", "alt+1" }); // TODO Configurable Shortcut
+            Command urlsToTextCmd = Cli.Wrap("qdbus")
+            .WithArguments(new[] { "org.kde.klipper", "/klipper", "getClipboardContents" });
             await switchWindowsCmd.ExecuteAsync();
-            await copyUrlsCmd.ExecuteAsync();
-            await (Cli.Wrap("xclip") | cmdOutputSB).ExecuteBufferedAsync();
+            await urlsToClipboardCmd.ExecuteAsync();
+            await Task.Delay(500);
+            await (urlsToTextCmd | cmdOutputSB).ExecuteBufferedAsync();
             await Cli.Wrap("xdotool")
                     .WithArguments(new[] { "windowactivate", "--sync", terminalWindowId })
                     .ExecuteAsync();
-            string[] urls = cmdOutputSB.ToString().Split(delimSB, StringSplitOptions.None);
+            string dirtyTabsJson = cmdOutputSB.ToString();
+            string cleanTabsJson = Regex.Replace(dirtyTabsJson, @"\\", "/");
             cmdOutputSB.Clear();
-            return urls;
+            Tab[] tabs = JsonConvert.DeserializeObject<Tab[]>(cleanTabsJson) ?? new Tab[1];
+            return tabs;
         }
 
-        public static async Task<string> GetActiveTerminalWindowId(StringBuilder cmdOutputSB)
+        public static async Task<string> GetActiveWindowId(StringBuilder cmdOutputSB)
         {
             cmdOutputSB.Clear();
-            Command getTerminalWindowCmd = Cli.Wrap("xdotool")
+            Command getActiveWindowIdCmd = Cli.Wrap("xdotool")
             .WithArguments(new[] { "getactivewindow" });
-            await (getTerminalWindowCmd | cmdOutputSB).ExecuteBufferedAsync();
-            string terminalWindow = cmdOutputSB.ToString();
+            await (getActiveWindowIdCmd | cmdOutputSB).ExecuteBufferedAsync();
+            string intActiveWindowId = cmdOutputSB.ToString()[0..^1];
             cmdOutputSB.Clear();
-            return terminalWindow;
+            Command convertIntWindowIdToHex = Cli.Wrap("printf")
+            .WithArguments(new[] { "0x0%x", intActiveWindowId });
+            await (convertIntWindowIdToHex | cmdOutputSB).ExecuteAsync();
+            string hexActiveWindowId = cmdOutputSB.ToString();
+            cmdOutputSB.Clear();
+            return hexActiveWindowId;
         }
     }
 }

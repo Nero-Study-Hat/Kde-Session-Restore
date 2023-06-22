@@ -1,8 +1,11 @@
 // Terminal
 xprop
-xclip
 wmctrl
 xdotool
+
+// CSharp
+CliWrap
+Newtonsoft.Json
 
 // Browser Extensions
 Open Multiple URLs

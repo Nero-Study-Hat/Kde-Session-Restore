@@ -1,0 +1,24 @@
+[{
+   "title": "coding music - YouTube",
+   "url": "https://www.youtube.com/results?search_query=coding+music" 
+},
+{
+   "title": "Lofi Jazz Study Music - Calm & Chill Background Jazz Music for Work, Study, Focus, Coding, Reading - YouTube",
+   "url": "https://www.youtube.com/watch?v=bz5q5gl2uZA" 
+},
+{
+   "title": "Concentration \ Programming Music 010 (part 2) - YouTube",
+   "url": "https://www.youtube.com/watch?v=pmxYePDPV6M" 
+},
+{
+   "title": "3:30 AM Coding Session - Lofi Hip Hop Mix [Study & Coding Beats] - YouTube",
+   "url": "https://www.youtube.com/watch?v=8nXqcugV2Y4" 
+},
+{
+   "title": "Programming / Coding / Hacking music vol.18 (ANONYMOUS HEADQUARTERS) - YouTube",
+   "url": "https://www.youtube.com/watch?v=Z-VfaG9ZN_U" 
+},
+{
+   "title": "github_api_project/GetGithubApiData.cs at cutting-edge · Nero-Study-Hat/github_api_project · GitHub",
+   "url": "https://github.com/Nero-Study-Hat/github_api_project/blob/cutting-edge/GetGithubApiData.cs" 
+}]
