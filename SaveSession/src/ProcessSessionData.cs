@@ -41,12 +41,27 @@ namespace SaveSession
             return session;
         }
 
-        private static Window[] ConfigFilterWindows(Window[] allWindows, string filterConfigPath)
+        private static Window[] ConfigFilterWindows(Window[] allWindows, string filterConfigPath, bool severeFilter)
         {
+            List<Window> filteredWindows = new List<Window>();
             string filterConfigText = File.ReadAllText(filterConfigPath);
-            WindowFilter windowFilter = JsonConvert.DeserializeObject<WindowFilter>(filterConfigText) ?? new WindowFilter();
+            WindowFilter windowFilter = JsonConvert.DeserializeObject<WindowFilter>(filterConfigText) ?? throw new ArgumentNullException("Window filter json failed: ", nameof(windowFilter));
+            //
+            
             return allWindows;
         }
+
+        //TODO Consider brainstrorming on inputing the property to filter, along with arrays and such.
+        // Consider choosing filters through -> config file, user input for list of choices, and func param.
+        public static void StrictWindowFilter(Window[] allWindows, WindowFilter windowFilter)
+        {
+            Dictionary<string, Func<Window, bool>> windowFilters = new Dictionary<string, Func<Window, bool>>()
+            {
+                {nameof(windowFilter.ActivityNames), (Window window) => windowFilter.ActivityNames!.Contains(window.ActivityName)}
+            };
+            Window[] filteredWindows = Array.FindAll(allWindows, (window) => windowFilters[nameof(windowFilter.ActivityNames)](window));
+        }
+
 
         private static Window[] FilterWindows(Window[] allWindows, Func<Window,bool>[] filterConditions)
         {
