@@ -41,6 +41,13 @@ namespace SaveSession
             return session;
         }
 
+        private static Window[] ConfigFilterWindows(Window[] allWindows, string filterConfigPath)
+        {
+            string filterConfigText = File.ReadAllText(filterConfigPath);
+            WindowFilter windowFilter = JsonConvert.DeserializeObject<WindowFilter>(filterConfigText) ?? new WindowFilter();
+            return allWindows;
+        }
+
         private static Window[] FilterWindows(Window[] allWindows, Func<Window,bool>[] filterConditions)
         {
             List<Window> windowsFiltered = new List<Window>();
