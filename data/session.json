@@ -13,8 +13,7 @@
     {
       "Name": "Haikyuu!!'s Greatest Redemption Story [Kei Tsukishima] - YouTube - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00003",
-      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "ActivityName": "0x06a00003",
       "DesktopNum": 0,
       "AbsoluteWindowPosition": [
         120,
@@ -38,8 +37,7 @@
     {
       "Name": "Methods for learning to write Japanese - Kristines Blog - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00005",
-      "ActivityId": "6693b44-93e9-4a2d-91ca-f7ef709a0062",
+      "ActivityName": "0x06a00005",
       "DesktopNum": 2,
       "AbsoluteWindowPosition": [
         120,
@@ -71,8 +69,7 @@
     {
       "Name": "How Do You Design a Just Society? | Thought Experiment: The Original Position - YouTube - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00006",
-      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "ActivityName": "0x06a00006",
       "DesktopNum": 3,
       "AbsoluteWindowPosition": [
         120,
@@ -92,8 +89,7 @@
     {
       "Name": "The Power of Friendship? Eleceed - YouTube - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00007",
-      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "ActivityName": "0x06a00007",
       "DesktopNum": 1,
       "AbsoluteWindowPosition": [
         120,
@@ -129,8 +125,7 @@
     {
       "Name": "Dear Authors... Friendships [CC] - YouTube - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00008",
-      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "ActivityName": "0x06a00008",
       "DesktopNum": 1,
       "AbsoluteWindowPosition": [
         120,
@@ -146,8 +141,7 @@
     {
       "Name": "Introduction to the A* Algorithm - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00009",
-      "ActivityId": "0c35f1a-029d-4c35-a48e-191eb40104e2",
+      "ActivityName": "0x06a00009",
       "DesktopNum": 2,
       "AbsoluteWindowPosition": [
         120,
@@ -189,10 +183,9 @@
       ]
     },
     {
-      "Name": "Lofi Jazz Study Music - Calm & Chill Background Jazz Music for Work, Study, Focus, Coding, Reading - YouTube - Brave",
+      "Name": "a piece of music that helps you focus on the computer every day |3 hour lofi hiphop mix /lofi coding - YouTube - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a0000a",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x06a0000a",
       "DesktopNum": 2,
       "AbsoluteWindowPosition": [
         48,
@@ -202,6 +195,10 @@
         {
           "Title": "coding music - YouTube",
           "Url": "https://www.youtube.com/results?search_query=coding+music"
+        },
+        {
+          "Title": "a piece of music that helps you focus on the computer every day |3 hour lofi hiphop mix /lofi coding - YouTube",
+          "Url": "https://www.youtube.com/watch?v=p6xqKJqsQWs"
         },
         {
           "Title": "Lofi Jazz Study Music - Calm & Chill Background Jazz Music for Work, Study, Focus, Coding, Reading - YouTube",
@@ -214,22 +211,13 @@
         {
           "Title": "3:30 AM Coding Session - Lofi Hip Hop Mix [Study & Coding Beats] - YouTube",
           "Url": "https://www.youtube.com/watch?v=8nXqcugV2Y4"
-        },
-        {
-          "Title": "Programming / Coding / Hacking music vol.18 (ANONYMOUS HEADQUARTERS) - YouTube",
-          "Url": "https://www.youtube.com/watch?v=Z-VfaG9ZN_U"
-        },
-        {
-          "Title": "github_api_project/GetGithubApiData.cs at cutting-edge · Nero-Study-Hat/github_api_project · GitHub",
-          "Url": "https://github.com/Nero-Study-Hat/github_api_project/blob/cutting-edge/GetGithubApiData.cs"
         }
       ]
     },
     {
       "Name": "Chapter 8: The Basement - Tunnel Rat | Royal Road - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a0000b",
-      "ActivityId": "39a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+      "ActivityName": "0x06a0000b",
       "DesktopNum": 0,
       "AbsoluteWindowPosition": [
         120,
@@ -267,10 +255,9 @@
       ]
     },
     {
-      "Name": "(754) Discord | #memes | Beebo's server - Brave",
+      "Name": "(756) Discord | #memes | Beebo's server - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a0000c",
-      "ActivityId": "39a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+      "ActivityName": "0x06a0000c",
       "DesktopNum": 2,
       "AbsoluteWindowPosition": [
         48,
@@ -310,7 +297,7 @@
           "Url": "https://www.youtube.com/watch?v=tLiSB9O4I2Q"
         },
         {
-          "Title": "(754) Discord | #memes | Beebo's server",
+          "Title": "(756) Discord | #memes | Beebo's server",
           "Url": "https://discord.com/channels/696755273901015122/1075960165955797042"
         },
         {
@@ -338,8 +325,7 @@
     {
       "Name": "How to Write a Bromance | Jujutsu Kaisen (ft. Shonen Ouji) - YouTube - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a0000d",
-      "ActivityId": "ca6f39c-fe4c-4502-8838-affde25d8dfc",
+      "ActivityName": "0x06a0000d",
       "DesktopNum": 1,
       "AbsoluteWindowPosition": [
         48,
@@ -355,8 +341,7 @@
     {
       "Name": "Tunnel Rat | Royal Road - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a0000e",
-      "ActivityId": "39a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+      "ActivityName": "0x06a0000e",
       "DesktopNum": 1,
       "AbsoluteWindowPosition": [
         48,
@@ -378,10 +363,9 @@
       ]
     },
     {
-      "Name": "Replacing \\ with / using Regex.Replace in C# - Forget Code - Brave",
+      "Name": "IDE0039: Use local function instead of lambda - .NET | Microsoft Learn - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a0000f",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x06a0000f",
       "DesktopNum": 0,
       "AbsoluteWindowPosition": [
         48,
@@ -389,60 +373,31 @@
       ],
       "Tabs": [
         {
-          "Title": "c# newtonsoft json serialize converter object - Google Search",
-          "Url": "https://www.google.com/search?q=c%23+newtonsoft+json+serialize+converter+object&hl=en&ei=_JeUZOSFKtee5NoPzuScIA&oq=c%23+newtonsoft+json+serialize+converter+ob&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgUIIRCgATIFCCEQoAEyBQghEKABMggIIRAWEB4QHTIICCEQFhAeEB0yCAghEBYQHhAdOgoIABBHENYEELADOhUILhADEI8BEOoCELQCEIwDEOUCGAE6FQgAEAMQjwEQ6gIQtAIQjAMQ5QIYAToICAAQigUQkQI6EQguEIAEELEDEIMBEMcBENEDOggILhCABBCxAzoLCAAQgAQQsQMQgwE6CwguEIoFELEDEIMBOgsILhCABBCxAxCDAToHCAAQigUQQzoNCAAQigUQsQMQgwEQQzoFCAAQgAQ6CAgAEIoFEIYDOgYIABAWEB46CAgAEBYQHhAPOgUIIRCrAkoFCCkSATFKBAhBGABQuglYv50BYLqsAWgDcAF4AYABlwKIAeERkgEGMTAuOS4xmAEAoAEBsAEKwAEByAEI2gEECAEYCg&sclient=gws-wiz-serp"
+          "Title": "filter objects array c# - Google Search",
+          "Url": "https://www.google.com/search?q=filter+objects+array+c%23&hl=en&ei=0L2UZJDLEeKi5NoPt4qRiAY&ved=0ahUKEwiQ883q6df_AhViEVkFHTdFBGEQ4dUDCBA&uact=5&oq=filter+objects+array+c%23&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIGCAAQCBAeMgYIABAIEB4yCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgMyCAgAEIoFEIYDOgoIABBHENYEELADOgYIABAHEB46CAgAEAgQBxAeSgQIQRgAUIQGWKkMYNYOaAFwAXgAgAF2iAGUBJIBAzQuMpgBAKABAcABAcgBCA&sclient=gws-wiz-serp"
         },
         {
-          "Title": "Serialize an Object",
-          "Url": "https://www.newtonsoft.com/json/help/html/serializeobject.htm"
+          "Title": "filter an array in C# - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/1912128/filter-an-array-in-c-sharp"
         },
         {
-          "Title": "NuGet Gallery | Newtonsoft.Json 13.0.3",
-          "Url": "https://www.nuget.org/packages/Newtonsoft.Json/"
+          "Title": "Func<T,TResult> Delegate (System) | Microsoft Learn",
+          "Url": "https://learn.microsoft.com/en-us/dotnet/api/system.func-2?view=net-7.0"
         },
         {
-          "Title": "c# prettify json string and write to a file - Google Search",
-          "Url": "https://www.google.com/search?hl=en&q=c%23%20prettify%20json%20string%20and%20write%20to%20a%20file"
+          "Title": "Use local function [SaveSession]csharp(IDE0039) - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=Use%20local%20function%20%5BSaveSession%5Dcsharp(IDE0039)"
         },
         {
-          "Title": "How do I get formatted JSON in .NET using C#? - Stack Overflow",
-          "Url": "https://stackoverflow.com/questions/2661063/how-do-i-get-formatted-json-in-net-using-c"
-        },
-        {
-          "Title": "Write to JSON file in C# | Techie Delight",
-          "Url": "https://www.techiedelight.com/write-to-json-file-csharp/"
-        },
-        {
-          "Title": "TabCopy Options",
-          "Url": "chrome-extension://micdllihgoppmejpecmkilggmaagfdmb/options.html"
-        },
-        {
-          "Title": "replace escape character in string c# - Google Search",
-          "Url": "https://www.google.com/search?q=replace+escape+character+in+string+c%23&hl=en&ei=hLiUZLmOAsyn5NoPkaa88AU&oq=c%23+replace+esca+character+in+string&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMggIABAIEAcQHjoECAAQRzoHCAAQigUQQzoGCAAQBxAeOgUIABCABDoGCAAQHhANOggIABAIEB4QDUoECEEYAFDkBlikGmDiJWgAcAJ4AIABU4gBgQSSAQE3mAEAoAEBwAEByAEI&sclient=gws-wiz-serp"
-        },
-        {
-          "Title": "asp.net - replacing escape character with double qoutes in c# - Stack Overflow",
-          "Url": "https://stackoverflow.com/questions/7615878/replacing-escape-character-with-double-qoutes-in-c-sharp"
-        },
-        {
-          "Title": "C# Strings - Special Characters (Escape Characters)",
-          "Url": "https://www.w3schools.com/cs/cs_strings_chars.php"
-        },
-        {
-          "Title": "C# Regex.Escape and Unescape Methods - Dot Net Perls",
-          "Url": "https://www.dotnetperls.com/regex-escape"
-        },
-        {
-          "Title": "Replacing / with / using Regex.Replace in C# - Forget Code",
-          "Url": "https://forgetcode.com/csharp/1324-replacing-with-using-regex-replace"
+          "Title": "IDE0039: Use local function instead of lambda - .NET | Microsoft Learn",
+          "Url": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0039"
         }
       ]
     },
     {
       "Name": "How can I get the monitor resolution using the command line? - Ask Ubuntu - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00010",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x06a00010",
       "DesktopNum": 2,
       "AbsoluteWindowPosition": [
         120,
@@ -482,8 +437,7 @@
     {
       "Name": "Can xdotool be used on some window not in the front? - Unix & Linux Stack Exchange - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00011",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x06a00011",
       "DesktopNum": 2,
       "AbsoluteWindowPosition": [
         837,
@@ -535,8 +489,7 @@
     {
       "Name": "Serializing and Deserializing JSON - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00012",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x06a00012",
       "DesktopNum": 3,
       "AbsoluteWindowPosition": [
         48,
@@ -580,8 +533,7 @@
     {
       "Name": "C# Tutorial - Serializing and Deserializing JSON with NewtonSoft (JSON.NET) - YouTube - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00013",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x06a00013",
       "DesktopNum": 3,
       "AbsoluteWindowPosition": [
         120,
@@ -617,8 +569,7 @@
     {
       "Name": "RemNote - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00014",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x06a00014",
       "DesktopNum": 2,
       "AbsoluteWindowPosition": [
         120,
@@ -634,8 +585,7 @@
     {
       "Name": "hibachi - YouTube - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00016",
-      "ActivityId": "39a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+      "ActivityName": "0x06a00016",
       "DesktopNum": 3,
       "AbsoluteWindowPosition": [
         120,
@@ -649,24 +599,9 @@
       ]
     },
     {
-      "Name": "DateTimeTest.cs - Kde_Project_Tests - Visual Studio Code",
+      "Name": "Session.cs - Kde-Session-Restore - Visual Studio Code",
       "ApplicationName": "code",
-      "WindowId": "0x09000003",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
-      "DesktopNum": 1,
-      "AbsoluteWindowPosition": [
-        162,
-        0
-      ],
-      "Tabs": [
-        null
-      ]
-    },
-    {
-      "Name": "Window.cs - Kde-Session-Restore - Visual Studio Code",
-      "ApplicationName": "code",
-      "WindowId": "0x09000005",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x09000005",
       "DesktopNum": 0,
       "AbsoluteWindowPosition": [
         162,
@@ -679,8 +614,7 @@
     {
       "Name": "M_NAME(STRING) = \"nero_admin@fedora:~",
       "ApplicationName": "cool-retro-term",
-      "WindowId": "0x07c0000d",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x07c0000d",
       "DesktopNum": 3,
       "AbsoluteWindowPosition": [
         162,
@@ -693,11 +627,10 @@
     {
       "Name": "M_NAME(STRING) = \"nero_admin@fedora:~",
       "ApplicationName": "cool-retro-term",
-      "WindowId": "0x07e0000d",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x07e0000d",
       "DesktopNum": 1,
       "AbsoluteWindowPosition": [
-        90,
+        162,
         0
       ],
       "Tabs": [
@@ -705,10 +638,9 @@
       ]
     },
     {
-      "Name": "Regex.Unescape(String) Method (System.Text.RegularExpressions) | Microsoft Learn - Brave",
+      "Name": "Consolidate Conditional Expression - Brave",
       "ApplicationName": "brave-browser",
-      "WindowId": "0x06a00087",
-      "ActivityId": "954e667-b011-49d1-873d-8e7f085f524d",
+      "ActivityName": "0x06a00087",
       "DesktopNum": 1,
       "AbsoluteWindowPosition": [
         120,
@@ -716,28 +648,16 @@
       ],
       "Tabs": [
         {
-          "Title": "An exception of type 'Newtonsoft.Json.JsonReaderException' occurred in System.Private.CoreLib.dll but was not handled in user code: 'Bad JSON escape sequence: / . Path '[2].title', line 10, position 29.' - Google Search",
-          "Url": "https://www.google.com/search?hl=en&q=An%20exception%20of%20type%20%27Newtonsoft.Json.JsonReaderException%27%20occurred%20in%20System.Private.CoreLib.dll%20but%20was%20not%20handled%20in%20user%20code%3A%20%27Bad%20JSON%20escape%20sequence%3A%20%5C%20.%20Path%20%27%5B2%5D.title%27%2C%20line%2010%2C%20position%2029.%27"
+          "Title": "Simplifying Conditional Expressions",
+          "Url": "https://refactoring.guru/refactoring/techniques/simplifying-conditional-expressions"
         },
         {
-          "Title": "I am getting a / character in my json, how do I deal with it c# - Google Search",
-          "Url": "https://www.google.com/search?hl=en&q=I%20am%20getting%20a%20%5C%20character%20in%20my%20json%2C%20how%20do%20I%20deal%20with%20it%20c%23"
+          "Title": "Consolidate Conditional Expression",
+          "Url": "https://refactoring.guru/consolidate-conditional-expression"
         },
         {
-          "Title": "c# - Replacing escape characters from JSON - Stack Overflow",
-          "Url": "https://stackoverflow.com/questions/16692371/replacing-escape-characters-from-json"
-        },
-        {
-          "Title": "c# - Json: how to properly strip the escape characters with json.net - Stack Overflow",
-          "Url": "https://stackoverflow.com/questions/16331770/json-how-to-properly-strip-the-escape-characters-with-json-net"
-        },
-        {
-          "Title": "escaping - How to escape a JSON string containing newline characters using JavaScript? - Stack Overflow",
-          "Url": "https://stackoverflow.com/questions/4253367/how-to-escape-a-json-string-containing-newline-characters-using-javascript"
-        },
-        {
-          "Title": "Regex.Unescape(String) Method (System.Text.RegularExpressions) | Microsoft Learn",
-          "Url": "https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.unescape?redirectedfrom=MSDN&view=net-7.0#System_Text_RegularExpressions_Regex_Unescape_System_String_"
+          "Title": "Replace Nested Conditional with Guard Clauses",
+          "Url": "https://refactoring.guru/replace-nested-conditional-with-guard-clauses"
         }
       ]
     }

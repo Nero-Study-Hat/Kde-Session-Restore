@@ -10,17 +10,15 @@ namespace SessionObjects
     {
         public string Name { get; set; }
         public string ApplicationName { get; set; }
-        public string WindowId { get; set; }
-        public string ActivityId { get; set; }
+        public string ActivityName { get; set; }
         public int DesktopNum { get; set; }
         public int[] AbsoluteWindowPosition { get; set; }
         public Tab[] Tabs { get; set; }
 
-        public Window(string name, string windowId, string activityId, int[] absoluteWindowPosition, int desktopNum, string applicationName, Tab[] tabs)
+        public Window(string name, string activityName, int[] absoluteWindowPosition, int desktopNum, string applicationName, Tab[] tabs)
         {
             Name = name;
-            WindowId = windowId;
-            ActivityId = activityId;
+            ActivityName = activityName;
             AbsoluteWindowPosition = absoluteWindowPosition;
             DesktopNum = desktopNum;
             ApplicationName = applicationName;
@@ -41,17 +39,22 @@ namespace SessionObjects
             return name;
         }
 
-        public static async Task<string> GetActivityId(string windowId, StringBuilder cmdOutputSB)
+        public static async Task<string> GetActivityName(string windowId, StringBuilder cmdOutputSB)
         {
             cmdOutputSB.Clear();
-            Command getWindowActivityCmd = Cli.Wrap("xprop")
+            Command getActivityIdCmd = Cli.Wrap("xprop")
             .WithArguments(new[] { "-id", windowId, "_KDE_NET_WM_ACTIVITIES" });
             Command awkFilterCmd = Cli.Wrap("awk")
             .WithArguments(new[] {"{print $3}"});
-            await (getWindowActivityCmd | awkFilterCmd | cmdOutputSB).ExecuteBufferedAsync();
-            string activityId = cmdOutputSB.ToString()[2..^2];
+            await (getActivityIdCmd | awkFilterCmd | cmdOutputSB).ExecuteBufferedAsync();
+            string activityId = cmdOutputSB.ToString()[1..^2];
             cmdOutputSB.Clear();
-            return activityId;
+            Command getActivityNameCmd = Cli.Wrap("qdbus")
+            .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "ActivityName", activityId });
+            await (getActivityNameCmd | cmdOutputSB).ExecuteBufferedAsync();
+            string activityName = cmdOutputSB.ToString()[0..^1];
+            cmdOutputSB.Clear();
+            return activityName;
         }
 
         public static async Task<int[]> GetAbsolutePosition(string windowId, StringBuilder cmdOutputSB, string[] delimSB)
@@ -100,10 +103,6 @@ namespace SessionObjects
 
         public static async Task<Tab[]> GetUrls(string windowId, StringBuilder cmdOutputSB, string[] delimSB)
         {
-            if(windowId == "0x06a0000a")
-            {
-                var debug = true;
-            }
             cmdOutputSB.Clear();
             string terminalWindowId = await GetActiveWindowId(cmdOutputSB);
             Command switchWindowsCmd = Cli.Wrap("xdotool")

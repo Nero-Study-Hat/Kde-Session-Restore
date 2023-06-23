@@ -47,7 +47,7 @@ namespace SessionObjects
             {
                 string name = await Window.GetName(windowIds[index], cmdOutputSB);
                 int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
-                string activityId = await Window.GetActivityId(windowIds[index], cmdOutputSB);
+                string activityId = await Window.GetActivityName(windowIds[index], cmdOutputSB);
                 int desktopNum = await Window.GetDesktopNum(windowIds[index], cmdOutputSB); // Incorrect for second vscode window. (Test Project Win)
                 string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
                 Tab[] tabs = new Tab[1];
@@ -56,7 +56,7 @@ namespace SessionObjects
                     tabs = await Window.GetUrls(windowIds[index], cmdOutputSB, delimSB);
                 }
 
-                windows[index] = new Window(name, windowIds[index], activityId, asbWinPos, desktopNum, appName, tabs);
+                windows[index] = new Window(name, windowIds[index], asbWinPos, desktopNum, appName, tabs);
             }
             return windows;
         }
@@ -68,7 +68,7 @@ namespace SessionObjects
             .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "ListActivities" })
             .WithStandardOutputPipe(PipeTarget.ToStringBuilder(cmdOutputSB))
             .ExecuteBufferedAsync();
-            string[] activityIds = cmdOutputSB.ToString().Split(delimSB, StringSplitOptions.None);
+            string[] activityIds = cmdOutputSB.ToString().Split(delimSB, StringSplitOptions.None)[0..^1];
             cmdOutputSB.Clear();
             Dictionary<string, string> activities = new Dictionary<string, string>();
             for (var i = 0; i < activityIds.Length; i++)
@@ -80,7 +80,6 @@ namespace SessionObjects
                 activities.Add(cmdOutputSB.ToString()[0..^1], activityIds[i]);
                 cmdOutputSB.Clear();
             }
-            activities.Remove("");
             return activities; // FIXME Activity name keys have \n after them.
         }
 
