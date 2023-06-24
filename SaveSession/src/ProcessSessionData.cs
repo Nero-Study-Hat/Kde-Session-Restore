@@ -50,19 +50,14 @@ namespace SaveSession
 
         //TODO Consider brainstrorming on inputing the property to filter, along with arrays and such.
         // Consider choosing filters through -> config file, user input for list of choices, and func param.
-        public static void StrictWindowFilter(Window[] allWindows, WindowFilter windowFilter, string[] filterKeys)
+        public static void StrictWindowFilter(Window[] allWindows, WindowFilter windowFilter)
         {
-            // var validPropertyFilters = windowFilter
-            //     .GetType()
-            //     .GetProperties()
-            //     .Select(p => p.GetValue(windowFilter))
-            //     .Where(x => x != null || ( x is string y && y != ""))
-            //     .ToList();
+            List<string> validProperties = new List<string>();
             foreach(var property in windowFilter.GetType().GetProperties())
             {
-                if (property.GetValue(windowFilter) == null)
+                if (property.GetValue(windowFilter) != null)
                 {
-                    // Add string to valid array.
+                    validProperties.Add(property.Name);
                 }
             }
 
@@ -76,7 +71,13 @@ namespace SaveSession
                 {nameof(windowFilter.TabUrls), (window) => windowFilter.TabUrls!.Intersect(window.Tabs.Select(tab => tab.Url).ToArray()).Any()},
                 {nameof(windowFilter.TabCount), (window) => windowFilter.TabCount!.Contains(window.Tabs.Length)}
             };
-            Window[] filteredWindows = Array.FindAll(allWindows, (window) => windowFilters[filterKeys[0]](window));
+
+            List<Window> approvedWindows = new List<Window>();
+            foreach (string property in validProperties)
+            {
+                approvedWindows.AddRange(Array.FindAll(allWindows, (window) => windowFilters[property](window))).ToArray();
+            }
+            Window[] filteredWindows = approvedWindows.Distinct();
             // Window[] filteredWindows = Array.FindAll(allWindows, (window) => windowFilters[nameof(windowFilter.ApplicationNames)](window));
         }
 
