@@ -1,8 +1,6 @@
-using System;
 using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace SessionObjects
 {
@@ -12,9 +10,9 @@ namespace SessionObjects
         public int DesktopsAmount { get; set; }
         public Display Display { get; set; }
 
-        public Window[] Windows { get; set; }
+        public List<Window> Windows { get; set; }
 
-        public Session(Dictionary<string, string> activities, Window[] windows, Display display, int desktopsAmount)
+        public Session(Dictionary<string, string> activities, List<Window> windows, Display display, int desktopsAmount)
         {
             Activities = activities;
             DesktopsAmount = desktopsAmount;
@@ -39,26 +37,54 @@ namespace SessionObjects
             return windowIds.ToArray();
         }
 
-        public static async Task<Window[]> GetWindows(StringBuilder cmdOutputSB, string[] delimSB, string[]? windowIds = null)
+        public static async Task<List<Window>> GetWindows(StringBuilder cmdOutputSB, string[] delimSB, string[]? windowIds = null, WindowFilter? windowFilter = null)
         {
-            windowIds ??= await Session.GetWindowIds(cmdOutputSB, delimSB);
-            Window[] windows = new Window[windowIds.Length];
-            for (int index = 0; index < windowIds.Length; index++)
+            if (windowFilter is null)
             {
-                string name = await Window.GetName(windowIds[index], cmdOutputSB);
-                int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
-                string activityId = await Window.GetActivityName(windowIds[index], cmdOutputSB);
-                int desktopNum = await Window.GetDesktopNum(windowIds[index], cmdOutputSB); // Incorrect for second vscode window. (Test Project Win)
-                string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
-                Tab[] tabs = new Tab[1];
-                if(appName == "brave-browser")
+                windowIds ??= await Session.GetWindowIds(cmdOutputSB, delimSB);
+                List<Window> windows = new List<Window>();
+                for (int index = 0; index < windowIds.Length; index++)
                 {
-                    tabs = await Window.GetUrls(windowIds[index], cmdOutputSB, delimSB);
-                }
+                    string name = await Window.GetName(windowIds[index], cmdOutputSB);
+                    string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
+                    string[] activity = await Window.GetActivity(windowIds[index], cmdOutputSB);
+                    int desktopNum = await Window.GetDesktopNum(windowIds[index], cmdOutputSB); //TODO Test - Incorrect for second vscode window. (Test Project Win)
+                    int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
+                    Tab[] tabs = new Tab[1];
+                    if(appName == "brave-browser")
+                    {
+                        tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
+                    }
 
-                windows[index] = new Window(name, windowIds[index], asbWinPos, desktopNum, appName, tabs);
+                    windows.Add(new Window(name, activity, asbWinPos, desktopNum, appName, tabs));
+                }
+                return windows;
             }
-            return windows;
+            else
+            {
+                windowIds ??= await Session.GetWindowIds(cmdOutputSB, delimSB);
+                List<Window> windows = new List<Window>();
+                for (int index = 0; index < windowIds.Length; index++)
+                {
+                    string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
+                    string[] activity = await Window.GetActivity(windowIds[index], cmdOutputSB);
+                    if (windowFilter.ActivityNames != null && windowFilter.ActivityNames.Contains(activity[0]) == false)
+                    {
+                        continue;
+                    }
+                    int desktopNum = await Window.GetDesktopNum(windowIds[index], cmdOutputSB); //TODO Test - Incorrect for second vscode window. (Test Project Win)
+                    string name = await Window.GetName(windowIds[index], cmdOutputSB);
+                    Tab[] tabs = new Tab[1];
+                    if(appName == "brave-browser")
+                    {
+                        tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
+                    }
+                    int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
+
+                    windows.Add(new Window(name, activity, asbWinPos, desktopNum, appName, tabs));
+                }
+                return windows;
+            }
         }
         
         public static async Task<Dictionary<string, string>> GetActivities(StringBuilder cmdOutputSB, string[] delimSB)

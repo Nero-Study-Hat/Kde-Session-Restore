@@ -1,7 +1,4 @@
-using CliWrap;
-using CliWrap.Buffered;
 using System.Text;
-using System.IO;
 using Newtonsoft.Json;
 using SessionObjects;
 
@@ -31,35 +28,56 @@ namespace SaveSession
             Dictionary<string, string> activities = await Session.GetActivities(cmdOutputSB, delimSB);
             Display display = new Display();
             int desktopsAmount = await Session.GetDesktopsAmount(cmdOutputSB);
-            Window[] windows = await Session.GetWindows(cmdOutputSB, delimSB);
+            List<Window> windows = await Session.GetWindows(cmdOutputSB, delimSB);
 
             Func<Window, bool> testCondition = (window) => window.ApplicationName == "brave-browser";
             Func<Window, bool>[] testConditions = { testCondition };
 
-            Window[] filteredWindows = FilterWindows(windows, testConditions);
+            // List<Window> filteredWindows = FilterWindows(windows, testConditions);
             Session session = new Session(activities, windows, display, desktopsAmount);
             return session;
         }
 
-        private static Window[] ConfigFilterWindows(Window[] allWindows, string filterConfigPath, bool severeFilter)
-        {
-            List<Window> filteredWindows = new List<Window>();
-            string filterConfigText = File.ReadAllText(filterConfigPath);
-            WindowFilter windowFilter = JsonConvert.DeserializeObject<WindowFilter>(filterConfigText) ?? throw new ArgumentNullException("Window filter json failed: ", nameof(windowFilter));
-            //
+        // private static List<Window> ConfigFilterWindows(List<Window> allWindows, string filterConfigPath, bool severeFilter)
+        // {
+        //     List<Window> filteredWindows = new List<Window>();
+        //     string filterConfigText = File.ReadAllText(filterConfigPath);
+        //     WindowFilter windowFilter = JsonConvert.DeserializeObject<WindowFilter>(filterConfigText) ?? throw new ArgumentNullException("Window filter json failed: ", nameof(windowFilter));
+        //     //
             
-            return allWindows;
-        }
+        //     return allWindows;
+        // }
 
         //TODO Consider brainstrorming on inputing the property to filter, along with arrays and such.
         // Consider choosing filters through -> config file, user input for list of choices, and func param.
-        public static void StrictWindowFilter(Window[] allWindows, WindowFilter windowFilter)
+        public static void StrictWindowFilter(Window[] allWindows, WindowFilter windowFilter, string[] filterKeys)
         {
+            // var validPropertyFilters = windowFilter
+            //     .GetType()
+            //     .GetProperties()
+            //     .Select(p => p.GetValue(windowFilter))
+            //     .Where(x => x != null || ( x is string y && y != ""))
+            //     .ToList();
+            foreach(var property in windowFilter.GetType().GetProperties())
+            {
+                if (property.GetValue(windowFilter) == null)
+                {
+                    // Add string to valid array.
+                }
+            }
+
             Dictionary<string, Func<Window, bool>> windowFilters = new Dictionary<string, Func<Window, bool>>()
             {
-                {nameof(windowFilter.ActivityNames), (Window window) => windowFilter.ActivityNames!.Contains(window.ActivityName)}
+                {nameof(windowFilter.ApplicationNames), (window) => windowFilter.ApplicationNames!.Contains(window.ApplicationName)},
+                {nameof(windowFilter.ActivityNames), (window) => windowFilter.ActivityNames!.Contains(window.Activity[0])},
+                {nameof(windowFilter.DesktopNumbers), (window) => windowFilter.DesktopNumbers!.Contains(window.DesktopNum)},
+                {nameof(windowFilter.Names), (window) => windowFilter.Names!.Contains(window.Name)},
+                {nameof(windowFilter.TabTitles), (window) => windowFilter.TabTitles!.Intersect(window.Tabs.Select(tab => tab.Title).ToArray()).Any()},
+                {nameof(windowFilter.TabUrls), (window) => windowFilter.TabUrls!.Intersect(window.Tabs.Select(tab => tab.Url).ToArray()).Any()},
+                {nameof(windowFilter.TabCount), (window) => windowFilter.TabCount!.Contains(window.Tabs.Length)}
             };
-            Window[] filteredWindows = Array.FindAll(allWindows, (window) => windowFilters[nameof(windowFilter.ActivityNames)](window));
+            Window[] filteredWindows = Array.FindAll(allWindows, (window) => windowFilters[filterKeys[0]](window));
+            // Window[] filteredWindows = Array.FindAll(allWindows, (window) => windowFilters[nameof(windowFilter.ApplicationNames)](window));
         }
 
 

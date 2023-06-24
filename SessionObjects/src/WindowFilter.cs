@@ -4,20 +4,30 @@ namespace SessionObjects
 {
     public class WindowFilter
     {
-        public string[]? Names { get; set; }
         public string[]? ApplicationNames { get; set; }
         public string[]? ActivityNames { get; set; }
         public int[]? DesktopNumbers { get; set; }
-        public Tab[]? Tabs { get; set; }
+        public string[]? Names { get; set; }
+        public string[]? TabTitles { get; set; }
+        public string[]? TabUrls { get; set; }
+        public int[]? TabCount { get; set; }
         
-        public WindowFilter
-        (string[]? name = null, string[]? activityNames = null, int[]? desktopNumbers = null, string[]? applicationNames = null, Tab[]? tabs = null)
+        public WindowFilter (
+            string[]? applicationNames = null,
+            string[]? activityNames = null,
+            int[]? desktopNumbers = null,
+            string[]? names = null,
+            string[]? tabTitles = null,
+            string[]? tabUrls = null,
+            int[]? tabCount = null)
         {
-            Names = name;
+            Names = names;
             ActivityNames = activityNames;
             DesktopNumbers = desktopNumbers;
             ApplicationNames = applicationNames;
-            Tabs = tabs;
+            TabTitles = tabTitles;
+            TabUrls = tabUrls;
+            TabCount = tabCount;
         }
 
         // bool return is continue status
