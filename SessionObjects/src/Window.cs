@@ -14,8 +14,9 @@ namespace SessionObjects
         public int DesktopNum { get; set; }
         public int[] AbsoluteWindowPosition { get; set; }
         public Tab[] Tabs { get; set; }
+        public string Id { get; set; }
 
-        public Window(string name, string[] activity, int[] absoluteWindowPosition, int desktopNum, string applicationName, Tab[] tabs)
+        public Window(string name, string[] activity, int[] absoluteWindowPosition, int desktopNum, string applicationName, Tab[] tabs, string id)
         {
             Name = name;
             Activity = activity;
@@ -23,6 +24,7 @@ namespace SessionObjects
             DesktopNum = desktopNum;
             ApplicationName = applicationName;
             Tabs = tabs;
+            Id = id;
         }
 
 
@@ -76,7 +78,7 @@ namespace SessionObjects
             return absolutePosition;
         }
 
-        public static async Task<int> GetDesktopNum(string windowId, StringBuilder cmdOutputSB)
+        public static async Task<int> GetDesktopNumber(string windowId, StringBuilder cmdOutputSB)
         {
             cmdOutputSB.Clear();
             Command getWindowDesktopCmd = Cli.Wrap("xprop")
@@ -84,7 +86,7 @@ namespace SessionObjects
             Command awkFilterCmd = Cli.Wrap("awk")
             .WithArguments(new[] {"{print $3}"});
             await (getWindowDesktopCmd | awkFilterCmd | cmdOutputSB).ExecuteBufferedAsync();
-            int desktopNum = Int32.Parse(cmdOutputSB.ToString());
+            int desktopNum = Int32.Parse(cmdOutputSB.ToString()) + 1;
             cmdOutputSB.Clear();
             return desktopNum;
         }

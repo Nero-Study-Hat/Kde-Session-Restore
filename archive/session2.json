@@ -1,0 +1,348 @@
+{
+  "Activities": {
+    "Art": "fa936946-4af6-47e4-960a-977edfb037b0",
+    "Development": "1954e667-b011-49d1-873d-8e7f085f524d",
+    "Game Dev": "e0c35f1a-029d-4c35-a48e-191eb40104e2",
+    "Productive HQ": "e6693b44-93e9-4a2d-91ca-f7ef709a0062",
+    "Slack": "939a33e7-cbd8-47bd-ba5b-e1604aa03e75",
+    "Writing": "1ca6f39c-fe4c-4502-8838-affde25d8dfc"
+  },
+  "DesktopsAmount": 4,
+  "Display": {},
+  "Windows": [
+    {
+      "Name": "Dear Authors... Friendships [CC] - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Writing",
+        "1ca6f39c-fe4c-4502-8838-affde25d8dfc"
+      ],
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Dear Authors... Friendships [CC] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=mrq2C_qdU4M&list=TLPQMDYwNjIwMjMgJ6H0N7wcvg&index=26"
+        }
+      ],
+      "Id": "0x06a00007"
+    },
+    {
+      "Name": "Introduction to the A* Algorithm - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Game Dev",
+        "e0c35f1a-029d-4c35-a48e-191eb40104e2"
+      ],
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Pathfinding Visualizer Tutorial (software engineering project) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=msttfIHHkak"
+        },
+        {
+          "Title": "A* Pathfinding Visualization Tutorial - Python A* Path Finding Tutorial - YouTube",
+          "Url": "https://www.youtube.com/watch?v=JtiK0DOeI4A"
+        },
+        {
+          "Title": "unity maze generator - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=unity+maze+generator+"
+        },
+        {
+          "Title": "unity ai* pathfinding 2d - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=unity+ai%2A+pathfinding+2d+"
+        },
+        {
+          "Title": "Pathfinding - Understanding A* (A star) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=i0x5fj4PqP4"
+        },
+        {
+          "Title": "Introduction to the A* Algorithm",
+          "Url": "https://www.redblobgames.com/pathfinding/a-star/introduction.html"
+        },
+        {
+          "Title": "Map representations",
+          "Url": "https://theory.stanford.edu/~amitp/GameProgramming/MapRepresentations.html"
+        },
+        {
+          "Title": "Flow Field Pathfinding for Tower Defense",
+          "Url": "https://www.redblobgames.com/pathfinding/tower-defense/"
+        }
+      ],
+      "Id": "0x06a00008"
+    },
+    {
+      "Name": "Cyberpunk: I Really Want to Stay at Your House | Emotional LoFi Chill Hip Hop Mix - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Slack",
+        "939a33e7-cbd8-47bd-ba5b-e1604aa03e75"
+      ],
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Hurt (Cover Demo) | Wolf Winters - YouTube",
+          "Url": "https://www.youtube.com/watch?v=xoFYaN9xkEk&list=TLPQMTYwNjIwMjMNMxvkLu2mWw&index=9"
+        },
+        {
+          "Title": "Cyberpunk: I Really Want to Stay at Your House | Emotional LoFi Chill Hip Hop Mix - YouTube",
+          "Url": "https://www.youtube.com/watch?v=7dPElhy9-V0&list=TLPQMTcwNjIwMjPt29JG3ixEjQ&index=7"
+        },
+        {
+          "Title": "【NightcoreFreakz and kitoclanck REUPLOAD】- Ultimate Nightcore Rock Mix 1.5 Hours - YouTube",
+          "Url": "https://www.youtube.com/watch?v=tLiSB9O4I2Q"
+        }
+      ],
+      "Id": "0x06a00009"
+    },
+    {
+      "Name": "How to Write a Bromance | Jujutsu Kaisen (ft. Shonen Ouji) - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Writing",
+        "1ca6f39c-fe4c-4502-8838-affde25d8dfc"
+      ],
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "How to Write a Bromance | Jujutsu Kaisen (ft. Shonen Ouji) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=K7PySkxnwEY"
+        }
+      ],
+      "Id": "0x06a0000a"
+    },
+    {
+      "Name": "filter an array in C# - Stack Overflow - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "1954e667-b011-49d1-873d-8e7f085f524d"
+      ],
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "filter objects array c# - Google Search",
+          "Url": "https://www.google.com/search?q=filter+objects+array+c%23&hl=en&ei=0L2UZJDLEeKi5NoPt4qRiAY&ved=0ahUKEwiQ883q6df_AhViEVkFHTdFBGEQ4dUDCBA&uact=5&oq=filter+objects+array+c%23&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIGCAAQCBAeMgYIABAIEB4yCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgMyCAgAEIoFEIYDOgoIABBHENYEELADOgYIABAHEB46CAgAEAgQBxAeSgQIQRgAUIQGWKkMYNYOaAFwAXgAgAF2iAGUBJIBAzQuMpgBAKABAcABAcgBCA&sclient=gws-wiz-serp"
+        },
+        {
+          "Title": "filter an array in C# - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/1912128/filter-an-array-in-c-sharp"
+        },
+        {
+          "Title": "remove all duplicate elements from a list c# - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=remove%20all%20duplicate%20elements%20from%20a%20list%20c%23"
+        },
+        {
+          "Title": "how to find all elements that have n duplicates in a list c# - Google Search",
+          "Url": "https://www.google.com/search?q=how+to+find+all+elements+that+have+n+duplicates+in+a+list+c%23&hl=en&ei=VPaWZJFu46bk2g-L_KnYCg&ved=0ahUKEwiR6K2BiNz_AhVjE1kFHQt-CqsQ4dUDCBA&uact=5&oq=how+to+find+all+elements+that+have+n+duplicates+in+a+list+c%23&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQA0oECEEYAFAAWABgAGgAcAF4AIABAIgBAJIBAJgBAKABAQ&sclient=gws-wiz-serp"
+        },
+        {
+          "Title": "how to find all elements that have n duplicates in a array c# - Google Search",
+          "Url": "https://www.google.com/search?q=how+to+find+all+elements+that+have+n+duplicates+in+a+array+c%23&hl=en&ei=WfaWZLyDJ8yr5NoPmdWRqAQ&ved=0ahUKEwj8k4WEiNz_AhXMFVkFHZlqBEUQ4dUDCBA&uact=5&oq=how+to+find+all+elements+that+have+n+duplicates+in+a+array+c%23&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQA0oECEEYAFAAWABgAGgAcAF4AIABAIgBAJIBAJgBAKABAQ&sclient=gws-wiz-serp"
+        },
+        {
+          "Title": "c# - How do I find duplicates in an array and display how many times they occurred? - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/20765589/how-do-i-find-duplicates-in-an-array-and-display-how-many-times-they-occurred"
+        },
+        {
+          "Title": "c# - How to display how many times an array element appears - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/11850935/how-to-display-how-many-times-an-array-element-appears"
+        },
+        {
+          "Title": "c# get number of all object duplicates in a list - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=c%23%20get%20number%20of%20all%20object%20duplicates%20in%20a%20list"
+        },
+        {
+          "Title": "linq - Checking for duplicates in a List of Objects C# - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/16197290/checking-for-duplicates-in-a-list-of-objects-c-sharp"
+        },
+        {
+          "Title": "c# - Group by in LINQ - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/7325278/group-by-in-linq"
+        },
+        {
+          "Title": "get an object from a group c# - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=get%20an%20object%20from%20a%20group%20c%23"
+        },
+        {
+          "Title": "c# - Using Linq to group a list of objects into a new grouped list of list of objects - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/2697253/using-linq-to-group-a-list-of-objects-into-a-new-grouped-list-of-list-of-objects"
+        }
+      ],
+      "Id": "0x06a0000b"
+    },
+    {
+      "Name": "NixOS - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Slack",
+        "939a33e7-cbd8-47bd-ba5b-e1604aa03e75"
+      ],
+      "DesktopNum": 3,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "NixOS Is A Fascinating Linux Distribution - YouTube",
+          "Url": "https://www.youtube.com/watch?v=J7Hdaqs1rjU"
+        },
+        {
+          "Title": "NixOS is Mindblowing - YouTube",
+          "Url": "https://www.youtube.com/watch?v=fuWPuJZ9NcU"
+        },
+        {
+          "Title": "NixOS Explained",
+          "Url": "https://christitus.com/nixos-explained/"
+        },
+        {
+          "Title": "NixOS - YouTube",
+          "Url": "https://www.youtube.com/playlist?list=PLgVG4PNqM5SbjFzePr_YZJKafNf_ngbq3"
+        }
+      ],
+      "Id": "0x06a0000c"
+    },
+    {
+      "Name": "Retrowave Songs | Part 1 (Coding, Driving, Gaming Music) - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "1954e667-b011-49d1-873d-8e7f085f524d"
+      ],
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "coding music - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=coding+music"
+        },
+        {
+          "Title": "synthwave coding music - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=synthwave+coding+music"
+        },
+        {
+          "Title": "Cybercity - A Synthwave Mix - YouTube",
+          "Url": "https://www.youtube.com/watch?v=dgCnYsDTiXU"
+        },
+        {
+          "Title": "Singularity (Synthwave - Retrowave - Chillwave Mix) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=BfCgF10C58Q"
+        },
+        {
+          "Title": "Retrowave Songs | Part 1 (Coding, Driving, Gaming Music) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=P2e4wnfEXXE"
+        },
+        {
+          "Title": "Programmer Music - Chill Beats to Code - Subliminal Binaural Beats - Coding Music Chill-Step Focus - YouTube",
+          "Url": "https://www.youtube.com/watch?v=hcHNGfdSDLo"
+        },
+        {
+          "Title": "Good music to listen to while concentrating on coding • Relaxing lofi beats to study music - YouTube",
+          "Url": "https://www.youtube.com/watch?v=4LIt_ICJyjk"
+        },
+        {
+          "Title": "a piece of music that helps you focus on the computer every day |3 hour lofi hiphop mix /lofi coding - YouTube",
+          "Url": "https://www.youtube.com/watch?v=p6xqKJqsQWs"
+        }
+      ],
+      "Id": "0x06a0000d"
+    },
+    {
+      "Name": "RemNote - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "1954e667-b011-49d1-873d-8e7f085f524d"
+      ],
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "RemNote",
+          "Url": "https://www.remnote.com/w/612cfdc49f54bc0034b147d2/Priority-Tasks-spCBoiJ3rY6zNMCm6"
+        }
+      ],
+      "Id": "0x06a0000e"
+    },
+    {
+      "Name": "FindNNumDuplicateItemsTest.cs - Kde_Project_Tests - Visual Studio Code",
+      "ApplicationName": "code",
+      "Activity": [
+        "Development",
+        "1954e667-b011-49d1-873d-8e7f085f524d"
+      ],
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        162,
+        0
+      ],
+      "Tabs": [
+        null
+      ],
+      "Id": "0x07c00003"
+    },
+    {
+      "Name": "ProcessSessionData.cs - Kde-Session-Restore - Visual Studio Code",
+      "ApplicationName": "code",
+      "Activity": [
+        "Development",
+        "1954e667-b011-49d1-873d-8e7f085f524d"
+      ],
+      "DesktopNum": 0,
+      "AbsoluteWindowPosition": [
+        162,
+        0
+      ],
+      "Tabs": [
+        null
+      ],
+      "Id": "0x07c00005"
+    },
+    {
+      "Name": "river of darkness - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "1954e667-b011-49d1-873d-8e7f085f524d"
+      ],
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        48,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "river of darkness - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=river+of+darkness"
+        }
+      ],
+      "Id": "0x06a00059"
+    }
+  ]
+}

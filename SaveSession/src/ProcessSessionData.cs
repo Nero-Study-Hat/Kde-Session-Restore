@@ -11,14 +11,14 @@ namespace SaveSession
             StringBuilder cmdOutputSB = new StringBuilder();
             string[] delimSB = { Environment.NewLine, "\n" };
 
+            // WindowFilter windowFilter = new WindowFilter();
+            // string windowFilterJson = JsonConvert.SerializeObject(windowFilter, Formatting.Indented);
+            // await File.WriteAllTextAsync($"/home/nero_admin/Workspace/IT/Kde-Session-Restore/data/test_filter.json", windowFilterJson);
+
             Session session = await GetSession(cmdOutputSB, delimSB);
             string sessionJson = JsonConvert.SerializeObject(session, Formatting.Indented);
-
             await File.WriteAllTextAsync($"/home/nero_admin/Workspace/IT/Kde-Session-Restore/data/session.json", sessionJson);
 
-            WindowFilter windowFilter = new WindowFilter();
-            string windowFilterJson = JsonConvert.SerializeObject(windowFilter, Formatting.Indented);
-            await File.WriteAllTextAsync($"/home/nero_admin/Workspace/IT/Kde-Session-Restore/data/test_filter.json", windowFilterJson);
 
             Console.WriteLine("Done");
         }
@@ -27,8 +27,12 @@ namespace SaveSession
         {
             Dictionary<string, string> activities = await Session.GetActivities(cmdOutputSB, delimSB);
             Display display = new Display();
-            int desktopsAmount = await Session.GetDesktopsAmount(cmdOutputSB);
-            List<Window> windows = await Session.GetWindows(cmdOutputSB, delimSB);
+            int desktopsAmount = await Session.GetNumberOfDesktops(cmdOutputSB);
+
+            string windowFilterText = File.ReadAllText("/home/nero_admin/Workspace/IT/Kde-Session-Restore/data/window_filter.json");
+            WindowFilter windowFilter = JsonConvert.DeserializeObject<WindowFilter>(windowFilterText) ?? new WindowFilter();
+
+            List<Window> windows = await Session.GetWindows(cmdOutputSB, delimSB, windowFilter);
 
             Func<Window, bool> testCondition = (window) => window.ApplicationName == "brave-browser";
             Func<Window, bool>[] testConditions = { testCondition };
@@ -38,73 +42,9 @@ namespace SaveSession
             return session;
         }
 
-        // private static List<Window> ConfigFilterWindows(List<Window> allWindows, string filterConfigPath, bool severeFilter)
-        // {
-        //     List<Window> filteredWindows = new List<Window>();
-        //     string filterConfigText = File.ReadAllText(filterConfigPath);
-        //     WindowFilter windowFilter = JsonConvert.DeserializeObject<WindowFilter>(filterConfigText) ?? throw new ArgumentNullException("Window filter json failed: ", nameof(windowFilter));
-        //     //
-            
-        //     return allWindows;
-        // }
-
-        //TODO Consider brainstrorming on inputing the property to filter, along with arrays and such.
-        // Consider choosing filters through -> config file, user input for list of choices, and func param.
-        public static void StrictWindowFilter(Window[] allWindows, WindowFilter windowFilter)
+        private static void ProcessUserInput()
         {
-            List<string> validProperties = new List<string>();
-            foreach(var property in windowFilter.GetType().GetProperties())
-            {
-                if (property.GetValue(windowFilter) != null)
-                {
-                    validProperties.Add(property.Name);
-                }
-            }
-
-            Dictionary<string, Func<Window, bool>> windowFilters = new Dictionary<string, Func<Window, bool>>()
-            {
-                {nameof(windowFilter.ApplicationNames), (window) => windowFilter.ApplicationNames!.Contains(window.ApplicationName)},
-                {nameof(windowFilter.ActivityNames), (window) => windowFilter.ActivityNames!.Contains(window.Activity[0])},
-                {nameof(windowFilter.DesktopNumbers), (window) => windowFilter.DesktopNumbers!.Contains(window.DesktopNum)},
-                {nameof(windowFilter.Names), (window) => windowFilter.Names!.Contains(window.Name)},
-                {nameof(windowFilter.TabTitles), (window) => windowFilter.TabTitles!.Intersect(window.Tabs.Select(tab => tab.Title).ToArray()).Any()},
-                {nameof(windowFilter.TabUrls), (window) => windowFilter.TabUrls!.Intersect(window.Tabs.Select(tab => tab.Url).ToArray()).Any()},
-                {nameof(windowFilter.TabCount), (window) => windowFilter.TabCount!.Contains(window.Tabs.Length)}
-            };
-
-            List<Window> approvedWindows = new List<Window>();
-            foreach (string property in validProperties)
-            {
-                approvedWindows.AddRange(Array.FindAll(allWindows, (window) => windowFilters[property](window))).ToArray();
-            }
-            Window[] filteredWindows = approvedWindows.Distinct();
-            // Window[] filteredWindows = Array.FindAll(allWindows, (window) => windowFilters[nameof(windowFilter.ApplicationNames)](window));
+            //
         }
-
-
-        private static Window[] FilterWindows(Window[] allWindows, Func<Window,bool>[] filterConditions)
-        {
-            List<Window> windowsFiltered = new List<Window>();
-            foreach(Window window in allWindows)
-            {
-                bool wanted = true;
-                int i = 0;
-                while(wanted == true && i < filterConditions.Length)
-                {
-                    wanted = filterConditions[i](window);
-                    i++;
-                }
-                if(wanted == true)
-                {
-                    windowsFiltered.Add(window);
-                }
-            }
-            return windowsFiltered.ToArray();
-        }
-
-        // public string GetMonitor(int[] positionDat)
-        // {
-        //     //
-        // }
     }
 }

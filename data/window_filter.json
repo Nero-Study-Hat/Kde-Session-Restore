@@ -1,0 +1,16 @@
+{
+  "ApplicationNames": [
+    "brave-browser"
+  ],
+  "ActivityNames": [
+    "Development"
+  ],
+  "DesktopNumbers": [
+    1
+  ],
+  "Names": null,
+  "TabTitles": null,
+  "TabUrls": null,
+  "TabCount": null,
+  "NumberOfRequiredFilters": "all"
+}

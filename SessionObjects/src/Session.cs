@@ -37,18 +37,18 @@ namespace SessionObjects
             return windowIds.ToArray();
         }
 
-        public static async Task<List<Window>> GetWindows(StringBuilder cmdOutputSB, string[] delimSB, string[]? windowIds = null, WindowFilter? windowFilter = null)
+        public static async Task<List<Window>> GetWindows(StringBuilder cmdOutputSB, string[] delimSB, WindowFilter? windowFilter = null, string[]? windowIds = null)
         {
-            if (windowFilter is null)
+            windowIds ??= await Session.GetWindowIds(cmdOutputSB, delimSB);
+            List<Window> windows = new List<Window>();
+            if (windowFilter is null) // No filtering while running.
             {
-                windowIds ??= await Session.GetWindowIds(cmdOutputSB, delimSB);
-                List<Window> windows = new List<Window>();
                 for (int index = 0; index < windowIds.Length; index++)
                 {
                     string name = await Window.GetName(windowIds[index], cmdOutputSB);
                     string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
                     string[] activity = await Window.GetActivity(windowIds[index], cmdOutputSB);
-                    int desktopNum = await Window.GetDesktopNum(windowIds[index], cmdOutputSB); //TODO Test - Incorrect for second vscode window. (Test Project Win)
+                    int desktopNum = await Window.GetDesktopNumber(windowIds[index], cmdOutputSB); //TODO Test - Incorrect for second vscode window. (Test Project Win)
                     int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
                     Tab[] tabs = new Tab[1];
                     if(appName == "brave-browser")
@@ -56,32 +56,49 @@ namespace SessionObjects
                         tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
                     }
 
-                    windows.Add(new Window(name, activity, asbWinPos, desktopNum, appName, tabs));
+                    windows.Add(new Window(name, activity, asbWinPos, desktopNum, appName, tabs, windowIds[index]));
                 }
                 return windows;
             }
-            else
+            else // With filter check after each property is retrieved.
             {
-                windowIds ??= await Session.GetWindowIds(cmdOutputSB, delimSB);
-                List<Window> windows = new List<Window>();
+                List<string> validProperties = WindowFilter.GetValidPropertyFilters(windowFilter);
+                int numFiltersRequired = WindowFilter.GetNumberOfRequiredFilters(windowFilter);
+                bool severeFilter = validProperties.Count == numFiltersRequired;
+                if (numFiltersRequired == - 1) { throw new Exception("Error result from number of filters."); }
+                List<bool> filterResults = new List<bool>();
                 for (int index = 0; index < windowIds.Length; index++)
                 {
+                    filterResults.Clear();
                     string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
+                    bool appNameCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.ApplicationNames, appName, filterResults, severeFilter);
+                    if (appNameCheckResult == true) { continue; }
                     string[] activity = await Window.GetActivity(windowIds[index], cmdOutputSB);
-                    if (windowFilter.ActivityNames != null && windowFilter.ActivityNames.Contains(activity[0]) == false)
-                    {
-                        continue;
-                    }
-                    int desktopNum = await Window.GetDesktopNum(windowIds[index], cmdOutputSB); //TODO Test - Incorrect for second vscode window. (Test Project Win)
+                    bool activityCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.ActivityNames, activity[0], filterResults, severeFilter);
+                    if (activityCheckResult == true) { continue; }
+                    int desktopNum = await Window.GetDesktopNumber(windowIds[index], cmdOutputSB); //TODO Test - Incorrect for second vscode window. (Test Project Win)
+                    bool desktopNumCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.DesktopNumbers, desktopNum, filterResults, severeFilter);
+                    if (desktopNumCheckResult == true) { continue; }
                     string name = await Window.GetName(windowIds[index], cmdOutputSB);
+                    bool nameCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.Names, name, filterResults, severeFilter);
+                    if (nameCheckResult == true) { continue; }
                     Tab[] tabs = new Tab[1];
                     if(appName == "brave-browser")
                     {
                         tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
                     }
+                    bool tabTitlesCheckResult = WindowFilter.TabsPropertyCheck(windowFilter.TabTitles, tabs.Select(t => t.Title).ToArray(), filterResults, severeFilter, true);
+                    if (tabTitlesCheckResult == true) { continue; }
+                    bool tabUrlsCheckResult = WindowFilter.TabsPropertyCheck(windowFilter.TabUrls, tabs.Select(t => t.Url).ToArray(), filterResults, severeFilter, true);
+                    if (tabUrlsCheckResult == true) { continue; }
+                    // TODO Add tab count filter check(s).
                     int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
 
-                    windows.Add(new Window(name, activity, asbWinPos, desktopNum, appName, tabs));
+                    bool[] filteredApproved = filterResults.Where(result => result == true).ToArray();
+                    if (severeFilter || filteredApproved.Length >= numFiltersRequired)
+                    {
+                        windows.Add(new Window(name, activity, asbWinPos, desktopNum, appName, tabs, windowIds[index]));
+                    }
                 }
                 return windows;
             }
@@ -109,7 +126,7 @@ namespace SessionObjects
             return activities; // FIXME Activity name keys have \n after them.
         }
 
-        public static async Task<int> GetDesktopsAmount(StringBuilder cmdOutputSB)
+        public static async Task<int> GetNumberOfDesktops(StringBuilder cmdOutputSB)
         {
             cmdOutputSB.Clear();
             Command getNumDesktopsCmd = Cli.Wrap("xprop")
