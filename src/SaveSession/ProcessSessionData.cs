@@ -6,7 +6,7 @@ namespace KDESessionManager.SaveSession
 {
     public class ProcessSessionData
     {
-        private async static Task Main()
+        private async static Task Process()
         {
             StringBuilder cmdOutputSB = new StringBuilder();
             string[] delimSB = { Environment.NewLine, "\n" };

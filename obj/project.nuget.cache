@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "c9hCHudazFAcMLBCyEZk+KjbnNrv33HQTwUuwn3Iy7Eay0KBM7D+sQP9yYENdM2FBhFFgeT2J0FpC2uQNnaQaA==",
+  "dgSpecHash": "BpfVjRADQ5NqLbPwuXe0jSj5EarJAl0hV2D+12rJ+DR03pSvDJCeynN3QB1CgZ1PUuQfxUecbfq1K2rg3YZdKA==",
   "success": true,
   "projectFilePath": "/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/project.csproj",
   "expectedPackageFiles": [
     "/home/nero/.nuget/packages/cliwrap/3.6.3/cliwrap.3.6.3.nupkg.sha512",
-    "/home/nero/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+    "/home/nero/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/home/nero/.nuget/packages/spectre.console/0.47.0/spectre.console.0.47.0.nupkg.sha512",
+    "/home/nero/.nuget/packages/spectre.console.cli/0.47.0/spectre.console.cli.0.47.0.nupkg.sha512",
+    "/home/nero/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512"
   ],
   "logs": []
 }
