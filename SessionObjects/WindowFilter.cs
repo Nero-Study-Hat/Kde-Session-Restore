@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace SessionObjects
+namespace KDESessionManager.SessionObjects
 {
     public class WindowFilter
     {

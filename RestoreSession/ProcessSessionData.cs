@@ -1,4 +1,4 @@
-namespace RestoreSession
+namespace KDESessionManager.RestoreSession
 {
     public class ProcessSessionData
     {

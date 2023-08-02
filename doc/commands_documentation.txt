@@ -36,3 +36,11 @@
 
 # qdbus org.kde.klipper /klipper org.kde.klipper.klipper.getClipboardContents
 # qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity $GUID
+
+xrandr | grep ' connected' | awk '{if ($3=="primary") {print $4} else {print $3}}' | sed 's/\+.*//'
+1050x1680
+3440x1440
+
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group "kwin" --key "Window to Screen 2" "Meta+Ctrl+Alt+3,,Window to Screen 2"
+kquitapp5 plasmashell
+kstart5 plasmashell

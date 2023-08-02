@@ -1,8 +1,8 @@
 using System.Text;
 using Newtonsoft.Json;
-using SessionObjects;
+using KDESessionManager.SessionObjects;
 
-namespace SaveSession
+namespace KDESessionManager.SaveSession
 {
     public class ProcessSessionData
     {
