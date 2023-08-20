@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/project.csproj": {}
+    "/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/project.csproj": {}
   },
   "projects": {
-    "/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/project.csproj": {
+    "/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/project.csproj",
+        "projectUniqueName": "/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/project.csproj",
         "projectName": "project",
-        "projectPath": "/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/project.csproj",
+        "projectPath": "/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/project.csproj",
         "packagesPath": "/home/nero/.nuget/packages/",
-        "outputPath": "/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/obj/",
+        "outputPath": "/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/nero/.nuget/NuGet/NuGet.Config"
@@ -45,6 +45,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "Nito.AsyncEx": {
+              "target": "Package",
+              "version": "[5.1.2, )"
             },
             "Spectre.Console": {
               "target": "Package",

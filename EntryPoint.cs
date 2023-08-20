@@ -12,9 +12,9 @@ namespace KDESessionManager
             {
                 config.ValidateExamples();
  
-                config.AddCommand<HelloCommand>("hello")
-                    .WithDescription("Say hello to anyone.")
-                    .WithExample(new[] { "hello", "--name", "DarthPedro" });
+                config.AddCommand<SaveCommand>("save")
+                    .WithDescription("Save windows in KDE session..")
+                    .WithExample(new[] { "save", "--live" });
             });
  
             return app.Run(args);

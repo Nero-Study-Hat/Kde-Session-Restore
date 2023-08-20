@@ -1,0 +1,14 @@
+{
+    "SessionFileIdPrefix": "session",
+    "SpacesReplacement": "_",
+    "DefaultWindowFilterPath": "/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/data/window_filter.json",
+    "WindowFiltersPathsSelection": [
+      "path_one",
+      "path_two"
+    ],
+    "DefaultDynamicOutputPath": "/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/data/OutputPathConfig.json",
+    "DynamicOutputPathsSelection": [
+      "path_one",
+      "path_two"
+    ]
+  }

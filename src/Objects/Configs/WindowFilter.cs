@@ -1,35 +1,21 @@
-using Newtonsoft.Json;
-
-namespace KDESessionManager.SessionObjects
+namespace KDESessionManager.Objects.Configs
 {
     public class WindowFilter
     {
         public string[]? ApplicationNames { get; set; }
         public string[]? ActivityNames { get; set; }
         public int[]? DesktopNumbers { get; set; }
-        public string[]? Names { get; set; }
-        public string[]? TabTitles { get; set; }
-        public string[]? TabUrls { get; set; }
-        public int[]? TabCount { get; set; } //TODO Switch to Min and Max tab count.
         public Object? NumberOfRequiredFilters { get; set; }
 
         public WindowFilter (
             string[]? applicationNames = null,
             string[]? activityNames = null,
             int[]? desktopNumbers = null,
-            string[]? names = null,
-            string[]? tabTitles = null,
-            string[]? tabUrls = null,
-            int[]? tabCount = null,
             Object? numberOfRequiredFilters = null)
         {
-            Names = names;
             ActivityNames = activityNames;
             DesktopNumbers = desktopNumbers;
             ApplicationNames = applicationNames;
-            TabTitles = tabTitles;
-            TabUrls = tabUrls;
-            TabCount = tabCount;
             NumberOfRequiredFilters = numberOfRequiredFilters;
         }
 
@@ -61,37 +47,6 @@ namespace KDESessionManager.SessionObjects
             }
         }
 
-        public static bool TabsPropertyCheck<T>(T[]? predicateCollection, T[] tabCollection, List<bool> filterResults, bool severeFilter, bool? tabsSevereFilter = null)
-        {
-            if (predicateCollection is null)
-            {
-                return false;
-            }
-            var intersectProperties = predicateCollection.Intersect(tabCollection);
-            if (severeFilter == true)
-            {
-                if (intersectProperties.Count() != predicateCollection.Length)
-                {
-                    return true;
-                }
-                return false;
-            }
-            else
-            {
-                if (tabsSevereFilter == true && intersectProperties.Count() == predicateCollection.Length)
-                {
-                    filterResults.Add(true);
-                    return false;
-                }
-                if ((tabsSevereFilter == false || tabsSevereFilter is null) && intersectProperties.Any())
-                {
-                    filterResults.Add(true);
-                    return false;
-                }
-                return false;
-            }
-        }
-
         public static List<string> GetValidPropertyFilters(WindowFilter windowFilter)
         {
             List<string> validProperties = new List<string>();
@@ -107,7 +62,7 @@ namespace KDESessionManager.SessionObjects
         }
 
         public static int GetNumberOfRequiredFilters(WindowFilter windowFilter)
-        {
+        { // TODO: Reprompt following invalid error.
             List<string> validProperties = GetValidPropertyFilters(windowFilter);
             if (windowFilter.NumberOfRequiredFilters is string amount)
             {
@@ -119,16 +74,19 @@ namespace KDESessionManager.SessionObjects
                 {
                     return 0;
                 }
+                Console.WriteLine("Given window filter property (NumberOfRequiredFilters) has an invalid string value.");
                 return -1; // Error
             }
             if (windowFilter.NumberOfRequiredFilters is int numberRequired)
             {
                 if (numberRequired < 0 || numberRequired > validProperties.Count)
                 {
-                    return 0; //FIXME: Reprompt user for new numbers.
+                    Console.WriteLine("Given window filter property (NumberOfRequiredFilters) has an invalid int value.");
+                    return -1;
                 }
                 return numberRequired;
             }
+            Console.WriteLine("Given window filter property (NumberOfRequiredFilters) has an invalid value type. Value should be an int or string.");
             return -1; // Error
         }
 
@@ -139,10 +97,6 @@ namespace KDESessionManager.SessionObjects
                 {nameof(windowFilter.ApplicationNames), (window) => windowFilter.ApplicationNames!.Contains(window.ApplicationName)},
                 {nameof(windowFilter.ActivityNames), (window) => windowFilter.ActivityNames!.Contains(window.Activity[0])},
                 {nameof(windowFilter.DesktopNumbers), (window) => windowFilter.DesktopNumbers!.Contains(window.DesktopNum)},
-                {nameof(windowFilter.Names), (window) => windowFilter.Names!.Contains(window.Name)},
-                {nameof(windowFilter.TabTitles), (window) => windowFilter.TabTitles!.Intersect(window.Tabs.Select(tab => tab.Title).ToArray()).Any()},
-                {nameof(windowFilter.TabUrls), (window) => windowFilter.TabUrls!.Intersect(window.Tabs.Select(tab => tab.Url).ToArray()).Any()},
-                {nameof(windowFilter.TabCount), (window) => windowFilter.TabCount!.Contains(window.Tabs.Length)}
             };
 
             bool[] filterResults = new bool[validProperties.Count];

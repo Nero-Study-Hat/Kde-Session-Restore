@@ -3,14 +3,10 @@
     "brave-browser"
   ],
   "ActivityNames": [
-    "Development"
+    // "Development"
   ],
   "DesktopNumbers": [
-    1
+    // 1
   ],
-  "Names": null,
-  "TabTitles": null,
-  "TabUrls": null,
-  "TabCount": null,
   "NumberOfRequiredFilters": "all"
 }

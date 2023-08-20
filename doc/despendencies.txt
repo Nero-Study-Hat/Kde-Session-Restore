@@ -13,6 +13,6 @@ https://chrome.google.com/webstore/detail/open-multiple-urls/bjifbockcjbcfgbkmle
 TabCopy
 https://chrome.google.com/webstore/detail/tabcopy/micdllihgoppmejpecmkilggmaagfdmb
 
-// Shortcuts
-alt+1   copy links
+// Shortcuts - brave://extensions/shortcuts
+alt+c (hit twice to copy all tabs in the window)   copy links
 alt+2   open links

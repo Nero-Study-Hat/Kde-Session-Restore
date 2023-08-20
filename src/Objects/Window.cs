@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 
-namespace KDESessionManager.SessionObjects
+namespace KDESessionManager.Objects
 {
     public class Window
     {
@@ -111,7 +111,7 @@ namespace KDESessionManager.SessionObjects
             Command switchWindowsCmd = Cli.Wrap("xdotool")
             .WithArguments(new[] { "windowactivate", "--sync", windowId });
             Command urlsToClipboardCmd = Cli.Wrap("xdotool")
-            .WithArguments(new[] { "key", "alt+1", "alt+1" }); // TODO Configurable Shortcut
+            .WithArguments(new[] { "key", "alt+c", "alt+c" }); // TODO Configurable Shortcut
             Command urlsToTextCmd = Cli.Wrap("qdbus")
             .WithArguments(new[] { "org.kde.klipper", "/klipper", "getClipboardContents" });
             await switchWindowsCmd.ExecuteAsync();

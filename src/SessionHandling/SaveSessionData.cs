@@ -1,12 +1,17 @@
+using System;
 using System.Text;
 using Newtonsoft.Json;
-using KDESessionManager.SessionObjects;
+using KDESessionManager.Objects;
+using KDESessionManager.Objects.Configs;
 
-namespace KDESessionManager.SaveSession
+namespace KDESessionManager.SessionHandling
 {
-    public class ProcessSessionData
+    public class SaveSessionData
     {
-        private async static Task Process()
+        public string _DynamicOutputPath = "";
+        public string _WindowFilterPath = "";
+
+        public async Task Process()
         {
             StringBuilder cmdOutputSB = new StringBuilder();
             string[] delimSB = { Environment.NewLine, "\n" };
@@ -17,16 +22,16 @@ namespace KDESessionManager.SaveSession
 
             Session session = await GetSession(cmdOutputSB, delimSB);
             string sessionJson = JsonConvert.SerializeObject(session, Formatting.Indented);
-            await File.WriteAllTextAsync($"/home/nero_admin/Workspace/IT/Kde-Session-Restore/data/session.json", sessionJson);
+            await File.WriteAllTextAsync(_DynamicOutputPath, sessionJson);
+            // await File.WriteAllTextAsync($"/home/nero_admin/Workspace/IT/Kde-Session-Restore/data/session.json", sessionJson);
 
 
             Console.WriteLine("Done");
         }
 
-        private static async Task<Session>GetSession(StringBuilder cmdOutputSB, string[] delimSB)
+        private async Task<Session>GetSession(StringBuilder cmdOutputSB, string[] delimSB)
         {
             Dictionary<string, string> activities = await Session.GetActivities(cmdOutputSB, delimSB);
-            Display display = new Display();
             int desktopsAmount = await Session.GetNumberOfDesktops(cmdOutputSB);
 
             string windowFilterText = File.ReadAllText("/home/nero_admin/Workspace/IT/Kde-Session-Restore/data/window_filter.json");
@@ -34,17 +39,12 @@ namespace KDESessionManager.SaveSession
 
             List<Window> windows = await Session.GetWindows(cmdOutputSB, delimSB, windowFilter);
 
-            Func<Window, bool> testCondition = (window) => window.ApplicationName == "brave-browser";
+            static bool testCondition (Window window) { return window.ApplicationName == "brave-browser"; }
             Func<Window, bool>[] testConditions = { testCondition };
 
             // List<Window> filteredWindows = FilterWindows(windows, testConditions);
-            Session session = new Session(activities, windows, display, desktopsAmount);
+            Session session = new Session(activities, windows, desktopsAmount);
             return session;
-        }
-
-        private static void ProcessUserInput()
-        {
-            //
         }
     }
 }

@@ -1,23 +1,21 @@
 using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
+using KDESessionManager.Objects.Configs;
 
-namespace KDESessionManager.SessionObjects
+namespace KDESessionManager.Objects
 {
     public class Session
     {
         public Dictionary<string, string> Activities { get; set; }
         public int DesktopsAmount { get; set; }
-        public Display Display { get; set; }
-
         public List<Window> Windows { get; set; }
 
-        public Session(Dictionary<string, string> activities, List<Window> windows, Display display, int desktopsAmount)
+        public Session(Dictionary<string, string> activities, List<Window> windows, int desktopsAmount)
         {
             Activities = activities;
             DesktopsAmount = desktopsAmount;
             Windows = windows;
-            Display = display;
         }
 
 
@@ -73,25 +71,23 @@ namespace KDESessionManager.SessionObjects
                     string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
                     bool appNameCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.ApplicationNames, appName, filterResults, severeFilter);
                     if (appNameCheckResult == true) { continue; }
+
                     string[] activity = await Window.GetActivity(windowIds[index], cmdOutputSB);
                     bool activityCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.ActivityNames, activity[0], filterResults, severeFilter);
                     if (activityCheckResult == true) { continue; }
+
                     int desktopNum = await Window.GetDesktopNumber(windowIds[index], cmdOutputSB); //TODO Test - Incorrect for second vscode window. (Test Project Win)
                     bool desktopNumCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.DesktopNumbers, desktopNum, filterResults, severeFilter);
                     if (desktopNumCheckResult == true) { continue; }
+
                     string name = await Window.GetName(windowIds[index], cmdOutputSB);
-                    bool nameCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.Names, name, filterResults, severeFilter);
-                    if (nameCheckResult == true) { continue; }
+
                     Tab[] tabs = new Tab[1];
                     if(appName == "brave-browser")
                     {
                         tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
                     }
-                    bool tabTitlesCheckResult = WindowFilter.TabsPropertyCheck(windowFilter.TabTitles, tabs.Select(t => t.Title).ToArray(), filterResults, severeFilter, true);
-                    if (tabTitlesCheckResult == true) { continue; }
-                    bool tabUrlsCheckResult = WindowFilter.TabsPropertyCheck(windowFilter.TabUrls, tabs.Select(t => t.Url).ToArray(), filterResults, severeFilter, true);
-                    if (tabUrlsCheckResult == true) { continue; }
-                    // TODO Add tab count filter check(s).
+                    
                     int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
 
                     bool[] filteredApproved = filterResults.Where(result => result == true).ToArray();

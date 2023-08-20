@@ -3,17 +3,23 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>KDESessionManager</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <GlobalAnalyzerConfigFiles Include="~/Workspace/IT/Kde-Session-Restore/.vscode/code_analyzer_settings.globalconfig" />
+    <GlobalAnalyzerConfigFiles Include="/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/.vscode/code_analyzer_settings.globalconfig" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CliWrap" Version="3.6.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.47.0" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.47.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Nito.AsyncEx" Version="5.1.2" />
   </ItemGroup>
 </Project>

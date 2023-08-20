@@ -1,4 +1,4 @@
-namespace KDESessionManager.SessionObjects
+namespace KDESessionManager.Objects
 {
     public class Tab
     {

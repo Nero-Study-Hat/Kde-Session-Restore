@@ -5,6 +5,8 @@
 # wmctrl -l  output -> list of window ids
 # wmctrl -l | grep -v -- -1     output -> list of window ids without sticky windows (bad apples those)
 # qdbus org.kde.ActivityManager /ActivityManager/Activities ListActivities  output -> list of activity ids
+qdbus org.kde.ActivityManager /ActivityManager/Activities ListActivities | xargs -I % qdbus org.kde.ActivityManager /ActivityManager/Activities ActivityName %
+list of activity names
 # xprop -id XID _KDE_NET_WM_ACTIVITIES  output -> _KDE_NET_WM_ACTIVITIES(STRING) = "1954e667-b011-49d1-873d-8e7f085f524d"
 # xprop -id XID _NET_WM_DESKTOP | awk '{print $3}'  output -> 0
 # xprop -id XID WM_CLASS | awk '{print $3}'  output -> "cool-retro-term",

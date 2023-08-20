@@ -1,4 +1,4 @@
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/project.deps.json
+/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/project
 /mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/project.dll
 /mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/project.pdb
 /mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/obj/Debug/net7.0/project.csproj.AssemblyReference.cache
@@ -9,12 +9,3 @@
 /mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/obj/Debug/net7.0/project.dll
 /mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/obj/Debug/net7.0/refint/project.dll
 /mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/obj/Debug/net7.0/project.pdb
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/obj/Debug/net7.0/ref/project.dll
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/project
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/project.runtimeconfig.json
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/CliWrap.dll
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/Newtonsoft.Json.dll
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/Spectre.Console.dll
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/bin/Debug/net7.0/Spectre.Console.Cli.dll
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/obj/Debug/net7.0/project.csproj.CopyComplete
-/mnt/data/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/obj/Debug/net7.0/project.genruntimeconfig.cache
