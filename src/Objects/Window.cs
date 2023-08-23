@@ -121,19 +121,10 @@ namespace KDESessionManager.Objects
             await Cli.Wrap("xdotool")
                     .WithArguments(new[] { "windowactivate", "--sync", terminalWindowId })
                     .ExecuteAsync();
-            string cleanTabsJson = GetCleanJson(cmdOutputSB.ToString());
+            string tabsData = cmdOutputSB.ToString();
             cmdOutputSB.Clear();
-            Tab[] testTabs = new Tab[1];
-            try
-            {
-                Tab[] tabs = JsonConvert.DeserializeObject<Tab[]>(cleanTabsJson) ?? new Tab[1];
-            }
-            catch (JsonException)
-            {
-                Console.WriteLine(cleanTabsJson);
-                Console.WriteLine("RAR");
-            }
-            return testTabs;
+            Tab[] tabs = ProcessTabsData(tabsData);
+            return tabs;
         }
 
         public static async Task<string> GetActiveWindowId(StringBuilder cmdOutputSB)
@@ -152,10 +143,31 @@ namespace KDESessionManager.Objects
             return hexActiveWindowId;
         }
 
-        private static string GetCleanJson(string json)
+        private static Tab[] ProcessTabsData(string data)
         {
-            json = json.Replace("\\", "/");
-            return json;
+            string[] lines = data.Split(
+                new string[] { Environment.NewLine },
+                StringSplitOptions.None
+            );
+
+            Tab[] tabs = new Tab[lines.Length / 2];
+
+            int tabIndex = 0;
+            for (int i = 0; i < lines.Length; i++)
+            {
+                if (i%2 == 0)
+                {
+                    string cleanTitle = lines[i].Trim();
+                    cleanTitle = cleanTitle.Replace("\\", "/");
+                    cleanTitle = cleanTitle.Replace("\"", "'");
+                    tabs[tabIndex].Title = cleanTitle;
+                } else {
+                    tabs[tabIndex].Url = lines[i];
+                    tabIndex += 1;
+                }
+            }
+
+            return tabs;
         }
     }
 }
