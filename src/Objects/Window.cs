@@ -121,11 +121,19 @@ namespace KDESessionManager.Objects
             await Cli.Wrap("xdotool")
                     .WithArguments(new[] { "windowactivate", "--sync", terminalWindowId })
                     .ExecuteAsync();
-            string dirtyTabsJson = cmdOutputSB.ToString();
-            string cleanTabsJson = Regex.Replace(dirtyTabsJson, @"\\", "/");
+            string cleanTabsJson = GetCleanJson(cmdOutputSB.ToString());
             cmdOutputSB.Clear();
-            Tab[] tabs = JsonConvert.DeserializeObject<Tab[]>(cleanTabsJson) ?? new Tab[1];
-            return tabs;
+            Tab[] testTabs = new Tab[1];
+            try
+            {
+                Tab[] tabs = JsonConvert.DeserializeObject<Tab[]>(cleanTabsJson) ?? new Tab[1];
+            }
+            catch (JsonException)
+            {
+                Console.WriteLine(cleanTabsJson);
+                Console.WriteLine("RAR");
+            }
+            return testTabs;
         }
 
         public static async Task<string> GetActiveWindowId(StringBuilder cmdOutputSB)
@@ -142,6 +150,12 @@ namespace KDESessionManager.Objects
             string hexActiveWindowId = cmdOutputSB.ToString();
             cmdOutputSB.Clear();
             return hexActiveWindowId;
+        }
+
+        private static string GetCleanJson(string json)
+        {
+            json = json.Replace("\\", "/");
+            return json;
         }
     }
 }

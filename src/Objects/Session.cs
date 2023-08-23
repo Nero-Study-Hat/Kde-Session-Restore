@@ -35,69 +35,47 @@ namespace KDESessionManager.Objects
             return windowIds.ToArray();
         }
 
-        public static async Task<List<Window>> GetWindows(StringBuilder cmdOutputSB, string[] delimSB, WindowFilter? windowFilter = null, string[]? windowIds = null)
+        public static async Task<List<Window>> GetWindows(StringBuilder cmdOutputSB, string[] delimSB, WindowFilter windowFilter, string[]? windowIds = null)
         {
             windowIds ??= await Session.GetWindowIds(cmdOutputSB, delimSB);
             List<Window> windows = new List<Window>();
-            if (windowFilter is null) // No filtering while running.
+            List<string> validProperties = WindowFilter.GetValidPropertyFilters(windowFilter);
+            int numFiltersRequired = WindowFilter.GetNumberOfRequiredFilters(windowFilter);
+            bool severeFilter = validProperties.Count == numFiltersRequired; // TODO: Document how this works later, confusing to look at.
+            if (numFiltersRequired == - 1) { throw new Exception("Error result from number of filters."); }
+            List<bool> filterResults = new List<bool>();
+            for (int index = 0; index < windowIds.Length; index++)
             {
-                for (int index = 0; index < windowIds.Length; index++)
-                {
-                    string name = await Window.GetName(windowIds[index], cmdOutputSB);
-                    string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
-                    string[] activity = await Window.GetActivity(windowIds[index], cmdOutputSB);
-                    int desktopNum = await Window.GetDesktopNumber(windowIds[index], cmdOutputSB); //TODO Test - Incorrect for second vscode window. (Test Project Win)
-                    int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
-                    Tab[] tabs = new Tab[1];
-                    if(appName == "brave-browser")
-                    {
-                        tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
-                    }
+                filterResults.Clear();
+                string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
+                bool appNameCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.ApplicationNames, appName, filterResults, severeFilter);
+                if (appNameCheckResult == true) { continue; }
 
+                string[] activity = await Window.GetActivity(windowIds[index], cmdOutputSB);
+                bool activityCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.ActivityNames, activity[0], filterResults, severeFilter); // FIXME: The filter has no activity requirement yet this is giving true.
+                if (activityCheckResult == true) { continue; }
+
+                int desktopNum = await Window.GetDesktopNumber(windowIds[index], cmdOutputSB);
+                bool desktopNumCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.DesktopNumbers, desktopNum, filterResults, severeFilter);
+                if (desktopNumCheckResult == true) { continue; }
+
+                string name = await Window.GetName(windowIds[index], cmdOutputSB);
+
+                Tab[] tabs = new Tab[1];
+                if(appName == "brave-browser") // FIXME: Support other chromium browsers.
+                {
+                    tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
+                }
+                
+                int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
+
+                bool[] filteredApproved = filterResults.Where(result => result == true).ToArray();
+                if (severeFilter || filteredApproved.Length >= numFiltersRequired)
+                {
                     windows.Add(new Window(name, activity, asbWinPos, desktopNum, appName, tabs, windowIds[index]));
                 }
-                return windows;
             }
-            else // With filter check after each property is retrieved.
-            {
-                List<string> validProperties = WindowFilter.GetValidPropertyFilters(windowFilter);
-                int numFiltersRequired = WindowFilter.GetNumberOfRequiredFilters(windowFilter);
-                bool severeFilter = validProperties.Count == numFiltersRequired;
-                if (numFiltersRequired == - 1) { throw new Exception("Error result from number of filters."); }
-                List<bool> filterResults = new List<bool>();
-                for (int index = 0; index < windowIds.Length; index++)
-                {
-                    filterResults.Clear();
-                    string appName = await Window.GetApplicationName(windowIds[index], cmdOutputSB);
-                    bool appNameCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.ApplicationNames, appName, filterResults, severeFilter);
-                    if (appNameCheckResult == true) { continue; }
-
-                    string[] activity = await Window.GetActivity(windowIds[index], cmdOutputSB);
-                    bool activityCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.ActivityNames, activity[0], filterResults, severeFilter);
-                    if (activityCheckResult == true) { continue; }
-
-                    int desktopNum = await Window.GetDesktopNumber(windowIds[index], cmdOutputSB); //TODO Test - Incorrect for second vscode window. (Test Project Win)
-                    bool desktopNumCheckResult = WindowFilter.ArrayPropertyCheck(windowFilter.DesktopNumbers, desktopNum, filterResults, severeFilter);
-                    if (desktopNumCheckResult == true) { continue; }
-
-                    string name = await Window.GetName(windowIds[index], cmdOutputSB);
-
-                    Tab[] tabs = new Tab[1];
-                    if(appName == "brave-browser")
-                    {
-                        tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
-                    }
-                    
-                    int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
-
-                    bool[] filteredApproved = filterResults.Where(result => result == true).ToArray();
-                    if (severeFilter || filteredApproved.Length >= numFiltersRequired)
-                    {
-                        windows.Add(new Window(name, activity, asbWinPos, desktopNum, appName, tabs, windowIds[index]));
-                    }
-                }
-                return windows;
-            }
+            return windows;
         }
         
         public static async Task<Dictionary<string, string>> GetActivities(StringBuilder cmdOutputSB, string[] delimSB)

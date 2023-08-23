@@ -12,10 +12,11 @@
     <GlobalAnalyzerConfigFiles Include="/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/.vscode/code_analyzer_settings.globalconfig" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CliWrap" Version="3.6.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="NJsonSchema" Version="10.9.0" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CliWrap" Version="3.6.3" />
     <PackageReference Include="Spectre.Console" Version="0.47.0" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.47.0" />
   </ItemGroup>

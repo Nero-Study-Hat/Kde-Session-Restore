@@ -28,5 +28,10 @@ namespace KDESessionManager.Objects.Configs
                 Path = path;
             }
         }
+
+        public static string GetPath(WindowFilter windowFilter, DynamicOutputPath dynamicOutputPath)
+        {
+            return "/home/nero/Workspace/IT_and_Dev/Apps/Current/Kde-Windows-Session/Kde-Session-Restore/data/sessions/hotseat/session.json"; // TODO: Replace hard coded solution.
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace KDESessionManager.Objects.Configs
         // Return value specifies whether the loop the caller is in continues(true) of not(false).
         public static bool ArrayPropertyCheck<T>(T[]? predicateCollection, T windowValue, List<bool> filterResults, bool severeFilter)
         {
-            if (predicateCollection is null)
+            if (predicateCollection is null || predicateCollection.Length == 0)
             {
                 return false;
             }

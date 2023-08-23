@@ -1,6 +1,0 @@
-foreach(var activity in activities)
-{
-    await Cli.Wrap("qdbus")
-    .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities}", "SetCurrentActivity", activity.Value })
-    .ExecuteAsync();
-}
