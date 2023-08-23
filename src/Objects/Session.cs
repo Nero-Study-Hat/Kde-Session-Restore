@@ -61,7 +61,8 @@ namespace KDESessionManager.Objects
 
                 string name = await Window.GetName(windowIds[index], cmdOutputSB);
 
-                Tab[] tabs = new Tab[1];
+                List<Tab> tabs = new List<Tab>();
+                
                 if(appName == "brave-browser") // FIXME: Support other chromium browsers.
                 {
                     tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
@@ -111,6 +112,25 @@ namespace KDESessionManager.Objects
             int desktopNum = Int32.Parse(cmdOutputSB.ToString()); //TODO awk cmd to get only number
             cmdOutputSB.Clear();
             return desktopNum;
+        }
+
+        public static async Task GetScreenData(StringBuilder cmdOutputSB)
+        {
+            string burnerActivityName = "Temp Burner Activity";
+            cmdOutputSB.Clear();
+            await Cli.Wrap("qdbus")
+            .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "AddActivity", burnerActivityName })
+            .ExecuteBufferedAsync();
+
+            // TODO: Get screen data bash implementation. 
+            // Run Bash Cmd -> "brave </dev/null &>/dev/null & disown"
+            // Then run the shortcut to move the window to screen 0.
+            // Then get the window geometry data and after that run the shortcut to move to the next screen.
+            // Stop when returned window geometry already exists in data.
+
+            await Cli.Wrap("qdbus")
+            .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "RemoveActivity", burnerActivityName })
+            .ExecuteBufferedAsync();
         }
     }
 }

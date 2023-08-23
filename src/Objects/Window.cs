@@ -13,10 +13,10 @@ namespace KDESessionManager.Objects
         public string[] Activity { get; set; }
         public int DesktopNum { get; set; }
         public int[] AbsoluteWindowPosition { get; set; }
-        public Tab[] Tabs { get; set; }
+        public List<Tab> Tabs { get; set; }
         public string Id { get; set; }
 
-        public Window(string name, string[] activity, int[] absoluteWindowPosition, int desktopNum, string applicationName, Tab[] tabs, string id)
+        public Window(string name, string[] activity, int[] absoluteWindowPosition, int desktopNum, string applicationName, List<Tab> tabs, string id)
         {
             Name = name;
             Activity = activity;
@@ -104,7 +104,7 @@ namespace KDESessionManager.Objects
             return appName;
         }
 
-        public static async Task<Tab[]> GetTabs(string windowId, StringBuilder cmdOutputSB, string[] delimSB)
+        public static async Task<List<Tab>> GetTabs(string windowId, StringBuilder cmdOutputSB, string[] delimSB)
         {
             cmdOutputSB.Clear();
             string terminalWindowId = await GetActiveWindowId(cmdOutputSB);
@@ -123,7 +123,7 @@ namespace KDESessionManager.Objects
                     .ExecuteAsync();
             string tabsData = cmdOutputSB.ToString();
             cmdOutputSB.Clear();
-            Tab[] tabs = ProcessTabsData(tabsData);
+            List<Tab> tabs = ProcessTabsData(tabsData);
             return tabs;
         }
 
@@ -143,28 +143,17 @@ namespace KDESessionManager.Objects
             return hexActiveWindowId;
         }
 
-        private static Tab[] ProcessTabsData(string data)
+        private static List<Tab> ProcessTabsData(string data)
         {
-            string[] lines = data.Split(
-                new string[] { Environment.NewLine },
-                StringSplitOptions.None
-            );
+            string[] lines = data.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            List<Tab> tabs = new List<Tab>();
 
-            Tab[] tabs = new Tab[lines.Length / 2];
-
-            int tabIndex = 0;
-            for (int i = 0; i < lines.Length; i++)
+            for (int i = 0; i < lines.Length; i += 2)
             {
-                if (i%2 == 0)
-                {
-                    string cleanTitle = lines[i].Trim();
-                    cleanTitle = cleanTitle.Replace("\\", "/");
-                    cleanTitle = cleanTitle.Replace("\"", "'");
-                    tabs[tabIndex].Title = cleanTitle;
-                } else {
-                    tabs[tabIndex].Url = lines[i];
-                    tabIndex += 1;
-                }
+                string cleanTitle = lines[i].Trim();
+                cleanTitle = cleanTitle.Replace("\\", "/");
+                cleanTitle = cleanTitle.Replace("\"", "'");
+                tabs.Add(new Tab(cleanTitle, lines[i + 1]));
             }
 
             return tabs;
