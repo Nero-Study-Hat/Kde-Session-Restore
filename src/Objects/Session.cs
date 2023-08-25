@@ -122,8 +122,18 @@ namespace KDESessionManager.Objects
             .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "AddActivity", burnerActivityName })
             .ExecuteBufferedAsync();
 
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = "brave";
+            process.StartInfo.Arguments = "https://google.com" + " --new-window"; 
+            process.Start();
+
+            // TODO: set shortcut if it does not exist
+            await Cli.Wrap("xdotool") // shortcut to move window to screen 0
+            .WithArguments(new[] { "key", "Meta_L+Control_L+Alt_L+1" })
+            .ExecuteAsync();
+
+            
             // TODO: Get screen data bash implementation. 
-            // Run Bash Cmd -> "brave </dev/null &>/dev/null & disown"
             // Then run the shortcut to move the window to screen 0.
             // Then get the window geometry data and after that run the shortcut to move to the next screen.
             // Stop when returned window geometry already exists in data.
