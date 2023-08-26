@@ -1,3 +1,4 @@
 {
-    "dotnet.defaultSolution": "Kde-Session-Restore.sln"
+    "dotnet.defaultSolution": "Kde-Session-Restore.sln",
+    "todo-tree.tree.scanMode": "workspace"
 }

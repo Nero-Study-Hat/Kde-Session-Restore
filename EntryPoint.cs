@@ -2,6 +2,7 @@ using KDESessionManager.Commands;
 using KDESessionManager.Utilities;
 using Spectre.Console.Cli;
 using CliWrap;
+using CliWrap.Buffered;
 using Nito.AsyncEx;
 
 namespace KDESessionManager
@@ -27,19 +28,33 @@ namespace KDESessionManager
 
         public static async Task HandleDependencies()
         {
+            if (!CheckPackageDependencies().Result)
+            {
+                Console.WriteLine("Installing linux package dependencies.");
+                var installScriptPath = $"{SessionManagerExtensions.TryGetProjectPath().FullName}/LinuxPackageDependenciesInstall.sh";
+                var cmdInstallScript = Cli.Wrap("/bin/bash").WithArguments(installScriptPath);
+                await (Cli.Wrap("yes") | cmdInstallScript).ExecuteBufferedAsync();
+                Console.WriteLine("Finished installing dependencies.");
+            }
+            if (!CheckPackageDependencies().Result)
+            {
+                Console.WriteLine("Linux package dependencies failed to install.");
+                //TODO: Error handling.
+                // Account for bash script reporting error that no accounted for package manager is present.
+                // Report to the user what packages need to be installed and stop the application.
+            }
+        }
+
+        public static async Task<bool> CheckPackageDependencies()
+        {
             try
             {
-                await Cli.Wrap("wmctrl").WithArguments(new[] { "-v" }).ExecuteAsync();
-                await Cli.Wrap("xdotool").WithArguments(new[] { "-v" }).ExecuteAsync();
                 await Cli.Wrap("xprop").WithArguments(new[] { "-version" }).ExecuteAsync();
+                await Cli.Wrap("wmctrl").WithArguments(new[] { "-V" }).ExecuteAsync();
+                await Cli.Wrap("xdotool").WithArguments(new[] { "-V" }).ExecuteAsync();
+                return true;
             }
-            catch (Exception)
-            {
-                var installScriptPath = $"{GetProjectPath.TryGetInfo().FullName}/LinuxPackageDependenciesInstall";
-                await Cli.Wrap("/bin/bash")
-                .WithArguments(new[] { installScriptPath })
-                .ExecuteAsync();
-            }
+            catch (Exception) { return false; }
         }
     } 
 }
