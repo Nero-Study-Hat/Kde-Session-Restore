@@ -7,8 +7,8 @@ declare -a packagesNeeded=(
     "wmctrl"
 )
 
-if [ -x "$(command -v pacman)" ]; then packagesNeeded+=("xorg-xprop");
-else packagesNeeded+=("xprop"); fi
+if [ -x "$(command -v pacman)" ]; then packagesNeeded+=("xorg-xprop" "xorg-xwininfo");
+else packagesNeeded+=("xprop" "xwininfo"); fi
 
 if [ -x "$(command -v apk)" ];       then sudo apk add --no-cache "${packagesNeeded[@]}"
 elif [ -x "$(command -v apt-get)" ]; then sudo apt-get install "${packagesNeeded[@]}"

@@ -50,6 +50,7 @@ namespace KDESessionManager
             try
             {
                 await Cli.Wrap("xprop").WithArguments(new[] { "-version" }).ExecuteAsync();
+                await Cli.Wrap("xwininfo").WithArguments(new[] { "-version" }).ExecuteAsync();
                 await Cli.Wrap("wmctrl").WithArguments(new[] { "-V" }).ExecuteAsync();
                 await Cli.Wrap("xdotool").WithArguments(new[] { "-V" }).ExecuteAsync();
                 return true;
