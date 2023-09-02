@@ -2,6 +2,7 @@ using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
 using KDESessionManager.Objects.Configs;
+using KDESessionManager.Utilities;
 
 namespace KDESessionManager.Objects
 {
@@ -10,14 +11,33 @@ namespace KDESessionManager.Objects
         public Dictionary<string, string> Activities { get; set; }
         public int DesktopsAmount { get; set; }
         public List<Window> Windows { get; set; }
+        public List<Screen> Screens { get; set; }
 
-        public Session(Dictionary<string, string> activities, List<Window> windows, int desktopsAmount)
+        public Session(Dictionary<string, string> activities, List<Window> windows, int desktopsAmount, List<Screen> screens)
         {
             Activities = activities;
             DesktopsAmount = desktopsAmount;
             Windows = windows;
+            Screens = screens;
         }
 
+        public enum Shortcuts
+        {
+            Screen_0_Move_to,
+            Screen_Next_Move_To,
+            Fullscreen_Window,
+            Close_Tab,
+        }
+
+        public static async Task<Session>GetSession(StringBuilder cmdOutputSB, string[] delimSB, WindowFilter windowFilter)
+        {
+            Dictionary<string, string> activities = await GetActivities(cmdOutputSB, delimSB);
+            int desktopsAmount = await GetNumberOfDesktops(cmdOutputSB);
+            List<Screen> screens = await GetScreens(cmdOutputSB);
+            List<Window> windows = await GetWindows(cmdOutputSB, delimSB, windowFilter, screens);
+            Session session = new Session(activities, windows, desktopsAmount, screens);
+            return session;
+        }
 
         public static async Task<string[]> GetWindowIds(StringBuilder cmdOutputSB, string[] delimSB)
         {
@@ -35,7 +55,7 @@ namespace KDESessionManager.Objects
             return windowIds.ToArray();
         }
 
-        public static async Task<List<Window>> GetWindows(StringBuilder cmdOutputSB, string[] delimSB, WindowFilter windowFilter, string[]? windowIds = null)
+        public static async Task<List<Window>> GetWindows(StringBuilder cmdOutputSB, string[] delimSB, WindowFilter windowFilter, List<Screen> screens, string[]? windowIds = null)
         {
             windowIds ??= await Session.GetWindowIds(cmdOutputSB, delimSB);
             List<Window> windows = new List<Window>();
@@ -68,7 +88,7 @@ namespace KDESessionManager.Objects
                     tabs = await Window.GetTabs(windowIds[index], cmdOutputSB, delimSB);
                 }
                 
-                int[] asbWinPos = await Window.GetAbsolutePosition(windowIds[index], cmdOutputSB, delimSB);
+                int asbWinPos = await Window.GetScreenNumber(windowIds[index], screens);
 
                 bool[] filteredApproved = filterResults.Where(result => result == true).ToArray();
                 if (severeFilter || filteredApproved.Length >= numFiltersRequired)
@@ -82,19 +102,13 @@ namespace KDESessionManager.Objects
         public static async Task<Dictionary<string, string>> GetActivities(StringBuilder cmdOutputSB, string[] delimSB)
         {
             cmdOutputSB.Clear();
-            await Cli.Wrap("qdbus")
-            .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "ListActivities" })
-            .WithStandardOutputPipe(PipeTarget.ToStringBuilder(cmdOutputSB))
-            .ExecuteBufferedAsync();
+            await (BashUtils.QdbusAvtivityCmd("ListActivities") | cmdOutputSB).ExecuteBufferedAsync();
             string[] activityIds = cmdOutputSB.ToString().Split(delimSB, StringSplitOptions.None)[0..^1];
             cmdOutputSB.Clear();
             Dictionary<string, string> activities = new Dictionary<string, string>();
             for (var i = 0; i < activityIds.Length; i++)
             {
-                await Cli.Wrap("qdbus")
-                .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "ActivityName", activityIds[i] })
-                .WithStandardOutputPipe(PipeTarget.ToStringBuilder(cmdOutputSB))
-                .ExecuteBufferedAsync();
+                await (BashUtils.QdbusAvtivityCmd("ActivityName", activityIds[i]) | cmdOutputSB).ExecuteBufferedAsync();
                 activities.Add(cmdOutputSB.ToString()[0..^1], activityIds[i]);
                 cmdOutputSB.Clear();
             }
@@ -114,33 +128,50 @@ namespace KDESessionManager.Objects
             return desktopNum;
         }
 
-        public static async Task GetScreenData(StringBuilder cmdOutputSB)
+        public static async Task<List<Screen>> GetScreens(StringBuilder cmdOutputSB)
         {
-            string burnerActivityName = "Temp Burner Activity";
             cmdOutputSB.Clear();
-            await Cli.Wrap("qdbus")
-            .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "AddActivity", burnerActivityName })
-            .ExecuteBufferedAsync();
-
+            string burnerActivityName = "Temp Burner Activity";
+            await BashUtils.QdbusAvtivityCmd("AddActivity", burnerActivityName).ExecuteAsync();
+            await Task.Delay(2000);
+            //TODO: Switch to burner activity and off at cleanup.
+            string[] delimSB = { Environment.NewLine, "\n" };
+            var activities = await GetActivities(cmdOutputSB, delimSB);
+            await BashUtils.QdbusAvtivityCmd("SetCurrentActivity", activities[burnerActivityName]).ExecuteAsync();
+            await Task.Delay(2000);
+            // Instance a brave browser window.
             System.Diagnostics.Process process = new System.Diagnostics.Process();
-            process.StartInfo.FileName = "brave";
+            process.StartInfo.FileName = "brave";  // FIXME: Support other chromium browsers.
             process.StartInfo.Arguments = "https://google.com" + " --new-window"; 
             process.Start();
-
-            // TODO: set shortcut if it does not exist
-            await Cli.Wrap("xdotool") // shortcut to move window to screen 0
-            .WithArguments(new[] { "key", "Meta_L+Control_L+Alt_L+1" })
-            .ExecuteAsync();
-
-            
-            // TODO: Get screen data bash implementation. 
-            // Then run the shortcut to move the window to screen 0.
-            // Then get the window geometry data and after that run the shortcut to move to the next screen.
-            // Stop when returned window geometry already exists in data.
-
-            await Cli.Wrap("qdbus")
-            .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "RemoveActivity", burnerActivityName })
-            .ExecuteBufferedAsync();
+            await Task.Delay(2000);
+            // Setup window and data.
+            Command getWinId = Cli.Wrap("xdotool").WithArguments(new[] { "getwindowfocus" });
+            await (getWinId | cmdOutputSB).ExecuteBufferedAsync();
+            string winId = cmdOutputSB.ToString();
+            cmdOutputSB.Clear();
+            await SessionManagerExtensions.RunGivenShortcut(Shortcuts.Screen_0_Move_to);
+            await Task.Delay(2000);
+            await SessionManagerExtensions.RunGivenShortcut(Shortcuts.Fullscreen_Window);
+            await Task.Delay(2000);
+            List<Screen> screens = new List<Screen>();
+            Screen firstScreen = await Screen.GetScreen(winId);
+            Screen newScreen = null!;
+            // Setup screens loop and run it to get dimensions for all the users screens.
+            //FIXME: Can't enter currently.
+            while (firstScreen != newScreen)
+            {
+                if (newScreen != null) { screens.Add(newScreen); }
+                await SessionManagerExtensions.RunGivenShortcut(Shortcuts.Screen_Next_Move_To);
+                await Task.Delay(2000);
+                newScreen = await Screen.GetScreen(winId);
+            }
+            // Clean up burner window and activity.
+            await SessionManagerExtensions.RunGivenShortcut(Shortcuts.Close_Tab);
+            await Task.Delay(2000);
+            await BashUtils.QdbusAvtivityCmd("RemoveActivity", burnerActivityName).ExecuteAsync();
+            await Task.Delay(2000);
+            return screens;
         }
     }
 }

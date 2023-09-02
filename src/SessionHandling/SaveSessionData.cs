@@ -16,21 +16,12 @@ namespace KDESessionManager.SessionHandling
             StringBuilder cmdOutputSB = new StringBuilder();
             string[] delimSB = { Environment.NewLine, "\n" };
 
-            Session session = await GetSession(cmdOutputSB, delimSB, _WindowFilter);
+            Session session = await Session.GetSession(cmdOutputSB, delimSB, _WindowFilter);
             string sessionJson = JsonConvert.SerializeObject(session, Formatting.Indented);
             await File.WriteAllTextAsync(_DynamicOutputPath, sessionJson);
 
 
             Console.WriteLine("Done");
-        }
-
-        private async Task<Session>GetSession(StringBuilder cmdOutputSB, string[] delimSB, WindowFilter windowFilter)
-        {
-            Dictionary<string, string> activities = await Session.GetActivities(cmdOutputSB, delimSB);
-            int desktopsAmount = await Session.GetNumberOfDesktops(cmdOutputSB);
-            List<Window> windows = await Session.GetWindows(cmdOutputSB, delimSB, windowFilter);
-            Session session = new Session(activities, windows, desktopsAmount);
-            return session;
         }
     }
 }

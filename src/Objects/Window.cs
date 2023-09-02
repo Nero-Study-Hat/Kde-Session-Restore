@@ -1,8 +1,7 @@
 using CliWrap;
 using CliWrap.Buffered;
 using System.Text;
-using System.Text.RegularExpressions;
-using Newtonsoft.Json;
+using KDESessionManager.Utilities;
 
 namespace KDESessionManager.Objects
 {
@@ -12,11 +11,11 @@ namespace KDESessionManager.Objects
         public string ApplicationName { get; set; }
         public string[] Activity { get; set; }
         public int DesktopNum { get; set; }
-        public int[] AbsoluteWindowPosition { get; set; }
+        public int AbsoluteWindowPosition { get; set; }
         public List<Tab> Tabs { get; set; }
         public string Id { get; set; }
 
-        public Window(string name, string[] activity, int[] absoluteWindowPosition, int desktopNum, string applicationName, List<Tab> tabs, string id)
+        public Window(string name, string[] activity, int absoluteWindowPosition, int desktopNum, string applicationName, List<Tab> tabs, string id)
         {
             Name = name;
             Activity = activity;
@@ -51,31 +50,30 @@ namespace KDESessionManager.Objects
             await (getActivityIdCmd | awkFilterCmd | cmdOutputSB).ExecuteBufferedAsync();
             string activityId = cmdOutputSB.ToString()[1..^2];
             cmdOutputSB.Clear();
-            Command getActivityNameCmd = Cli.Wrap("qdbus")
-            .WithArguments(new[] { "org.kde.ActivityManager", "/ActivityManager/Activities", "ActivityName", activityId });
-            await (getActivityNameCmd | cmdOutputSB).ExecuteBufferedAsync();
+            await (BashUtils.QdbusAvtivityCmd("ActivityName", activityId) | cmdOutputSB).ExecuteBufferedAsync();
             string activityName = cmdOutputSB.ToString()[0..^1];
             cmdOutputSB.Clear();
             string[] activity = {activityName, activityId};
             return activity;
         }
 
-        public static async Task<int[]> GetAbsolutePosition(string windowId, StringBuilder cmdOutputSB, string[] delimSB)
+        public static async Task<int> GetScreenNumber(string windowId, List<Screen> screens)
         {
-            cmdOutputSB.Clear();
-            Command getWindowPositionCmd = Cli.Wrap("xwininfo")
+            var getWinInfoCmd = Cli.Wrap("xwininfo")
             .WithArguments(new[] { "-id", windowId });
-            Command grepFilterCmd = Cli.Wrap("grep")
-            .WithArguments("Absolute");
-            Command awkFilterCmd = Cli.Wrap("awk")
-            .WithArguments(new[] {"{print $4}"});
-            await (getWindowPositionCmd | grepFilterCmd | awkFilterCmd | cmdOutputSB).ExecuteBufferedAsync();
-            string[] positionDataText = cmdOutputSB.ToString().Split(delimSB, StringSplitOptions.None);
-            int[] absolutePosition = new int[2];
-            absolutePosition[0] = Int32.Parse(positionDataText[0]);
-            absolutePosition[0] = Int32.Parse(positionDataText[1]);
-            cmdOutputSB.Clear();
-            return absolutePosition;
+            var cmdOutput = await BashUtils.FilterCmdGrepAwk(getWinInfoCmd, "Absolute upper-left X", 4);
+            int absX = Int32.Parse(cmdOutput);
+            cmdOutput = await BashUtils.FilterCmdGrepAwk(getWinInfoCmd, "Absolute upper-left Y", 4);
+            int absY = Int32.Parse(cmdOutput);
+
+            foreach(Screen screen in screens)
+            {
+                if (absX > screen.LeftBound && absX < screen.RightBound && absY > screen.TopBound && absY < screen.BottomBound)
+                {
+                    return screen.KdeNum;
+                }
+            }
+            throw new Exception($"Error: Screen not found for window id: {windowId}");
         }
 
         public static async Task<int> GetDesktopNumber(string windowId, StringBuilder cmdOutputSB)

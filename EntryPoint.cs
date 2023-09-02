@@ -4,6 +4,7 @@ using Spectre.Console.Cli;
 using CliWrap;
 using CliWrap.Buffered;
 using Nito.AsyncEx;
+using System.Text;
 
 namespace KDESessionManager
 {
@@ -26,9 +27,11 @@ namespace KDESessionManager
             return app.Run(args);
         }
 
-        public static async Task HandleDependencies()
+        private static async Task HandleDependencies()
         {
-            if (!CheckPackageDependencies().Result)
+            await SetShortcuts();
+            var statusPackageDependencies = await CheckPackageDependencies();
+            if (statusPackageDependencies)
             {
                 Console.WriteLine("Installing linux package dependencies.");
                 var installScriptPath = $"{SessionManagerExtensions.TryGetProjectPath().FullName}/LinuxPackageDependenciesInstall.sh";
@@ -36,7 +39,7 @@ namespace KDESessionManager
                 await (Cli.Wrap("yes") | cmdInstallScript).ExecuteBufferedAsync();
                 Console.WriteLine("Finished installing dependencies.");
             }
-            if (!CheckPackageDependencies().Result)
+            if (statusPackageDependencies)
             {
                 Console.WriteLine("Linux package dependencies failed to install.");
                 //TODO: Error handling.
@@ -45,7 +48,7 @@ namespace KDESessionManager
             }
         }
 
-        public static async Task<bool> CheckPackageDependencies()
+        private static async Task<bool> CheckPackageDependencies()
         {
             try
             {
@@ -56,6 +59,29 @@ namespace KDESessionManager
                 return true;
             }
             catch (Exception) { return false; }
+        }
+
+        private static async Task<int> SetShortcuts()
+        {
+            string shortcutsConfigPath = "~/.config/kglobalshortcutsrc";
+            bool shortcutsConfigExists = File.Exists(shortcutsConfigPath);
+            if (!shortcutsConfigExists) { return 0; }
+            // TODO: Make it possible to choose the shortcuts used by the program in the config, keys speaking.
+            // TODO: Prompt user to set up kde shortcuts and try to account for possible file places on the following distros.
+            // Arch, Debian, Red Hat
+
+            StringBuilder cmdOutputSB = new StringBuilder();
+            CliWrap.Command checkScreenZeroMoveShortcut = Cli.Wrap("kreadconfig5")
+            .WithArguments(new[] { "--group", "kwin", "--key", "Window to Screen 2" });
+            await (checkScreenZeroMoveShortcut | cmdOutputSB).ExecuteBufferedAsync();
+            if (cmdOutputSB.ToString() == "")
+            {
+                await Cli.Wrap("kwriteconfig5")
+                .WithArguments(new[] { "--file", "~/.config/kglobalshortcutsrc", "--group", "kwin", "--key", "Window to Screen 0", "Meta+Ctrl+Alt+3" })
+                .ExecuteAsync();
+            }
+            cmdOutputSB.Clear();
+            return 1;
         }
     } 
 }

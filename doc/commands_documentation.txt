@@ -46,3 +46,8 @@ xrandr | grep ' connected' | awk '{if ($3=="primary") {print $4} else {print $3}
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group "kwin" --key "Window to Screen 2" "Meta+Ctrl+Alt+3,,Window to Screen 2"
 kquitapp5 plasmashell
 kstart5 plasmashell
+
+xwininfo -frame -id "" | grep "Width" | awk '{print $2}'
+xwininfo -frame -id "" | grep "Height" | awk '{print $2}'
+xwininfo -frame -id "" | grep "Absolute upper-left X" | awk '{print $4}'
+xwininfo -frame -id "" | grep "Absolute upper-left Y" | awk '{print $4}'
