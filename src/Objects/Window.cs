@@ -27,9 +27,9 @@ namespace KDESessionManager.Objects
         }
 
 
-        public static async Task<string> GetName(string windowId, StringBuilder cmdOutputSB)
+        public static async Task<string> GetName(string windowId)
         {
-            cmdOutputSB.Clear();
+            StringBuilder cmdOutputSB = new StringBuilder();
             Command getWindowNameCmd = Cli.Wrap("xprop")
             .WithArguments(new[] { "-id", windowId, "WM_NAME" });
             Command sedTrimOutputCmd = Cli.Wrap("sed")
@@ -40,9 +40,9 @@ namespace KDESessionManager.Objects
             return name;
         }
 
-        public static async Task<string[]> GetActivity(string windowId, StringBuilder cmdOutputSB)
+        public static async Task<string[]> GetActivity(string windowId)
         {
-            cmdOutputSB.Clear();
+            StringBuilder cmdOutputSB = new StringBuilder();
             Command getActivityIdCmd = Cli.Wrap("xprop")
             .WithArguments(new[] { "-id", windowId, "_KDE_NET_WM_ACTIVITIES" });
             Command awkFilterCmd = Cli.Wrap("awk")
@@ -59,6 +59,28 @@ namespace KDESessionManager.Objects
 
         public static async Task<int> GetScreenNumber(string windowId, List<Screen> screens)
         {
+            var debug = false;
+            if(windowId == "0x03600008")
+            {
+                debug = true;
+            }
+
+            string terminalWindowId = await GetActiveWindowId();
+            Command checkWindowStatusCmd = Cli.Wrap("xprop").WithArguments(new[] { "-id", windowId });
+            //FIXME: full screen check out put is wrong
+            bool isFullScreen = await BashUtils.FilterCmdGrepAwk(checkWindowStatusCmd, "_NET_WM_STATE(ATOM)", 3) == "_NET_WM_STATE_FULLSCREEN";
+
+            // Fullscreen browser so dimensions data recieved from xwininfo is accurate with tiling.
+            string appName = await GetApplicationName(windowId);
+            if(appName == "brave-browser" && isFullScreen == false) // FIXME: Support other chromium browsers.
+            {
+                await Cli.Wrap("xdotool")
+                .WithArguments(new[] { "windowactivate", "--sync", windowId })
+                .ExecuteAsync();
+                await SessionManagerExtensions.RunGivenShortcut(Session.Shortcuts.Fullscreen_Window);
+                await Task.Delay(1500);
+            }
+
             var getWinInfoCmd = Cli.Wrap("xwininfo")
             .WithArguments(new[] { "-id", windowId });
             var cmdOutput = await BashUtils.FilterCmdGrepAwk(getWinInfoCmd, "Absolute upper-left X", 4);
@@ -66,19 +88,30 @@ namespace KDESessionManager.Objects
             cmdOutput = await BashUtils.FilterCmdGrepAwk(getWinInfoCmd, "Absolute upper-left Y", 4);
             int absY = Int32.Parse(cmdOutput);
 
-            foreach(Screen screen in screens)
+            for(int i = 0; i < screens.Count; i++)
             {
-                if (absX > screen.LeftBound && absX < screen.RightBound && absY > screen.TopBound && absY < screen.BottomBound)
+                Screen screen = screens[i];
+                if (absX >= screen.LeftBound && absX < screen.RightBound && absY >= screen.TopBound && absY < screen.BottomBound)
                 {
-                    return screen.KdeNum;
+                    // Unfullscreen window to clean up.
+                    if(appName == "brave-browser" && isFullScreen == false) // FIXME: Support other chromium browsers.
+                    {
+                        await SessionManagerExtensions.RunGivenShortcut(Session.Shortcuts.Fullscreen_Window);
+                        await Task.Delay(1500);
+                        await Cli.Wrap("xdotool")
+                        .WithArguments(new[] { "windowactivate", "--sync", terminalWindowId })
+                        .ExecuteAsync();
+                        await Task.Delay(300);
+                    }
+                    return i;
                 }
             }
             throw new Exception($"Error: Screen not found for window id: {windowId}");
         }
 
-        public static async Task<int> GetDesktopNumber(string windowId, StringBuilder cmdOutputSB)
+        public static async Task<int> GetDesktopNumber(string windowId)
         {
-            cmdOutputSB.Clear();
+            StringBuilder cmdOutputSB = new StringBuilder();
             Command getWindowDesktopCmd = Cli.Wrap("xprop")
             .WithArguments(new[] { "-id", windowId, "_NET_WM_DESKTOP" });
             Command awkFilterCmd = Cli.Wrap("awk")
@@ -89,9 +122,9 @@ namespace KDESessionManager.Objects
             return desktopNum;
         }
 
-        public static async Task<string> GetApplicationName(string windowId, StringBuilder cmdOutputSB)
+        public static async Task<string> GetApplicationName(string windowId)
         {
-            cmdOutputSB.Clear();
+            StringBuilder cmdOutputSB = new StringBuilder();
             Command getAppNameCmd = Cli.Wrap("xprop")
             .WithArguments(new[] { "-id", windowId, "WM_CLASS" });
             Command awkFilterCmd = Cli.Wrap("awk")
@@ -102,10 +135,10 @@ namespace KDESessionManager.Objects
             return appName;
         }
 
-        public static async Task<List<Tab>> GetTabs(string windowId, StringBuilder cmdOutputSB, string[] delimSB)
+        public static async Task<List<Tab>> GetTabs(string windowId)
         {
-            cmdOutputSB.Clear();
-            string terminalWindowId = await GetActiveWindowId(cmdOutputSB);
+            StringBuilder cmdOutputSB = new StringBuilder();
+            string terminalWindowId = await GetActiveWindowId();
             Command switchWindowsCmd = Cli.Wrap("xdotool")
             .WithArguments(new[] { "windowactivate", "--sync", windowId });
             Command urlsToClipboardCmd = Cli.Wrap("xdotool")
@@ -125,9 +158,9 @@ namespace KDESessionManager.Objects
             return tabs;
         }
 
-        public static async Task<string> GetActiveWindowId(StringBuilder cmdOutputSB)
+        public static async Task<string> GetActiveWindowId()
         {
-            cmdOutputSB.Clear();
+            StringBuilder cmdOutputSB = new StringBuilder();
             Command getActiveWindowIdCmd = Cli.Wrap("xdotool")
             .WithArguments(new[] { "getactivewindow" });
             await (getActiveWindowIdCmd | cmdOutputSB).ExecuteBufferedAsync();

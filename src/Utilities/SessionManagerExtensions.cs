@@ -23,16 +23,18 @@ namespace KDESessionManager.Utilities
             //TODO: Get shortcuts from the main config.
             //TODO: Add the shortcut for for getting the tabs here and in the entry point for setup.
 
+            //FIXME: Super / opt key is not working with other keys for xdotool.
+
             switch(shortcut)
             {
                 case Session.Shortcuts.Screen_0_Move_to:
                     await Cli.Wrap("xdotool")
-                    .WithArguments(new[] { "key", "Meta_L+Control_L+Alt_L+1" })
+                    .WithArguments(new[] { "key", "Super_L+Control_L+alt+1" })
                     .ExecuteAsync();
                     break;
                 case Session.Shortcuts.Screen_Next_Move_To:
                     await Cli.Wrap("xdotool")
-                    .WithArguments(new[] { "key", "Meta_L+Control_L+Alt_L+1" })
+                    .WithArguments(new[] { "key", "Shift_L+Super_L+Right" })
                     .ExecuteAsync();
                     break;
                 case Session.Shortcuts.Fullscreen_Window:
@@ -42,7 +44,7 @@ namespace KDESessionManager.Utilities
                     break;
                 case Session.Shortcuts.Close_Tab:
                     await Cli.Wrap("xdotool")
-                    .WithArguments(new[] { "key", "Control_L+w" })
+                    .WithArguments(new[] { "key", "ctrl+w" })
                     .ExecuteAsync();
                     break;
             }

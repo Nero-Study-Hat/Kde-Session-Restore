@@ -13,10 +13,7 @@ namespace KDESessionManager.SessionHandling
 
         public async Task Process()
         {
-            StringBuilder cmdOutputSB = new StringBuilder();
-            string[] delimSB = { Environment.NewLine, "\n" };
-
-            Session session = await Session.GetSession(cmdOutputSB, delimSB, _WindowFilter);
+            Session session = await Session.GetSession(_WindowFilter);
             string sessionJson = JsonConvert.SerializeObject(session, Formatting.Indented);
             await File.WriteAllTextAsync(_DynamicOutputPath, sessionJson);
 
