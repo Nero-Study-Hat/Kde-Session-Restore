@@ -11,7 +11,7 @@ namespace KDESessionManager.Objects
         public string ApplicationName { get; set; }
         public string[] Activity { get; set; }
         public int DesktopNum { get; set; }
-        public int AbsoluteWindowPosition { get; set; }
+        public int ScreenNum { get; set; }
         public List<Tab> Tabs { get; set; }
         public string Id { get; set; }
 
@@ -19,7 +19,7 @@ namespace KDESessionManager.Objects
         {
             Name = name;
             Activity = activity;
-            AbsoluteWindowPosition = absoluteWindowPosition;
+            ScreenNum = absoluteWindowPosition;
             DesktopNum = desktopNum;
             ApplicationName = applicationName;
             Tabs = tabs;
@@ -59,16 +59,11 @@ namespace KDESessionManager.Objects
 
         public static async Task<int> GetScreenNumber(string windowId, List<Screen> screens)
         {
-            var debug = false;
-            if(windowId == "0x03600008")
-            {
-                debug = true;
-            }
-
             string terminalWindowId = await GetActiveWindowId();
             Command checkWindowStatusCmd = Cli.Wrap("xprop").WithArguments(new[] { "-id", windowId });
             //FIXME: full screen check out put is wrong
-            bool isFullScreen = await BashUtils.FilterCmdGrepAwk(checkWindowStatusCmd, "_NET_WM_STATE(ATOM)", 3) == "_NET_WM_STATE_FULLSCREEN";
+            string screenStatus = await BashUtils.FilterCmdGrepAwk(checkWindowStatusCmd, "_NET_WM_STATE(ATOM)", 3);
+            bool isFullScreen = screenStatus.TrimEnd( '\r', '\n' ) == "_NET_WM_STATE_FULLSCREEN";
 
             // Fullscreen browser so dimensions data recieved from xwininfo is accurate with tiling.
             string appName = await GetApplicationName(windowId);
@@ -78,7 +73,7 @@ namespace KDESessionManager.Objects
                 .WithArguments(new[] { "windowactivate", "--sync", windowId })
                 .ExecuteAsync();
                 await SessionManagerExtensions.RunGivenShortcut(Session.Shortcuts.Fullscreen_Window);
-                await Task.Delay(1500);
+                await Task.Delay(200);
             }
 
             var getWinInfoCmd = Cli.Wrap("xwininfo")
@@ -96,12 +91,14 @@ namespace KDESessionManager.Objects
                     // Unfullscreen window to clean up.
                     if(appName == "brave-browser" && isFullScreen == false) // FIXME: Support other chromium browsers.
                     {
+                        await Cli.Wrap("xdotool")
+                        .WithArguments(new[] { "windowactivate", "--sync", windowId })
+                        .ExecuteAsync();
                         await SessionManagerExtensions.RunGivenShortcut(Session.Shortcuts.Fullscreen_Window);
-                        await Task.Delay(1500);
+                        await Task.Delay(200);
                         await Cli.Wrap("xdotool")
                         .WithArguments(new[] { "windowactivate", "--sync", terminalWindowId })
                         .ExecuteAsync();
-                        await Task.Delay(300);
                     }
                     return i;
                 }

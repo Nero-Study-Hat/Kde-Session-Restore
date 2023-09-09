@@ -275,6 +275,27 @@
       "Id": "0x0360000b"
     },
     {
+      "Name": "linux - Find the default terminal emulator - Super User - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "4274e5d4-940b-47bb-bcce-1504b76b02fe"
+      ],
+      "DesktopNum": 2,
+      "ScreenNum": 0,
+      "Tabs": [
+        {
+          "Title": "System.Diagnostics.Process() bin/sh not opening Terminal window. - Unity Forum",
+          "Url": "https://forum.unity.com/threads/system-diagnostics-process-bin-sh-not-opening-terminal-window.454374/"
+        },
+        {
+          "Title": "linux - Find the default terminal emulator - Super User",
+          "Url": "https://superuser.com/questions/1153988/find-the-default-terminal-emulator"
+        }
+      ],
+      "Id": "0x0360000c"
+    },
+    {
       "Name": "On Worldbuilding: Place Names — countries, cities, places - YouTube - Brave",
       "ApplicationName": "brave-browser",
       "Activity": [
@@ -828,54 +849,25 @@
       "Id": "0x03600021"
     },
     {
-      "Name": "xorg - Command to move a window to all desktops - Unix & Linux Stack Exchange - Brave",
+      "Name": "stopwatch at DuckDuckGo - Brave",
       "ApplicationName": "brave-browser",
       "Activity": [
         "Development",
         "4274e5d4-940b-47bb-bcce-1504b76b02fe"
       ],
-      "DesktopNum": 2,
+      "DesktopNum": 1,
       "ScreenNum": 0,
       "Tabs": [
         {
-          "Title": "cli bash command move window to different desktop kde - Google Search",
-          "Url": "https://www.google.com/search?q=cli+bash+command+move+window+to+different+desktop+kde&sca_esv=564005793&hl=en&ei=HJL8ZIyRBJWlptQPj6id8Ag&ved=0ahUKEwiMj9Pj7p2BAxWVkokEHQ9UB44Q4dUDCBA&uact=5&oq=cli+bash+command+move+window+to+different+desktop+kde&gs_lp=Egxnd3Mtd2l6LXNlcnAiNWNsaSBiYXNoIGNvbW1hbmQgbW92ZSB3aW5kb3cgdG8gZGlmZmVyZW50IGRlc2t0b3Aga2RlMggQIRigARjDBEjkI1DiDViwInABeAGQAQCYAV-gAaAHqgECMTK4AQPIAQD4AQHCAgoQABhHGNYEGLADwgIKECEYoAEYwwQYCsICBRAAGKIE4gMEGAAgQYgGAZAGCA&sclient=gws-wiz-serp"
+          "Title": "stopwatch at DuckDuckGo",
+          "Url": "https://duckduckgo.com/?q=stopwatch&t=brave&ia=answer"
         },
         {
-          "Title": "cli bash command move window to different desktop kde - Google Search",
-          "Url": "https://www.google.com/search?q=cli+bash+command+move+window+to+different+desktop+kde&sca_esv=564005793&hl=en&ei=HJL8ZIyRBJWlptQPj6id8Ag&ved=0ahUKEwiMj9Pj7p2BAxWVkokEHQ9UB44Q4dUDCBA&uact=5&oq=cli+bash+command+move+window+to+different+desktop+kde&gs_lp=Egxnd3Mtd2l6LXNlcnAiNWNsaSBiYXNoIGNvbW1hbmQgbW92ZSB3aW5kb3cgdG8gZGlmZmVyZW50IGRlc2t0b3Aga2RlMggQIRigARjDBEjkI1DiDViwInABeAGQAQCYAV-gAaAHqgECMTK4AQPIAQD4AQHCAgoQABhHGNYEGLADwgIKECEYoAEYwwQYCsICBRAAGKIE4gMEGAAgQYgGAZAGCA&sclient=gws-wiz-serp"
-        },
-        {
-          "Title": "xorg - Command to move a window to all desktops - Unix & Linux Stack Exchange",
-          "Url": "https://unix.stackexchange.com/questions/11893/command-to-move-a-window-to-all-desktops"
+          "Title": "stopwatch at DuckDuckGo",
+          "Url": "https://duckduckgo.com/?q=stopwatch&t=brave&ia=answer"
         }
       ],
       "Id": "0x03600081"
-    },
-    {
-      "Name": "async await - How to call asynchronous method from synchronous method in C#? - Stack Overflow - Brave",
-      "ApplicationName": "brave-browser",
-      "Activity": [
-        "Development",
-        "4274e5d4-940b-47bb-bcce-1504b76b02fe"
-      ],
-      "DesktopNum": 3,
-      "ScreenNum": 0,
-      "Tabs": [
-        {
-          "Title": "c# how to call an async function with parameters from a synchronous function - Google Search",
-          "Url": "https://www.google.com/search?hl=en&q=c%23%20how%20to%20call%20an%20async%20func%20with%20paramaters%20from%20a%20syncronous%20func"
-        },
-        {
-          "Title": "async await - How to call asynchronous method from synchronous method in C#? - Stack Overflow",
-          "Url": "https://stackoverflow.com/questions/9343594/how-to-call-asynchronous-method-from-synchronous-method-in-c"
-        },
-        {
-          "Title": "Argument 1: cannot convert from 'System.Threading.Tasks.Task' to 'System.Action' - Google Search",
-          "Url": "https://www.google.com/search?hl=en&q=Argument%201%3A%20cannot%20convert%20from%20%27System.Threading.Tasks.Task%27%20to%20%27System.Action%27"
-        }
-      ],
-      "Id": "0x036000ff"
     }
   ]
 }

@@ -7,20 +7,6 @@
     "97749d39-cc0f-4e45-9c02-61d523bac539": "Writing"
   },
   "DesktopsAmount": 4,
-  "Screens": [
-    {
-      "TopBound": 120,
-      "BottomBound": 1560,
-      "LeftBound": 1050,
-      "RightBound": 4490
-    },
-    {
-      "TopBound": 0,
-      "BottomBound": 1680,
-      "LeftBound": 0,
-      "RightBound": 1050
-    }
-  ],
   "Windows": [
     {
       "Name": "Separate Accounts/Installations, Workspaces and sync options - Feature Requests - Anytype Community - Brave",
@@ -30,7 +16,7 @@
         "594a4fff-448f-42bc-8a57-8ba1c59a8279"
       ],
       "DesktopNum": 1,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "The Everything App",
@@ -51,7 +37,7 @@
         "594a4fff-448f-42bc-8a57-8ba1c59a8279"
       ],
       "DesktopNum": 4,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "Zackray / ザクレイ - YouTube",
@@ -88,7 +74,7 @@
         "4274e5d4-940b-47bb-bcce-1504b76b02fe"
       ],
       "DesktopNum": 4,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "Fullmetal Alchemist Brotherhood Trailer HD - YouTube",
@@ -125,7 +111,7 @@
         "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
       ],
       "DesktopNum": 2,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "DIE. RESPAWN. REPEAT. [Book 2 Started] | Royal Road",
@@ -154,7 +140,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 2,
-      "ScreenNum": 1,
+      "AbsoluteWindowPosition": 1,
       "Tabs": [
         {
           "Title": "Richardsl/heatmap-calendar-obsidian: An Obsidian plugin for displaying data in a calendar similar to the github activity calendar",
@@ -171,7 +157,7 @@
         "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
       ],
       "DesktopNum": 3,
-      "ScreenNum": 1,
+      "AbsoluteWindowPosition": 1,
       "Tabs": [
         {
           "Title": "BIBI (비비) - Very, Slowly (아주, 천천히) Twenty-Five Twenty-One OST Part 3 (스물다섯 스물하나 OST) Lyrics/가사 - YouTube",
@@ -208,7 +194,7 @@
         "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
       ],
       "DesktopNum": 4,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "Nirvana in Fire《琅琊榜》Japanese DVD promotional trailer HD (Eng Sub) - YouTube",
@@ -241,7 +227,7 @@
         "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
       ],
       "DesktopNum": 2,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "Best Rated | Royal Road",
@@ -275,6 +261,27 @@
       "Id": "0x0360000b"
     },
     {
+      "Name": "linux - Find the default terminal emulator - Super User - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "4274e5d4-940b-47bb-bcce-1504b76b02fe"
+      ],
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": 0,
+      "Tabs": [
+        {
+          "Title": "System.Diagnostics.Process() bin/sh not opening Terminal window. - Unity Forum",
+          "Url": "https://forum.unity.com/threads/system-diagnostics-process-bin-sh-not-opening-terminal-window.454374/"
+        },
+        {
+          "Title": "linux - Find the default terminal emulator - Super User",
+          "Url": "https://superuser.com/questions/1153988/find-the-default-terminal-emulator"
+        }
+      ],
+      "Id": "0x0360000c"
+    },
+    {
       "Name": "On Worldbuilding: Place Names — countries, cities, places - YouTube - Brave",
       "ApplicationName": "brave-browser",
       "Activity": [
@@ -282,7 +289,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 4,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "Writing Vivid Descriptions (and when to shut up) | On Writing - YouTube",
@@ -311,7 +318,7 @@
         "594a4fff-448f-42bc-8a57-8ba1c59a8279"
       ],
       "DesktopNum": 4,
-      "ScreenNum": 1,
+      "AbsoluteWindowPosition": 1,
       "Tabs": [
         {
           "Title": "[MV] Park Ji Won(fromis_9)(박지원(프로미스나인)) - Cloud | 라켓소년단 OST - YouTube",
@@ -340,7 +347,7 @@
         "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
       ],
       "DesktopNum": 2,
-      "ScreenNum": 1,
+      "AbsoluteWindowPosition": 1,
       "Tabs": [
         {
           "Title": "reddit fantasy writing games that use magic at DuckDuckGo",
@@ -381,7 +388,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 4,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "Dear Authors.. Main Characters - YouTube",
@@ -438,7 +445,7 @@
         "4274e5d4-940b-47bb-bcce-1504b76b02fe"
       ],
       "DesktopNum": 4,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "CYBER PROGRAMMER - Productivity Music 💰 #30 - YouTube",
@@ -463,7 +470,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 3,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "The Science of Thinking - YouTube",
@@ -492,7 +499,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 2,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "The True Difference Between Magic and Technology - YouTube",
@@ -533,7 +540,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 1,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "New Magic Sys Main Doc",
@@ -550,7 +557,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 2,
-      "ScreenNum": 1,
+      "AbsoluteWindowPosition": 1,
       "Tabs": [
         {
           "Title": "Why I teach people how to hack | Ýmir Vigfússon | TEDxReykjavík - YouTube",
@@ -567,7 +574,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 2,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "concepts in fiction defined - YouTube",
@@ -604,7 +611,7 @@
         "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
       ],
       "DesktopNum": 4,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "Chill Beats for Worldbuilding and Writing — Sci-fi Playlist - YouTube",
@@ -641,7 +648,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 3,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "The Law of Conservation: Crash Course Engineering #7 - YouTube",
@@ -682,7 +689,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 1,
-      "ScreenNum": 1,
+      "AbsoluteWindowPosition": 1,
       "Tabs": [
         {
           "Title": "world building music - YouTube",
@@ -703,7 +710,7 @@
         "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
       ],
       "DesktopNum": 1,
-      "ScreenNum": 1,
+      "AbsoluteWindowPosition": 1,
       "Tabs": [
         {
           "Title": "The Story of Vox Machina Fansub - YouTube",
@@ -732,7 +739,7 @@
         "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
       ],
       "DesktopNum": 1,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "Arrival at Kraghammer | Critical Role: VOX MACHINA | Episode 1 - YouTube",
@@ -765,7 +772,7 @@
         "97749d39-cc0f-4e45-9c02-61d523bac539"
       ],
       "DesktopNum": 1,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "(942) Discord | #character-creation-for-pat-and-dan | Thoulor D&D Campaign",
@@ -798,7 +805,7 @@
         "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
       ],
       "DesktopNum": 3,
-      "ScreenNum": 0,
+      "AbsoluteWindowPosition": 0,
       "Tabs": [
         {
           "Title": "LOL cinematics - YouTube",
@@ -826,56 +833,20 @@
         }
       ],
       "Id": "0x03600021"
+    }
+  ],
+  "Screens": [
+    {
+      "TopBound": 120,
+      "BottomBound": 1560,
+      "LeftBound": 1050,
+      "RightBound": 4490
     },
     {
-      "Name": "xorg - Command to move a window to all desktops - Unix & Linux Stack Exchange - Brave",
-      "ApplicationName": "brave-browser",
-      "Activity": [
-        "Development",
-        "4274e5d4-940b-47bb-bcce-1504b76b02fe"
-      ],
-      "DesktopNum": 2,
-      "ScreenNum": 0,
-      "Tabs": [
-        {
-          "Title": "cli bash command move window to different desktop kde - Google Search",
-          "Url": "https://www.google.com/search?q=cli+bash+command+move+window+to+different+desktop+kde&sca_esv=564005793&hl=en&ei=HJL8ZIyRBJWlptQPj6id8Ag&ved=0ahUKEwiMj9Pj7p2BAxWVkokEHQ9UB44Q4dUDCBA&uact=5&oq=cli+bash+command+move+window+to+different+desktop+kde&gs_lp=Egxnd3Mtd2l6LXNlcnAiNWNsaSBiYXNoIGNvbW1hbmQgbW92ZSB3aW5kb3cgdG8gZGlmZmVyZW50IGRlc2t0b3Aga2RlMggQIRigARjDBEjkI1DiDViwInABeAGQAQCYAV-gAaAHqgECMTK4AQPIAQD4AQHCAgoQABhHGNYEGLADwgIKECEYoAEYwwQYCsICBRAAGKIE4gMEGAAgQYgGAZAGCA&sclient=gws-wiz-serp"
-        },
-        {
-          "Title": "cli bash command move window to different desktop kde - Google Search",
-          "Url": "https://www.google.com/search?q=cli+bash+command+move+window+to+different+desktop+kde&sca_esv=564005793&hl=en&ei=HJL8ZIyRBJWlptQPj6id8Ag&ved=0ahUKEwiMj9Pj7p2BAxWVkokEHQ9UB44Q4dUDCBA&uact=5&oq=cli+bash+command+move+window+to+different+desktop+kde&gs_lp=Egxnd3Mtd2l6LXNlcnAiNWNsaSBiYXNoIGNvbW1hbmQgbW92ZSB3aW5kb3cgdG8gZGlmZmVyZW50IGRlc2t0b3Aga2RlMggQIRigARjDBEjkI1DiDViwInABeAGQAQCYAV-gAaAHqgECMTK4AQPIAQD4AQHCAgoQABhHGNYEGLADwgIKECEYoAEYwwQYCsICBRAAGKIE4gMEGAAgQYgGAZAGCA&sclient=gws-wiz-serp"
-        },
-        {
-          "Title": "xorg - Command to move a window to all desktops - Unix & Linux Stack Exchange",
-          "Url": "https://unix.stackexchange.com/questions/11893/command-to-move-a-window-to-all-desktops"
-        }
-      ],
-      "Id": "0x03600081"
-    },
-    {
-      "Name": "async await - How to call asynchronous method from synchronous method in C#? - Stack Overflow - Brave",
-      "ApplicationName": "brave-browser",
-      "Activity": [
-        "Development",
-        "4274e5d4-940b-47bb-bcce-1504b76b02fe"
-      ],
-      "DesktopNum": 3,
-      "ScreenNum": 0,
-      "Tabs": [
-        {
-          "Title": "c# how to call an async function with parameters from a synchronous function - Google Search",
-          "Url": "https://www.google.com/search?hl=en&q=c%23%20how%20to%20call%20an%20async%20func%20with%20paramaters%20from%20a%20syncronous%20func"
-        },
-        {
-          "Title": "async await - How to call asynchronous method from synchronous method in C#? - Stack Overflow",
-          "Url": "https://stackoverflow.com/questions/9343594/how-to-call-asynchronous-method-from-synchronous-method-in-c"
-        },
-        {
-          "Title": "Argument 1: cannot convert from 'System.Threading.Tasks.Task' to 'System.Action' - Google Search",
-          "Url": "https://www.google.com/search?hl=en&q=Argument%201%3A%20cannot%20convert%20from%20%27System.Threading.Tasks.Task%27%20to%20%27System.Action%27"
-        }
-      ],
-      "Id": "0x036000ff"
+      "TopBound": 0,
+      "BottomBound": 1680,
+      "LeftBound": 0,
+      "RightBound": 1050
     }
   ]
 }

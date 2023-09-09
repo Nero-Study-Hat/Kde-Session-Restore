@@ -1,23 +1,22 @@
-using System;
-using System.Text;
 using Newtonsoft.Json;
 using KDESessionManager.Objects;
 using KDESessionManager.Objects.Configs;
+using CliWrap;
 
 namespace KDESessionManager.SessionHandling
 {
     public class SaveSessionData
     {
-        public WindowFilter _WindowFilter;
-        public string _DynamicOutputPath = "";
-
-        public async Task Process()
+        public async Task Process(WindowFilter windowFilter, DynamicOutputPath dynamicOutputPath)
         {
-            Session session = await Session.GetSession(_WindowFilter);
+            string terminalWindowId = await Window.GetActiveWindowId();
+            Session session = await Session.GetSession(windowFilter);
             string sessionJson = JsonConvert.SerializeObject(session, Formatting.Indented);
-            await File.WriteAllTextAsync(_DynamicOutputPath, sessionJson);
-
-
+            string outputPath = DynamicOutputPath.GetPath(windowFilter , dynamicOutputPath);
+            await File.WriteAllTextAsync(outputPath, sessionJson);
+            await Cli.Wrap("xdotool")
+            .WithArguments(new[] { "windowactivate", "--sync", terminalWindowId })
+            .ExecuteAsync();
             Console.WriteLine("Done");
         }
     }

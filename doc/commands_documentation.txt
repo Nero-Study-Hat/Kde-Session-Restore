@@ -51,3 +51,5 @@ xwininfo -frame -id "" | grep "Width" | awk '{print $2}'
 xwininfo -frame -id "" | grep "Height" | awk '{print $2}'
 xwininfo -frame -id "" | grep "Absolute upper-left X" | awk '{print $4}'
 xwininfo -frame -id "" | grep "Absolute upper-left Y" | awk '{print $4}'
+
+wmctrl -i -r "WID" -t "DESKNUM" # move specified window to specified desktop

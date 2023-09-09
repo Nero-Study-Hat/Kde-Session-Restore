@@ -11,8 +11,8 @@ namespace KDESessionManager.Objects
     {
         public Dictionary<string, string> Activities { get; set; }
         public int DesktopsAmount { get; set; }
-        public List<Window> Windows { get; set; }
         public List<Screen> Screens { get; set; }
+        public List<Window> Windows { get; set; }
 
         public Session(Dictionary<string, string> activities, List<Window> windows, int desktopsAmount, List<Screen> screens)
         {
@@ -137,7 +137,7 @@ namespace KDESessionManager.Objects
             StringBuilder cmdOutputSB = new StringBuilder();
             string burnerActivityName = "Temp Burner Activity";
             await BashUtils.QdbusAvtivityCmd("AddActivity", burnerActivityName).ExecuteAsync();
-            await Task.Delay(2000);
+            await Task.Delay(300);
             await (BashUtils.QdbusAvtivityCmd("CurrentActivity") | cmdOutputSB).ExecuteBufferedAsync();
             string initialActivity = cmdOutputSB.ToString();
             cmdOutputSB.Clear();
@@ -145,22 +145,22 @@ namespace KDESessionManager.Objects
             var activities = await GetActivities();
             string burnerActivityId = activities.First(a => a.Value == burnerActivityName).Key;
             await BashUtils.QdbusAvtivityCmd("SetCurrentActivity", burnerActivityId).ExecuteAsync();
-            await Task.Delay(2000);
+            await Task.Delay(400);
             // Instance a brave browser window.
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             process.StartInfo.FileName = "brave";  // FIXME: Support other chromium browsers.
             process.StartInfo.Arguments = "https://google.com" + " --new-window"; 
             process.Start();
-            await Task.Delay(1500);
+            await Task.Delay(300);
             // Setup window and data.
             Command getWinId = Cli.Wrap("xdotool").WithArguments(new[] { "getwindowfocus" });
             await (getWinId | cmdOutputSB).ExecuteBufferedAsync();
             string winId = cmdOutputSB.ToString();
             cmdOutputSB.Clear();
             await SessionManagerExtensions.RunGivenShortcut(Shortcuts.Screen_0_Move_to);
-            await Task.Delay(1000);
+            await Task.Delay(400);
             await SessionManagerExtensions.RunGivenShortcut(Shortcuts.Fullscreen_Window);
-            await Task.Delay(1000);
+            await Task.Delay(400);
             List<Screen> screens = new List<Screen>();
             Screen firstScreen = await Screen.GetScreen(winId);
             screens.Add(firstScreen);
@@ -168,7 +168,7 @@ namespace KDESessionManager.Objects
             while (true)
             {
                 await SessionManagerExtensions.RunGivenShortcut(Shortcuts.Screen_Next_Move_To);
-                await Task.Delay(1000);
+                await Task.Delay(500);
                 Screen newScreen = await Screen.GetScreen(winId);
                 if (JsonConvert.SerializeObject(firstScreen) == JsonConvert.SerializeObject(newScreen)) break;
                 screens.Add(newScreen);
@@ -176,9 +176,9 @@ namespace KDESessionManager.Objects
             // Clean up burner window and activity.
             await SessionManagerExtensions.RunGivenShortcut(Shortcuts.Close_Tab);
             await BashUtils.QdbusAvtivityCmd("SetCurrentActivity", initialActivity).ExecuteAsync();
-            await Task.Delay(2000);
-            await BashUtils.QdbusAvtivityCmd("RemoveActivity", burnerActivityName).ExecuteAsync();
-            await Task.Delay(2000);
+            await Task.Delay(500);
+            await BashUtils.QdbusAvtivityCmd("RemoveActivity", burnerActivityId).ExecuteAsync();
+            await Task.Delay(200);
             return screens;
         }
     }

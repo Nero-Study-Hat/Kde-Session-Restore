@@ -1,0 +1,616 @@
+{
+  "Activities": {
+    "Development": "4274e5d4-940b-47bb-bcce-1504b76b02fe",
+    "IT": "9e29f2d9-bbf4-4867-9e76-21f3ce772c00",
+    "Productivity": "594a4fff-448f-42bc-8a57-8ba1c59a8279",
+    "Slack": "a5db09b4-51a1-472e-8dd4-88bd7caf77dc",
+    "Writing": "97749d39-cc0f-4e45-9c02-61d523bac539"
+  },
+  "DesktopsAmount": 4,
+  "Windows": [
+    {
+      "Name": "Separate Accounts/Installations, Workspaces and sync options - Feature Requests - Anytype Community - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Productivity",
+        "594a4fff-448f-42bc-8a57-8ba1c59a8279"
+      ],
+      "DesktopNum": 3,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "The Everything App",
+          "Url": "https://anytype.io/"
+        },
+        {
+          "Title": "Separate Accounts/Installations, Workspaces and sync options - Feature Requests - Anytype Community",
+          "Url": "https://community.anytype.io/t/separate-accounts-installations-workspaces-and-sync-options/1250"
+        }
+      ],
+      "Id": "0x03800003"
+    },
+    {
+      "Name": "Learn Katakana: The Ultimate Guide - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Productivity",
+        "594a4fff-448f-42bc-8a57-8ba1c59a8279"
+      ],
+      "DesktopNum": 4,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Zackray / ザクレイ - YouTube",
+          "Url": "https://www.youtube.com/@zackray3056/videos"
+        },
+        {
+          "Title": "Learn Katakana: The Ultimate Guide",
+          "Url": "https://www.tofugu.com/japanese/learn-katakana/"
+        },
+        {
+          "Title": "Practice Hiragana & Katakana",
+          "Url": "https://kana-quiz.tofugu.com/"
+        },
+        {
+          "Title": "コーディング - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0"
+        },
+        {
+          "Title": "ゲーム開発 - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=%E3%82%B2%E3%83%BC%E3%83%A0%E9%96%8B%E7%99%BA"
+        },
+        {
+          "Title": "Language Learning with YouTube: A Simple but Powerful Tip - YouTube",
+          "Url": "https://www.youtube.com/watch?v=MadpZEBFHIc"
+        }
+      ],
+      "Id": "0x03800005"
+    },
+    {
+      "Name": "(905) Discord | #general | BCC Create Writing Club - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Slack",
+        "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
+      ],
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Cruel Summer - YouTube",
+          "Url": "https://www.youtube.com/watch?v=5XUPcRxqkHg"
+        },
+        {
+          "Title": "Wildfire - YouTube",
+          "Url": "https://www.youtube.com/watch?v=SxlW79tDhCA"
+        },
+        {
+          "Title": "Starlight - YouTube",
+          "Url": "https://www.youtube.com/watch?v=sFT4kjrytW8"
+        },
+        {
+          "Title": "BIBI (비비) - Very, Slowly (아주, 천천히) Twenty-Five Twenty-One OST Part 3 (스물다섯 스물하나 OST) Lyrics/가사 - YouTube",
+          "Url": "https://www.youtube.com/watch?v=_hgSiJzCDJQ"
+        },
+        {
+          "Title": "Seol Hoseung (설호승) SURL - Your World (너의 세상) Twenty-Five Twenty-One OST 9 (스물다섯 스물하나 OST) Lyrics/가사 - YouTube",
+          "Url": "https://www.youtube.com/watch?v=jFxOe-W6aC0"
+        },
+        {
+          "Title": "DK (SEVENTEEN) - 'Go!' (2521 OST 5) Lyrics Color Coded (Han/Rom/Eng) | @HansaGame - YouTube",
+          "Url": "https://www.youtube.com/watch?v=RxllfIUYS7k"
+        },
+        {
+          "Title": "10CM (십센치) - Drawer (서랍) Our Beloved Summer OST Part 1 (그 해 우리는 OST) Lyrics/가사 [Han|Rom|Eng] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=1EqlpIspz5I"
+        },
+        {
+          "Title": "BIBI (비비) - Maybe If (우리가 헤어져야 했던 이유) Our Beloved Summer OST 2 (그 해 우리는 OST) Lyrics/가사 [Han|Rom|Eng] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=9CkZHs_TBnA"
+        },
+        {
+          "Title": "V (BTS) - 'Christmas Tree' (Our Beloved Summer OST 5) Lyrics Color Coded (Han/Rom/Eng) |@HansaGame - YouTube",
+          "Url": "https://www.youtube.com/watch?v=M_E5mXVJ0D4"
+        },
+        {
+          "Title": "RED VELVET - 'FUTURE' (미래) [Start-Up OST Part.1] Lyrics [Color Coded_Han_Rom_Eng] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=oiNkumxPVzU"
+        },
+        {
+          "Title": "(905) Discord | #general | BCC Create Writing Club",
+          "Url": "https://discord.com/channels/1112867253008994384/1112867253008994391"
+        }
+      ],
+      "Id": "0x03800006"
+    },
+    {
+      "Name": "gravity ace rigid bodies - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Slack",
+        "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
+      ],
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Twenty Five Twenty One - K Drama",
+          "Url": "https://www.remnote.com/w/612cfdc49f54bc0034b147d2/Twenty-Five-Twenty-One--K-Drama-MOCWSnrYqa5PlK6Qu"
+        },
+        {
+          "Title": "making a complex combo system fighting game programming - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=making+a+complex+combo+system+fighting+game+programming"
+        },
+        {
+          "Title": "programming knockback - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=programming+knockback+top+down"
+        },
+        {
+          "Title": "How to create knockback in Unity - YouTube",
+          "Url": "https://www.youtube.com/watch?v=RXhTD8YZnY4"
+        },
+        {
+          "Title": "Part 17 - Knockback: Make a game like Zelda using Unity and C# - YouTube",
+          "Url": "https://www.youtube.com/watch?v=QnsGSCXknUY"
+        },
+        {
+          "Title": "using rigid bodies godot - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=using+rigid+bodies+godot"
+        },
+        {
+          "Title": "using rigid bodies forces godot - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=using+rigid+bodies+forces+godot"
+        },
+        {
+          "Title": "How to Apply Forces to a RigidBody in Godot (2D & 3D) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=XSFkAzXQSWE"
+        },
+        {
+          "Title": "gravity ace rigid bodies - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=gravity+ace+rigid+bodies"
+        }
+      ],
+      "Id": "0x03800007"
+    },
+    {
+      "Name": "Nightcore - Ready For This - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "4274e5d4-940b-47bb-bcce-1504b76b02fe"
+      ],
+      "DesktopNum": 4,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Fullmetal Alchemist Brotherhood Trailer HD - YouTube",
+          "Url": "https://www.youtube.com/watch?v=AYlksPeSXrs"
+        },
+        {
+          "Title": "We Are The Empty - 10,000 Miles (Official Lyric Video) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=efAq3ZSbkkY"
+        },
+        {
+          "Title": "Your Turn To Roll (Critical Role Intro) - Cover by Chloe - YouTube",
+          "Url": "https://www.youtube.com/watch?v=TpHwm_6-cgE&list=PLHbvOSfo_mltebQMzCmHPntR6kABnNbxC&index=43"
+        },
+        {
+          "Title": "Spiritualized - Ladies and Gentlemen We Are Floating in Space (lyrics) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=5BVZbAPz9Bs"
+        },
+        {
+          "Title": "Fate/Apocrypha 「 AMV 」- War On Falling Stars - YouTube",
+          "Url": "https://www.youtube.com/watch?v=M4-zazVil6k"
+        },
+        {
+          "Title": "Nightcore - Ready For This - YouTube",
+          "Url": "https://www.youtube.com/watch?v=v1VSh3MvRG0"
+        },
+        {
+          "Title": "NEFFEX - Best of Me 🤘 [Copyright Free] No.23 - YouTube",
+          "Url": "https://www.youtube.com/watch?v=A4LiP8WFuG0"
+        },
+        {
+          "Title": "Nerv - Low - YouTube",
+          "Url": "https://www.youtube.com/watch?v=FT8J3bqPLag"
+        },
+        {
+          "Title": "TrineATX - The Fight [HD] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=z2TCWd_9h2s"
+        }
+      ],
+      "Id": "0x03800008"
+    },
+    {
+      "Name": "Supervillainy and Other Poor Career Choices | Royal Road - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Slack",
+        "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
+      ],
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Best Rated | Royal Road",
+          "Url": "https://www.royalroad.com/fictions/best-rated?page=15"
+        },
+        {
+          "Title": "DIE. RESPAWN. REPEAT. [Book 1 Complete] | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/66643/die-respawn-repeat-book-1-complete"
+        },
+        {
+          "Title": "A Practical Guide to Sorcery | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/34009/a-practical-guide-to-sorcery"
+        },
+        {
+          "Title": "Chapter 3 - The Elder Lands (A Kingdom Building LitRPG) | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/64948/the-elder-lands-a-kingdom-building-litrpg/chapter/1122762/chapter-3"
+        },
+        {
+          "Title": "Supervillainy and Other Poor Career Choices | Royal Road",
+          "Url": "https://www.royalroad.com/fiction/22653/supervillainy-and-other-poor-career-choices"
+        }
+      ],
+      "Id": "0x03800009"
+    },
+    {
+      "Name": "Dataview in Obsidian: A Beginner's Guide - Obsidian Rocks - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Writing",
+        "97749d39-cc0f-4e45-9c02-61d523bac539"
+      ],
+      "DesktopNum": 2,
+      "AbsoluteWindowPosition": [
+        48,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "dataview obsidian get notes from a filder at DuckDuckGo",
+          "Url": "https://duckduckgo.com/?q=dataview+obsidian+get+notes+from+a+filder&t=brave&ia=web"
+        },
+        {
+          "Title": "Listing all files within a directory that the current note is in - current folder - Basement - Obsidian Forum",
+          "Url": "https://forum.obsidian.md/t/listing-all-files-within-a-directory-that-the-current-note-is-in-current-folder/20869"
+        },
+        {
+          "Title": "how to exlude a subtag or subfolder dataview obsidian - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=how%20to%20exlude%20a%20subtag%20or%20subfolder%20dataview%20obsidian"
+        },
+        {
+          "Title": "Exclude all sub-folders in dataview query - Help - Obsidian Forum",
+          "Url": "https://forum.obsidian.md/t/exclude-all-sub-folders-in-dataview-query/52130"
+        },
+        {
+          "Title": "Dataview",
+          "Url": "https://blacksmithgu.github.io/obsidian-dataview/"
+        },
+        {
+          "Title": "Dataview in Obsidian: A Beginner's Guide - Obsidian Rocks",
+          "Url": "https://obsidian.rocks/dataview-in-obsidian-a-beginners-guide/"
+        }
+      ],
+      "Id": "0x0380000a"
+    },
+    {
+      "Name": "C# Exceptions (Try..Catch) - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "4274e5d4-940b-47bb-bcce-1504b76b02fe"
+      ],
+      "DesktopNum": 3,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "c# check if a file exists for the provided path - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=c%23%20check%20if%20a%20file%20exists%20for%20the%20provided%20path"
+        },
+        {
+          "Title": "c# - Check if file or folder by given path exists - Stack Overflow",
+          "Url": "https://stackoverflow.com/questions/26270873/check-if-file-or-folder-by-given-path-exists"
+        },
+        {
+          "Title": "newtonsoft json validate json to object - Google Search",
+          "Url": "https://www.google.com/search?q=newtonsoft+json+validate+json+to+object&sca_esv=558472118&hl=en&sxsrf=AB5stBhOmHSuD4B8LYXEKOWdMPIB9VbcQQ%3A1692496050192&ei=snDhZPepC9-vptQPva2umAo&oq=newtonsoft+json+validate+json+to+ob&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgDIiNuZXd0b25zb2Z0IGpzb24gdmFsaWRhdGUganNvbiB0byBvYioCCAAyBRAhGKABMggQIRigARiLAzIIECEYoAEYiwMyBRAhGKABMggQIRirAhiLA0jOXFC2D1jMUXADeAGQAQCYAXigAZoVqgEEMjkuNrgBA8gBAPgBAcICChAAGEcY1gQYsAPCAggQABiKBRiRAsICBxAAGIoFGEPCAgsQLhiABBixAxiDAcICCxAAGIoFGLEDGIMBwgIREC4YgAQYsQMYgwEYxwEY0QPCAgsQABiABBixAxiDAcICBRAuGIAEwgIIEAAYgAQYsQPCAgQQIxgnwgIREC4YgAQYsQMYgwEYxwEYrwHCAggQLhiABBixA8ICCxAuGIAEGMcBGNEDwgIIEC4YsQMYgATCAgsQABiKBRixAxiRAsICChAAGIAEGLEDGArCAgcQABiABBgKwgIFEAAYgATCAgYQABgWGB7CAggQABiKBRiGA8ICBRAhGKsCwgILECEYFhgeGB0YiwPiAwQYACBBiAYBkAYI&sclient=gws-wiz-serp"
+        },
+        {
+          "Title": "how does newtonsoft jschema work - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=how%20does%20newtonsoft%20jschema%20work#ip=1"
+        },
+        {
+          "Title": "c# generate json schema from object - Google Search",
+          "Url": "https://www.google.com/search?q=c%23+generate+json+schema+from+object&sca_esv=558560939&hl=en&sxsrf=AB5stBi6qLhqvEOgRWURjtp-3J_lv7tQHA%3A1692540351247&ei=vx3iZITEDrujptQPrtycmAY&oq=c%23+generate+json+sch&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhRjIyBnZW5lcmF0ZSBqc29uIHNjaCoCCAEyBRAAGIAEMgUQABiABDIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHkjgSVAAWP88cAN4AZABAJgBeKAByw2qAQQyMS4yuAEDyAEA-AEBwgIEECMYJ8ICCBAAGIoFGJECwgIIEAAYgAQYsQPCAhEQLhiABBixAxiDARjHARjRA8ICCxAAGIAEGLEDGIMBwgIKEAAYigUYsQMYQ8ICBxAAGIoFGEPCAgoQABiABBgUGIcCwgIIECEYoAEYiwPiAwQYACBBiAYB&sclient=gws-wiz-serp"
+        },
+        {
+          "Title": "GitHub - RicoSuter/NJsonSchema: JSON Schema reader, generator and validator for .NET",
+          "Url": "https://github.com/RicoSuter/NJsonSchema"
+        },
+        {
+          "Title": "NJsonSchema exception validating { ... } - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=NJsonSchema%20exception%20validating%20%7B%20...%20%7D"
+        },
+        {
+          "Title": "NJsonSchema/src/NJsonSchema/Validation/ValidationError.cs at master · RicoSuter/NJsonSchema · GitHub",
+          "Url": "https://github.com/RicoSuter/NJsonSchema/blob/master/src/NJsonSchema/Validation/ValidationError.cs"
+        },
+        {
+          "Title": "NJsonSchema/src/NJsonSchema/Validation/JsonSchemaValidator.cs at master · RicoSuter/NJsonSchema · GitHub",
+          "Url": "https://github.com/RicoSuter/NJsonSchema/blob/master/src/NJsonSchema/Validation/JsonSchemaValidator.cs"
+        },
+        {
+          "Title": "NJsonSchema/README.md at master · RicoSuter/NJsonSchema · GitHub",
+          "Url": "https://github.com/RicoSuter/NJsonSchema/blob/master/README.md"
+        },
+        {
+          "Title": "c# try catch - Google Search",
+          "Url": "https://www.google.com/search?hl=en&q=c%23%20try%20catch"
+        },
+        {
+          "Title": "C# Exceptions (Try..Catch)",
+          "Url": "https://www.w3schools.com/cs/cs_exceptions.php"
+        }
+      ],
+      "Id": "0x0380000b"
+    },
+    {
+      "Name": "Fate/Apocrypha 「 AMV 」- War On Falling Stars - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Slack",
+        "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
+      ],
+      "DesktopNum": 4,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "(896) Discord | 'thread for music dump' | Bosan",
+          "Url": "https://discord.com/channels/521050287046262826/1142197528868167811"
+        },
+        {
+          "Title": "Touch The Sky / Milkoi & Miraie - YouTube",
+          "Url": "https://www.youtube.com/watch?v=09SPgjG8xgQ"
+        },
+        {
+          "Title": "Kozah - Dream State - YouTube",
+          "Url": "https://www.youtube.com/watch?v=NJz3mDrhcio"
+        },
+        {
+          "Title": "Attack on Titan OST - Barricades | Hiroyuki Sawano - YouTube",
+          "Url": "https://www.youtube.com/watch?v=mwa8PLKPBsU"
+        },
+        {
+          "Title": "Fate/Apocrypha 「 AMV 」- War On Falling Stars - YouTube",
+          "Url": "https://www.youtube.com/watch?v=M4-zazVil6k"
+        },
+        {
+          "Title": "Nightcore - Ready For This - YouTube",
+          "Url": "https://www.youtube.com/watch?v=v1VSh3MvRG0"
+        },
+        {
+          "Title": "Jørgen Dahl Moe - A Play For The Gallery (Official Lyric Video) - YouTube",
+          "Url": "https://www.youtube.com/watch?v=viH_kkE7VZU"
+        }
+      ],
+      "Id": "0x0380000c"
+    },
+    {
+      "Name": "You all NEED these Obsidian community plugins - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Writing",
+        "97749d39-cc0f-4e45-9c02-61d523bac539"
+      ],
+      "DesktopNum": 4,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "You all NEED these Obsidian community plugins - YouTube",
+          "Url": "https://www.youtube.com/watch?v=Yzi1o-BH6QQ"
+        },
+        {
+          "Title": "Use Obsidian (BEST Markdown editor) for note taking and tech docs! - YouTube",
+          "Url": "https://www.youtube.com/watch?v=cBzc5r-FNW0"
+        }
+      ],
+      "Id": "0x0380000d"
+    },
+    {
+      "Name": "Using the Obsidian Quick Add Plugin - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Writing",
+        "97749d39-cc0f-4e45-9c02-61d523bac539"
+      ],
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Using the Obsidian Quick Add Plugin - YouTube",
+          "Url": "https://www.youtube.com/watch?v=LrQVQ37y6IU"
+        },
+        {
+          "Title": "Automate Your Vault With Templater - How to Use Templater in Obsidian - YouTube",
+          "Url": "https://www.youtube.com/watch?v=QpJbeP8f55A"
+        },
+        {
+          "Title": "Building a USEFUL Dashboard in Obsidian - YouTube",
+          "Url": "https://www.youtube.com/watch?v=AatZl1Z_n-g"
+        }
+      ],
+      "Id": "0x0380000e"
+    },
+    {
+      "Name": "phibr0/obsidian-commander: Commander - Obsidian Plugin | Add Commands to every part of Obsidian's user interface - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Writing",
+        "97749d39-cc0f-4e45-9c02-61d523bac539"
+      ],
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        48,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Richardsl/heatmap-calendar-obsidian: An Obsidian plugin for displaying data in a calendar similar to the github activity calendar",
+          "Url": "https://github.com/Richardsl/heatmap-calendar-obsidian"
+        },
+        {
+          "Title": "phibr0/obsidian-commander: Commander - Obsidian Plugin | Add Commands to every part of Obsidian's user interface",
+          "Url": "https://github.com/phibr0/obsidian-commander"
+        }
+      ],
+      "Id": "0x0380000f"
+    },
+    {
+      "Name": "FlorianWoelki/obsidian-icon-folder: Simply add icons to your folders or files in Obsidian. - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Writing",
+        "97749d39-cc0f-4e45-9c02-61d523bac539"
+      ],
+      "DesktopNum": 4,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "custom icon packs for obsidian at DuckDuckGo",
+          "Url": "https://duckduckgo.com/?q=custom+icon+packs+for+obsidian&t=brave&ia=web"
+        },
+        {
+          "Title": "FlorianWoelki/obsidian-icon-folder: Simply add icons to your folders or files in Obsidian.",
+          "Url": "https://github.com/FlorianWoelki/obsidian-icon-folder"
+        },
+        {
+          "Title": "visini/obsidian-icons-plugin: Add icons to your Obsidian notes – Experimental Obsidian Plugin",
+          "Url": "https://github.com/visini/obsidian-icons-plugin"
+        },
+        {
+          "Title": "madmaxms/iconpack-obsidian: Gnome Icon Pack based upon Faenza, optimized for dark themes",
+          "Url": "https://github.com/madmaxms/iconpack-obsidian"
+        }
+      ],
+      "Id": "0x03800010"
+    },
+    {
+      "Name": "Oh My Venus | 오 마이 비너스 [Trailer] - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Slack",
+        "a5db09b4-51a1-472e-8dd4-88bd7caf77dc"
+      ],
+      "DesktopNum": 4,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "oh my venus trailer - YouTube",
+          "Url": "https://www.youtube.com/results?search_query=oh+my+venus+trailer"
+        },
+        {
+          "Title": "Oh My Venus | 오 마이 비너스 [Trailer] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=6Ug6U9vcXwQ"
+        }
+      ],
+      "Id": "0x03800011"
+    },
+    {
+      "Name": "BIBI (비비) - Very, Slowly (아주, 천천히) Twenty-Five Twenty-One OST Part 3 (스물다섯 스물하나 OST) Lyrics/가사 - YouTube - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "4274e5d4-940b-47bb-bcce-1504b76b02fe"
+      ],
+      "DesktopNum": 4,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "Jaurim - Twenty Five, Twenty One 스물다섯, 스물하나 (KDrama MV) [Eng Sub] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=Y1MpPe6raeU"
+        },
+        {
+          "Title": "Jaurim(자우림) 'Twenty-Five Twenty-One'('Twenty-Five Twenty-One OST Part 2')Lyrics/[Han/Rom/Eng] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=FDmouMHn0ZI"
+        },
+        {
+          "Title": "Full OST Twenty Five Twenty One Part 1-9 - YouTube",
+          "Url": "https://www.youtube.com/watch?v=um0cn_2BlVk"
+        },
+        {
+          "Title": "BIBI (비비) - Very, Slowly (아주, 천천히) Twenty-Five Twenty-One OST Part 3 (스물다섯 스물하나 OST) Lyrics/가사 - YouTube",
+          "Url": "https://www.youtube.com/watch?v=_hgSiJzCDJQ&list=TLPQMjMwODIwMjPXreXRwLhE1Q&index=3"
+        },
+        {
+          "Title": "Xydo - Free (가보자) ( Twenty Five Twenty One Ost ) #twentyfivetwentyone #xydo #가보자 - YouTube",
+          "Url": "https://www.youtube.com/watch?v=lglmXKekKgU"
+        },
+        {
+          "Title": "Jaurim - Twenty Five, Twenty One 스물다섯, 스물하나 (KDrama MV) [Eng Sub] - YouTube",
+          "Url": "https://www.youtube.com/watch?v=Y1MpPe6raeU"
+        }
+      ],
+      "Id": "0x03800012"
+    },
+    {
+      "Name": "does newtonsoft serialize arrays faster than lists - Google Search - Brave",
+      "ApplicationName": "brave-browser",
+      "Activity": [
+        "Development",
+        "4274e5d4-940b-47bb-bcce-1504b76b02fe"
+      ],
+      "DesktopNum": 1,
+      "AbsoluteWindowPosition": [
+        120,
+        0
+      ],
+      "Tabs": [
+        {
+          "Title": "does newtonsoft serialize arrays faster than lists - Google Search",
+          "Url": "https://www.google.com/search?q=does+newtonsoft+serialize+arrays+faster+than+lists&sca_esv=559523683&hl=en&ei=QHzmZIKJGoGr5NoP0aqy4Ak&ved=0ahUKEwiCqbjr3vOAAxWBFVkFHVGVDJwQ4dUDCBA&uact=5&oq=does+newtonsoft+serialize+arrays+faster+than+lists&gs_lp=Egxnd3Mtd2l6LXNlcnAiMmRvZXMgbmV3dG9uc29mdCBzZXJpYWxpemUgYXJyYXlzIGZhc3RlciB0aGFuIGxpc3RzMgUQIRigATIFECEYqwJIjnVQ2hFYw3NwA3gBkAEAmAGDAaABsB6qAQQ0Ny4zuAEDyAEA-AEBwgIKEAAYRxjWBBiwA8ICBxAAGIoFGEPCAg0QABiKBRixAxiDARhDwgIUEC4YigUYsQMYgwEYxwEY0QMYkQLCAhEQLhiKBRixAxjHARjRAxiRAsICERAuGIAEGLEDGIMBGMcBGNEDwgILEC4YgAQYsQMYgwHCAgsQABiABBixAxiDAcICIxAuGIoFGLEDGIMBGMcBGNEDGJECGJcFGNwEGN4EGOAE2AEBwgIIEAAYigUYkQLCAggQLhiABBixA8ICCBAAGIAEGLEDwgIFEAAYgATCAggQABiABBjJA8ICCBAAGIoFGJIDwgILEC4YgAQYxwEYrwHCAgcQABiABBgKwgIIEAAYigUYhgPCAgYQABgWGB7CAggQIRgWGB4YHeIDBBgAIEGIBgGQBgi6BgYIARABGBQ&sclient=gws-wiz-serp"
+        }
+      ],
+      "Id": "0x03800054"
+    }
+  ]
+}
